@@ -1023,8 +1023,8 @@
       width: 100%;
       border-radius: var(--radius);
       overflow: hidden;
-      height: 500px;
-      max-height: 500px;
+      height: 440px;
+      max-height: 440px;
       background: #1A1D24;
       box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
     }
@@ -1032,7 +1032,7 @@
     .resto-img-col {
       position: relative;
       overflow: hidden;
-      height: 500px;
+      height: 440px;
     }
 
     .resto-img-col img {
@@ -1049,13 +1049,13 @@
     .resto-info-col {
       background: #1A1D24;
       color: var(--white);
-      padding: 4rem 4.5rem;
+      padding: 3.2rem 4rem;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
       justify-content: center;
       text-align: left;
-      height: 500px;
+      height: 440px;
     }
 
     .resto-award-badge {
@@ -1289,23 +1289,32 @@
       color: var(--text-muted);
       display: flex;
       flex-direction: column;
-      gap: 1.4rem;
+      gap: 0;
+    }
+    .location-text .section-label {
+      margin-bottom: 0.8rem;
+    }
+    .location-text .section-title {
+      margin-bottom: 1.2rem;
+    }
+    .location-text p {
+      margin-bottom: 0.9rem;
     }
     .location-distances {
-      background: var(--white);
-      border: 1px solid var(--border-light);
+      background: #1A1D24;
+      border: 1px solid rgba(255, 255, 255, 0.08);
       border-radius: var(--radius);
       padding: 2.2rem;
-      margin-top: 1rem;
-      box-shadow: 0 10px 30px rgba(18, 20, 24, 0.04);
+      margin-top: 1.2rem;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
     }
     .distances-title {
       font-family: var(--font-serif);
       font-size: 1.3rem;
       font-weight: 400;
-      color: var(--text-dark);
+      color: var(--white);
       margin-bottom: 1.4rem;
-      border-bottom: 1px solid var(--border-light);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
       padding-bottom: 0.8rem;
     }
     .distances-list {
@@ -1318,22 +1327,23 @@
       align-items: center;
       gap: 1rem;
       padding: 1rem 1.2rem;
-      background: var(--light-bg);
-      border: 1px solid rgba(18, 20, 24, 0.06);
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.08);
       border-radius: 6px;
       transition: all var(--transition);
     }
     .distance-item-card:hover {
       transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(18, 20, 24, 0.06);
-      border-color: rgba(115, 32, 86, 0.2);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      border-color: rgba(191, 143, 175, 0.4);
+      background: rgba(255, 255, 255, 0.08);
     }
     .distance-icon-wrap {
       width: 42px;
       height: 42px;
       border-radius: 50%;
-      background: rgba(115, 32, 86, 0.08);
-      color: var(--wine);
+      background: rgba(191, 143, 175, 0.15);
+      color: var(--mauve);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -1346,16 +1356,16 @@
     }
     .distance-val {
       font-family: var(--font-serif);
-      font-size: 1.3rem;
+      font-size: 1.35rem;
       font-weight: 600;
-      color: var(--wine);
+      color: var(--mauve);
       line-height: 1;
     }
     .distance-lbl {
       font-family: var(--font-sans);
       font-size: 0.78rem;
-      font-weight: 500;
-      color: var(--text-dark);
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.9);
     }
     .location-map-wrap {
       width: 100%;
@@ -2221,8 +2231,8 @@
           <p class="section-label">Gastronomía local</p>
           <h2 class="resto-info-title">Lares Restó</h2>
           <div class="resto-info-body">
-            <p>Una cocina que celebra los sabores de Mendoza y los productos de la región, con una carta que cambia con cada temporada y una selección de vinos de bodegas cercanas.</p>
-            <p style="margin-top: 0.7rem;">Lares Restó está abierto también a quienes no se alojan en el hotel, para disfrutar una experiencia gastronómica cuidada sin necesidad de salir de Lares.</p>
+            <p>Una cocina que celebra los sabores de Mendoza, con productos de la región, una carta de temporada y vinos de bodegas cercanas.</p>
+            <p style="margin-top: 0.7rem;">Lares Restó está abierto también a quienes no se alojan en el hotel, para disfrutar la experiencia sin salir de Lares.</p>
           </div>
           <a href="https://www.laresresto.com/" target="_blank" rel="noopener" class="btn-primary">
             Descubrí Lares Restó
