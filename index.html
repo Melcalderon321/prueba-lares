@@ -170,19 +170,159 @@
       transition: left 0.1s ease-out, top 0.1s ease-out;
     }
 
-    /* NAVBAR HEADER */
-    #navbar {
+    /* FIXED HEADER & PROMO BAR ("SOBRE NAV TIPO PROMO") */
+    .header-fixed-wrapper {
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 1000;
-      padding: 0.6rem 0;
       transition: all var(--transition);
     }
-    #navbar.scrolled {
+
+    .top-promo-bar {
+      background: linear-gradient(90deg, #421130 0%, #732056 35%, #8C286A 50%, #732056 65%, #421130 100%);
+      background-size: 200% 100%;
+      animation: promoGlow 8s ease infinite;
+      color: var(--white);
+      padding: 0.3rem 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      font-size: 0.74rem;
+      position: relative;
+      z-index: 1001;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+      transition: all var(--transition);
+    }
+
+    @keyframes promoGlow {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .promo-inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .promo-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.8rem;
+      cursor: pointer;
+    }
+
+    .promo-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      background: rgba(255, 255, 255, 0.16);
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      padding: 0.2rem 0.6rem;
+      border-radius: 20px;
+      font-size: 0.64rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #FDE8F5;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .promo-icon {
+      width: 14px;
+      height: 14px;
+      color: #F8C6E6;
+    }
+
+    .promo-text {
+      color: var(--white);
+      font-family: var(--font-sans);
+      font-weight: 300;
+      font-size: 0.76rem;
+      text-align: center;
+      width: 100%;
+    }
+
+    .promo-text strong {
+      font-weight: 600;
+      color: var(--white);
+      letter-spacing: 0.01em;
+    }
+
+    .promo-divider {
+      color: rgba(255, 255, 255, 0.3);
+      font-size: 0.8rem;
+      flex-shrink: 0;
+    }
+
+    .promo-perks {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      font-size: 0.73rem;
+      color: rgba(255, 255, 255, 0.9);
+      flex-shrink: 0;
+    }
+
+    .promo-perks span {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .perk-check {
+      width: 13px;
+      height: 13px;
+      color: var(--mauve);
+    }
+
+    .promo-cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: var(--white);
+      color: var(--wine);
+      padding: 0.28rem 0.85rem;
+      border-radius: var(--radius);
+      font-family: var(--font-sans);
+      font-size: 0.66rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      white-space: nowrap;
+      flex-shrink: 0;
+      transition: all var(--transition);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.18);
+    }
+
+    .promo-cta-btn:hover {
+      background: #FFFFFF;
+      color: #54163e;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    }
+
+    /* NAVBAR HEADER */
+    #navbar {
+      position: relative;
+      width: 100%;
+      padding: 0.35rem 0;
+      transition: all var(--transition);
+      background: rgba(18, 20, 24, 0.4);
+      backdrop-filter: blur(8px);
+    }
+    .header-fixed-wrapper.scrolled #navbar {
       background: rgba(18, 20, 24, 0.95);
       backdrop-filter: blur(16px);
-      padding: 0.4rem 0;
+      padding: 0.22rem 0;
       border-bottom: 1px solid rgba(191, 143, 175, 0.2);
+    }
+    .header-fixed-wrapper.scrolled .top-promo-bar {
+      padding: 0.22rem 0;
     }
     .nav-inner {
       display: flex;
@@ -190,12 +330,12 @@
       justify-content: space-between;
     }
     .nav-logo-img {
-      height: 76px;
+      height: 56px;
       width: auto;
       object-fit: contain;
       transition: height var(--transition);
     }
-    #navbar.scrolled .nav-logo-img { height: 58px; }
+    #navbar.scrolled .nav-logo-img { height: 46px; }
     .nav-links {
       display: flex;
       align-items: center;
@@ -371,9 +511,9 @@
     .hero-seo-title {
       font-family: var(--font-sans);
       font-size: clamp(2.4rem, 6.2vw, 4.8rem);
-      font-weight: 300;
+      font-weight: 400;
       color: var(--white);
-      line-height: 1.1;
+      line-height: 1.02;
       letter-spacing: 0.02em;
       margin-bottom: 1.4rem;
       text-shadow: 0 4px 20px rgba(0,0,0,0.6);
@@ -412,170 +552,461 @@
     }
 
     /* ============================================================
-       BLOQUE 2: LA BIENVENIDA ("Un día en Lares") - CLAVE
+       BLOQUE 2: LA BIENVENIDA ("El alma del hotel") - ESTÉTICA EDITORIAL
     ============================================================ */
     #welcome {
       padding: 8rem 0;
       background: var(--light-bg);
+      position: relative;
+      overflow: hidden;
     }
+
     .welcome-grid {
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 5rem;
+      grid-template-columns: 1fr 1fr;
+      gap: 5.5rem;
       align-items: center;
     }
+
+    /* COMPOSICIÓN DE IMÁGENES SUPERPUESTAS (ESTILO REFERENCIA) */
+    .welcome-img-composition {
+      position: relative;
+      width: 100%;
+      padding-bottom: 3.5rem;
+      padding-right: 3.5rem;
+    }
+
+    .welcome-img-primary {
+      position: relative;
+      z-index: 1;
+      width: 80%;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+      border-radius: var(--radius);
+      box-shadow: 0 16px 40px rgba(18, 20, 24, 0.08);
+      display: block;
+    }
+
+    .welcome-img-secondary {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      z-index: 2;
+      width: 58%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      border: 8px solid var(--light-bg);
+      border-radius: var(--radius);
+      box-shadow: 0 20px 50px rgba(18, 20, 24, 0.16);
+      transition: transform var(--transition);
+    }
+
+    .welcome-img-composition:hover .welcome-img-secondary {
+      transform: translateY(-4px) scale(1.02);
+    }
+
     .welcome-text {
       display: flex;
       flex-direction: column;
     }
+
+    .welcome-lead-quote {
+      font-family: var(--font-serif);
+      font-size: clamp(1.25rem, 2.2vw, 1.6rem);
+      font-style: italic;
+      font-weight: 400;
+      color: var(--wine);
+      line-height: 1.45;
+      margin-bottom: 1.8rem;
+    }
+
     .welcome-narrative {
       font-family: var(--font-sans);
-      font-size: 0.96rem;
+      font-size: 0.94rem;
       font-weight: 300;
       line-height: 1.9;
       color: var(--text-muted);
-      margin-bottom: 2rem;
+      margin-bottom: 2.2rem;
       display: flex;
       flex-direction: column;
-      gap: 1.2rem;
+      gap: 1.1rem;
     }
-    .welcome-soul-quote {
-      font-family: var(--font-serif);
-      font-size: clamp(1.4rem, 2.4vw, 1.85rem);
-      font-weight: 400;
-      font-style: italic;
-      color: var(--wine);
-      line-height: 1.4;
-      padding: 1.8rem 2rem;
-      border-left: 2px solid var(--mauve);
-      background: rgba(191, 143, 175, 0.08);
-      margin: 1.5rem 0 2.2rem 0;
-    }
-    .welcome-img-wrap {
-      position: relative;
-    }
-    .welcome-img-main {
-      width: 100%;
-      aspect-ratio: 4/5;
-      object-fit: cover;
-      box-shadow: 0 20px 40px rgba(18,20,24,0.12);
-      border-radius: var(--radius);
+
+    .welcome-cta-wrap {
+      margin-top: 0.5rem;
     }
 
     /* ============================================================
-       BLOQUE 3: HABITACIONES ("Dónde dormir") - CLAVE
+       BLOQUE 3: HABITACIONES ("Dónde dormir") - FONDO OSCURO BOUTIQUE
     ============================================================ */
     #rooms {
       padding: 8rem 0;
-      background: var(--white);
+      background: var(--dark-bg);
+      color: var(--white);
     }
+    #rooms .section-label {
+      color: var(--mauve);
+    }
+    #rooms .section-label::before {
+      background: var(--mauve);
+    }
+    #rooms .section-title {
+      color: var(--white);
+    }
+
     .rooms-intro {
       max-width: 820px;
-      font-size: 1rem;
+      font-size: 1.05rem;
       font-weight: 300;
       line-height: 1.85;
-      color: var(--text-muted);
-      margin-bottom: 4rem;
+      color: rgba(255, 255, 255, 0.72);
+      margin-bottom: 4.5rem;
     }
-    .rooms-cards-grid {
+
+    .rooms-showcase-list {
+      display: flex;
+      flex-direction: column;
+      gap: 5.5rem;
+    }
+
+    .room-showcase-item {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-    }
-    .room-card {
-      background: var(--light-bg);
-      border: 1px solid var(--border-light);
-      display: flex;
-      flex-direction: column;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 4.5rem;
+      align-items: center;
+      background: var(--dark-card);
+      border: 1px solid rgba(191, 143, 175, 0.2);
+      border-radius: var(--radius);
       overflow: hidden;
-      transition: transform var(--transition), box-shadow var(--transition);
+      box-shadow: 0 15px 45px rgba(0, 0, 0, 0.25);
+      transition: all var(--transition);
     }
-    .room-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 15px 35px rgba(18,20,24,0.08);
+
+    .room-showcase-item.reverse {
+      grid-template-columns: 0.85fr 1.15fr;
     }
-    .room-card-img {
+
+    .room-showcase-item:hover {
+      box-shadow: 0 22px 55px rgba(0, 0, 0, 0.45);
+      border-color: rgba(191, 143, 175, 0.45);
+    }
+
+    .room-showcase-img-wrap {
+      position: relative;
+      overflow: hidden;
+      height: 100%;
+      min-height: 440px;
+    }
+
+    .room-showcase-img {
       width: 100%;
-      height: 280px;
+      height: 100%;
       object-fit: cover;
+      transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
-    .room-card-body {
-      padding: 2.6rem;
+
+    .room-showcase-item:hover .room-showcase-img {
+      transform: scale(1.04);
+    }
+
+    .room-showcase-badge {
+      position: absolute;
+      top: 1.5rem;
+      left: 1.5rem;
+      background: rgba(18, 20, 24, 0.85);
+      backdrop-filter: blur(10px);
+      color: var(--white);
+      font-family: var(--font-sans);
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 0.4rem 0.9rem;
+      border-radius: var(--radius);
+      border: 1px solid rgba(191, 143, 175, 0.3);
+      z-index: 2;
+    }
+
+    .room-showcase-content {
+      padding: 3.5rem 3.5rem 3.5rem 0;
       display: flex;
       flex-direction: column;
-      flex: 1;
     }
-    .room-card-title {
-      font-family: var(--font-serif);
-      font-size: 2rem;
-      font-weight: 400;
-      color: var(--text-dark);
-      margin-bottom: 1rem;
+
+    .room-showcase-item.reverse .room-showcase-content {
+      padding: 3.5rem 0 3.5rem 3.5rem;
     }
-    .room-card-desc {
+
+    .room-showcase-subtitle {
       font-family: var(--font-sans);
-      font-size: 0.88rem;
-      font-weight: 300;
-      color: var(--text-muted);
-      line-height: 1.8;
-      margin-bottom: 2rem;
-      flex: 1;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--mauve);
+      margin-bottom: 0.6rem;
     }
-    .room-card-links {
+
+    .room-showcase-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2rem, 3.2vw, 2.6rem);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--white);
+      margin-bottom: 1.2rem;
+      line-height: 1.2;
+    }
+
+    .room-showcase-desc {
+      font-family: var(--font-sans);
+      font-size: 0.92rem;
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.72);
+      line-height: 1.85;
+      margin-bottom: 2rem;
+    }
+
+    /* PREMIUM AMENITIES ICONS GRID */
+    .room-amenities-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem 1.5rem;
+      margin-bottom: 2.5rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(191, 143, 175, 0.2);
+    }
+
+    .amenity-item {
       display: flex;
-      gap: 1.5rem;
+      align-items: center;
+      gap: 0.65rem;
+      font-family: var(--font-sans);
+      font-size: 0.82rem;
+      font-weight: 400;
+      color: rgba(255, 255, 255, 0.88);
+    }
+
+    .amenity-icon {
+      width: 17px;
+      height: 17px;
+      color: var(--mauve);
+      flex-shrink: 0;
+    }
+
+    .room-showcase-actions {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      margin-top: auto;
+    }
+    #rooms .btn-outline {
+      border-color: var(--mauve);
+      color: var(--mauve);
+    }
+    #rooms .btn-outline:hover {
+      background: var(--mauve);
+      color: var(--dark-bg);
+    }
+
+    /* SLIDER/CARRUSEL FOTOGRÁFICO DE CASA VITA */
+    .room-slider-wrap {
+      position: relative;
+      overflow: hidden;
+      height: 100%;
+      min-height: 440px;
+    }
+
+    .room-slider-wrap .slide-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 1.2s cubic-bezier(0.4, 0, 0.2, 1), transform 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+      transform: scale(1.04);
+      z-index: 1;
+    }
+
+    .room-slider-wrap .slide-img.active {
+      opacity: 1;
+      transform: scale(1);
+      z-index: 2;
+    }
+
+    .slider-dots {
+      position: absolute;
+      bottom: 1.2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 0.5rem;
+      z-index: 4;
+    }
+
+    .slider-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.4);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: 1px solid rgba(0, 0, 0, 0.2);
+    }
+
+    .slider-dot.active {
+      background: var(--mauve);
+      width: 22px;
+      border-radius: 10px;
+    }
+
+    .slider-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(18, 20, 24, 0.6);
+      backdrop-filter: blur(4px);
+      color: var(--white);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      cursor: pointer;
+      z-index: 4;
+      opacity: 0;
+      transition: all 0.3s ease;
+    }
+
+    .room-slider-wrap:hover .slider-arrow {
+      opacity: 1;
+    }
+
+    .prev-arrow { left: 1rem; }
+    .next-arrow { right: 1rem; }
+
+    .slider-arrow:hover {
+      background: var(--wine);
+      border-color: var(--mauve);
+    }
       align-items: center;
       margin-top: auto;
     }
 
     /* ============================================================
-       BLOQUE 4: LA CAVA ("Una casa entre bodegas") - CLAVE (BANDERA)
+       BLOQUE 4: LA CAVA ("Una casa entre bodegas") - ESTILO REFERENCIA
     ============================================================ */
     #cava {
-      padding: 9rem 0;
+      padding: 4rem 0 0 0;
       background: var(--dark-bg);
       color: var(--white);
       position: relative;
       overflow: hidden;
     }
-    .cava-grid {
+
+    /* CINTA DE TEXTO ANIMADO (MARQUEE TICKER) */
+    .cava-ticker-wrap {
+      overflow: hidden;
+      background: var(--wine);
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      padding: 0.85rem 0;
+      margin-bottom: 0;
+      white-space: nowrap;
+    }
+
+    .cava-ticker-track {
+      display: inline-flex;
+      align-items: center;
+      gap: 1.5rem;
+      animation: cavaMarquee 35s linear infinite;
+    }
+
+    @keyframes cavaMarquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .cava-ticker-item {
+      font-family: var(--font-serif);
+      font-size: 0.88rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--white);
+      display: inline-flex;
+      align-items: center;
+      gap: 1.5rem;
+      flex-shrink: 0;
+    }
+
+    .cava-card-wrapper {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 5rem;
-      align-items: center;
+      width: 100%;
+      border-radius: 0;
+      overflow: hidden;
+      height: 450px;
+      max-height: 450px;
     }
-    .cava-content .section-label { color: var(--mauve); }
-    .cava-content .section-label::before { background: var(--mauve); }
-    .cava-title {
-      font-family: var(--font-serif);
-      font-size: clamp(2.4rem, 4.2vw, 3.6rem);
-      font-weight: 300;
-      font-style: italic;
-      color: var(--white);
-      line-height: 1.15;
-      margin-bottom: 1.8rem;
+
+    .cava-img-col {
+      position: relative;
+      overflow: hidden;
+      height: 450px;
     }
-    .cava-body {
+
+    .cava-img-col img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    .cava-card-wrapper:hover .cava-img-col img {
+      transform: scale(1.05);
+    }
+
+    .cava-info-col {
+      background: var(--light-bg);
+      color: var(--text-dark);
+      padding: 3.8rem 4.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      text-align: left;
+      height: 450px;
+    }
+
+    .cava-info-col .section-label {
+      color: var(--wine);
+      margin-bottom: 1rem;
+    }
+
+    .cava-info-col .section-title {
+      color: var(--text-dark);
+      margin-bottom: 1.5rem;
+    }
+
+    .cava-info-body {
       font-family: var(--font-sans);
       font-size: 0.94rem;
       font-weight: 300;
       line-height: 1.9;
-      color: rgba(255,255,255,0.75);
-      margin-bottom: 2.8rem;
+      color: var(--text-muted);
+      max-width: 580px;
+      margin-bottom: 2rem;
     }
-    .cava-img-wrap {
-      position: relative;
-      overflow: hidden;
-      aspect-ratio: 4/3;
-      border: 1px solid rgba(191, 143, 175, 0.25);
+
+    .btn-pill-cava:hover {
+      background: var(--wine);
+      color: var(--white);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(115, 32, 86, 0.35);
     }
-    .cava-img {
-      width: 100%; height: 100%;
-      object-fit: cover;
-      filter: brightness(0.88);
-      transition: transform 1s ease;
-    }
-    .cava-img-wrap:hover .cava-img { transform: scale(1.05); }
 
     /* ============================================================
        BLOQUE 5: EL RESTAURANTE ("Lares Restó") - NORMAL
@@ -1096,12 +1527,27 @@
       gap: 4rem;
       margin-bottom: 4rem;
     }
+    .footer-logos-row {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      margin-bottom: 1.4rem;
+      flex-wrap: wrap;
+    }
     .footer-brand .footer-logo-img {
-      height: 115px;
+      height: 95px;
       width: auto;
       object-fit: contain;
       filter: brightness(0) invert(1);
-      margin-bottom: 1.4rem;
+    }
+    .footer-seal-img {
+      height: 60px;
+      width: auto;
+      object-fit: contain;
+      transition: transform var(--transition);
+    }
+    .footer-seal-img:hover {
+      transform: scale(1.08);
     }
     .footer-brand-desc {
       font-family: var(--font-sans);
@@ -1202,20 +1648,34 @@
     /* RESPONSIVE DESIGN & MOBILE FOLD DIRECTIVE */
     @media (max-width: 1024px) {
       .welcome-grid, .cava-grid, .location-grid, .bb-inner, .single-note-card { grid-template-columns: 1fr; gap: 3rem; }
-      .rooms-cards-grid, .experiences-grid, .reviews-grid, .guide-multi-view { grid-template-columns: repeat(2, 1fr); }
+      .experiences-grid, .reviews-grid, .guide-multi-view { grid-template-columns: repeat(2, 1fr); }
+      .room-showcase-item, .room-showcase-item.reverse { grid-template-columns: 1fr; gap: 0; }
+      .room-showcase-content, .room-showcase-item.reverse .room-showcase-content { padding: 2.4rem; }
+      .room-showcase-img-wrap { min-height: 320px; }
+      .room-amenities-grid { grid-template-columns: 1fr; }
+      .cava-card-wrapper { grid-template-columns: 1fr; }
+      .cava-info-col { padding: 3.5rem 2rem; }
+      .cava-img-col { min-height: 320px; }
       .footer-grid { grid-template-columns: 1fr 1fr; gap: 3rem; }
       .resto-card { grid-template-columns: 1fr; }
+      .promo-perks, .promo-divider { display: none; }
     }
 
     @media (max-width: 768px) {
       .nav-links, .lang-selector { display: none; }
       .nav-hamburger { display: flex; }
 
+      .promo-inner { justify-content: center; text-align: center; }
+      .promo-content { justify-content: center; }
+      .promo-cta-btn { display: none; }
+      .promo-text { font-size: 0.7rem; white-space: normal; text-align: center; line-height: 1.25; }
+      .promo-tag { font-size: 0.58rem; padding: 0.15rem 0.45rem; }
+
       /* MOBILE HERO FIRST FOLD MANDATE */
       #hero {
         height: 100vh;
         min-height: -webkit-fill-available;
-        padding-top: 5rem;
+        padding-top: 6.8rem;
       }
       .hero-subtitle { margin-bottom: 1.8rem; font-size: 0.9rem; }
       .hero-btn-reserve { padding: 1rem 2.4rem; font-size: 0.78rem; }
@@ -1232,7 +1692,7 @@
 
   <!-- Floating WhatsApp Button -->
   <a href="https://wa.me/5492613738750?text=Hola%20Lares%20de%20Chacras,%20quisiera%20consultar%20por%20una%20reserva" target="_blank" class="floating-whatsapp" aria-label="Contacto por WhatsApp">
-    <img src="WhatsApp.svg" alt="WhatsApp" />
+    <img src="assets/WhatsApp.svg" alt="WhatsApp" />
   </a>
 
   <!-- Mobile Drawer Menu -->
@@ -1248,41 +1708,55 @@
     <button class="btn-primary trigger-booking" style="margin-top:1.5rem">Reservar</button>
   </nav>
 
-  <!-- Header Navigation -->
-  <header id="navbar">
-    <div class="container">
-      <div class="nav-inner">
-        <a href="#" class="nav-logo-link">
-          <img src="logo.png" alt="Lares de Chacras Logo" class="nav-logo-img" />
-        </a>
-        <ul class="nav-links">
-          <li><a href="#rooms">Habitaciones</a></li>
-          <li><a href="#cava">Cava y Vinos</a></li>
-          <li><a href="#experiences">Experiencias</a></li>
-          <li><a href="https://www.laresresto.com/" target="_blank">Restaurante</a></li>
-          <li><a href="#welcome">El Hotel</a></li>
-          <li><a href="#guide">Guía</a></li>
-          <li><a href="#before-booking">Contacto</a></li>
-        </ul>
-        <div class="nav-right">
-          <select class="lang-selector" aria-label="Idioma">
-            <option value="es" selected>ES</option>
-            <option value="en">EN</option>
-            <option value="pt">PT</option>
-          </select>
-          <button class="nav-cta trigger-booking">Reservar</button>
-          <button class="nav-hamburger" id="hamburgerBtn" aria-label="Abrir Menú">
-            <span></span><span></span><span></span>
-          </button>
+  <!-- Header Fixed Container with Top Promo Bar ("Sobre Nav") -->
+  <div class="header-fixed-wrapper" id="headerFixedWrapper">
+    <!-- Top Promo Banner -->
+    <div class="top-promo-bar" id="topPromoBar">
+      <div class="container promo-inner">
+        <div class="promo-content trigger-booking" title="Hacé clic para reservar directo">
+          <p class="promo-text">
+            <strong>Mejor tarifa garantizada</strong> reservando directamente en nuestra web
+          </p>
         </div>
       </div>
     </div>
-  </header>
+
+    <!-- Header Navigation -->
+    <header id="navbar">
+      <div class="container">
+        <div class="nav-inner">
+          <a href="#" class="nav-logo-link">
+            <img src="assets/logo.png" alt="Lares de Chacras Logo" class="nav-logo-img" />
+          </a>
+          <ul class="nav-links">
+            <li><a href="#rooms">Habitaciones</a></li>
+            <li><a href="#cava">Cava y Vinos</a></li>
+            <li><a href="#experiences">Experiencias</a></li>
+            <li><a href="https://www.laresresto.com/" target="_blank">Restaurante</a></li>
+            <li><a href="#welcome">El Hotel</a></li>
+            <li><a href="#guide">Guía</a></li>
+            <li><a href="#before-booking">Contacto</a></li>
+          </ul>
+          <div class="nav-right">
+            <select class="lang-selector" aria-label="Idioma">
+              <option value="es" selected>ES</option>
+              <option value="en">EN</option>
+              <option value="pt">PT</option>
+            </select>
+            <button class="nav-cta trigger-booking">Reservar</button>
+            <button class="nav-hamburger" id="hamburgerBtn" aria-label="Abrir Menú">
+              <span></span><span></span><span></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+  </div>
 
   <!-- ============================================================
        BLOQUE 1: PORTADA (HERO) - CLAVE
   ============================================================ -->
-  <section id="hero" style="background-image: url('hero.jpg');">
+  <section id="hero" style="background-image: url('assets/hero.jpg');">
     <div class="hero-container">
       <h1 class="hero-seo-title">
         Hotel boutique en Chacras de Coria Mendoza
@@ -1295,86 +1769,194 @@
           <i data-lucide="calendar" style="width:18px;height:18px"></i>
           Reservar
         </button>
-        <span class="hero-subline">Mejor tarifa garantizada reservando directamente en nuestra web</span>
       </div>
     </div>
   </section>
 
   <!-- ============================================================
-       BLOQUE 2: LA BIENVENIDA ("Un día en Lares") - CLAVE
+       BLOQUE 2: LA BIENVENIDA ("El alma del hotel")
   ============================================================ -->
   <section id="welcome">
     <div class="container">
       <div class="welcome-grid">
+        <!-- COMPOSICIÓN DE IMÁGENES SUPERPUESTAS (REFERENCIA ESTÉTICA) -->
+        <div class="welcome-img-composition">
+          <img src="assets/welcome_accent.jpg" alt="Atmósfera de jardines y galería en Lares de Chacras" class="welcome-img-primary" />
+          <img src="assets/welcome_secondary.jpg" alt="Piscina y jardines Lares de Chacras" class="welcome-img-secondary" />
+        </div>
+
+        <!-- CONTENIDO DE TEXTO -->
         <div class="welcome-text">
           <p class="section-label">El alma del hotel</p>
-          <h2 class="section-title">Un día en Lares</h2>
+          <h2 class="section-title">Una forma diferente<br>de vivir Mendoza</h2>
+
           <div class="welcome-narrative">
             <p>
-              Vas a llegar por una calle de plátanos. Cruzás el portón y aparece la casa: jardines amplios, la piscina al sol, la cava al fondo. Son dieciséis habitaciones repartidas entre el edificio principal y Casa Vita, a veinte metros, más reservada.
+              Lares es un hotel boutique íntimo, rodeado de jardines y viñedos, donde la arquitectura, el diseño y la naturaleza conviven en equilibrio. Dieciséis habitaciones, una piscina rodeada de verde, una galería abierta al parque y una cava pensada para disfrutar Mendoza también puertas adentro.
             </p>
             <p>
-              Servimos el desayuno en la galería, frente al parque, y no lo levantamos a horario. A media mañana casi todos salen a recorrer las <strong>bodegas de Luján de Cuyo</strong>, muchas veces con un itinerario que armamos juntos la noche anterior, y vuelven para el atardecer. Las noches terminan en la cava, con una copa y conversación.
+              Durante el día, la experiencia continúa más allá del hotel: las bodegas de Luján de Cuyo, los restaurantes de Chacras y los paisajes de una de las regiones más reconocidas del vino argentino.
             </p>
             <p>
-              Al otro día, el que quiere sale caminando hasta la plaza de Chacras. El que no, se queda leyendo bajo los árboles.
+              Al volver, Lares invita a hacer una pausa. Una copa en la cava, una tarde junto a la piscina o simplemente el placer de no tener nada más que hacer.
+            </p>
+            <p>
+              Un lugar pensado para descubrir Mendoza, pero también para disfrutar de quedarse.
             </p>
           </div>
-          <blockquote class="welcome-soul-quote">
-            "Dieciséis habitaciones. Las suficientes para acordarnos de cómo te gusta el café."
-          </blockquote>
-          <div>
+
+          <div class="welcome-cta-wrap">
             <a href="/el-hotel.html" class="btn-link">
-              Conocé la casa
+              Conocé Lares
               <i data-lucide="arrow-right" style="width:16px;height:16px"></i>
             </a>
           </div>
         </div>
-
-        <div class="welcome-img-wrap">
-          <img src="welcome_accent.jpg" alt="Atmósfera cálida de jardines y galería en Lares de Chacras" class="welcome-img-main" />
-        </div>
       </div>
     </div>
   </section>
 
   <!-- ============================================================
-       BLOQUE 3: HABITACIONES ("Dónde dormir") - CLAVE
+       BLOQUE 3: HABITACIONES ("Dónde dormir")
   ============================================================ -->
   <section id="rooms">
     <div class="container">
       <p class="section-label">Alojamiento boutique</p>
-      <h2 class="section-title">Dónde dormir</h2>
-      <p class="rooms-intro">
-        Dieciséis habitaciones entre las dos casas, con desayuno incluido y acceso a la piscina, el parque y el gimnasio. Ninguna igual a la otra: la casa es antigua y acomodamos cada habitación a su lugar.
-      </p>
+      <h2 class="section-title">Espacios pensados para quedarse</h2>
+      <div class="rooms-intro">
+        <p>En Lares, cada una de las dieciséis habitaciones tiene su propia identidad. Distribuidas entre la Casa Principal y Casa Vita, combinan privacidad, confort y detalles cuidados.</p>
+      </div>
 
-      <div class="rooms-cards-grid">
-        <!-- Casa Principal -->
-        <article class="room-card">
-          <img src="casa_principal.jpg" alt="Habitación en la Casa Principal" class="room-card-img" />
-          <div class="room-card-body">
-            <h3 class="room-card-title">La casa principal</h3>
-            <p class="room-card-desc">
-              Diez habitaciones alrededor del jardín, en tres categorías. Las clásicas tienen 23 m²; las especiales, 28 con balcón o terraza; y las dos superiores, 30 m² con jacuzzi. Todas con aire acondicionado, calefacción y caja de seguridad, a pasos del desayuno y de la cava.
-            </p>
-            <div class="room-card-links">
-              <a href="/habitaciones.html" class="btn-primary">Ver habitaciones</a>
+      <div class="rooms-showcase-list">
+        <!-- BLOQUE 1: LA CASA PRINCIPAL -->
+        <article class="room-showcase-item">
+          <!-- SLIDER DE FOTOS LA CASA PRINCIPAL -->
+          <div class="room-showcase-img-wrap room-slider-wrap" id="casaPrincipalSlider">
+            <img src="assets/casa_principal_1.jpg" alt="La Casa Principal Habitación & Jardines 1" class="slide-img active" />
+            <img src="assets/casa_principal_2.jpg" alt="La Casa Principal Habitación 2" class="slide-img" />
+            <img src="assets/casa_principal_3.jpg" alt="La Casa Principal Detalles 3" class="slide-img" />
+            <img src="assets/casa_principal_4.jpg" alt="La Casa Principal Balcón & Galería 4" class="slide-img" />
+
+            <!-- Puntos de navegación (Dots) -->
+            <div class="slider-dots">
+              <span class="slider-dot active" data-index="0"></span>
+              <span class="slider-dot" data-index="1"></span>
+              <span class="slider-dot" data-index="2"></span>
+              <span class="slider-dot" data-index="3"></span>
+            </div>
+
+            <!-- Flechas de navegación -->
+            <button class="slider-arrow prev-arrow" aria-label="Anterior">&lsaquo;</button>
+            <button class="slider-arrow next-arrow" aria-label="Siguiente">&rsaquo;</button>
+          </div>
+          <div class="room-showcase-content">
+            <h3 class="room-showcase-title">La Casa Principal</h3>
+            <div class="room-showcase-desc">
+              <p>Diez habitaciones alrededor del jardín, distribuidas en tres categorías.</p>
+              <p style="margin-top: 0.6rem;">Las Classic tienen 23 m²; las Special, 28 m² con balcón o terraza; y las Superior, 30 m² con jacuzzi privado.</p>
+              <p style="margin-top: 0.6rem;">Todas cuentan con aire acondicionado, calefacción y caja de seguridad, cerca de la galería y la cava.</p>
+            </div>
+
+            <!-- SERVICIOS CON ÍCONOS -->
+            <div class="room-amenities-grid">
+              <div class="amenity-item">
+                <i data-lucide="maximize" class="amenity-icon"></i>
+                <span>23 a 30 m² según categoría</span>
+              </div>
+              <div class="amenity-item">
+                <i data-lucide="bath" class="amenity-icon"></i>
+                <span>Jacuzzi (Hab. Superiores)</span>
+              </div>
+              <div class="amenity-item">
+                <i data-lucide="coffee" class="amenity-icon"></i>
+                <span>Desayuno en galería incluido</span>
+              </div>
+              <div class="amenity-item">
+                <i data-lucide="sun" class="amenity-icon"></i>
+                <span>Piscina, parque & gimnasio</span>
+              </div>
+              <div class="amenity-item">
+                <i data-lucide="flame" class="amenity-icon"></i>
+                <span>Climatización frío/calor</span>
+              </div>
+              <div class="amenity-item">
+                <i data-lucide="shield-check" class="amenity-icon"></i>
+                <span>Caja de seguridad & Cava</span>
+              </div>
+            </div>
+
+            <div class="room-showcase-actions">
+              <a href="/habitaciones.html" class="btn-primary">
+                Ver habitaciones
+                <i data-lucide="arrow-right" style="width:16px;height:16px"></i>
+              </a>
             </div>
           </div>
         </article>
 
-        <!-- Casa Vita -->
-        <article class="room-card">
-          <img src="casa_vita.jpg" alt="Casa Vita Guest House" class="room-card-img" />
-          <div class="room-card-body">
-            <h3 class="room-card-title">Casa Vita</h3>
-            <p class="room-card-desc">
-              Seis habitaciones junior de 20 m² a veinte metros del edificio principal, con baño privado, frigobar y Smart TV. Es la opción más reservada, para quienes buscan silencio o viajan en pareja. El desayuno y la conserjería funcionan en la casa principal.
-            </p>
-            <div class="room-card-links">
-              <a href="#casa-vita-detail" class="btn-outline">Conocer Casa Vita</a>
+        <!-- BLOQUE 2: CASA VITA -->
+        <article class="room-showcase-item reverse">
+          <div class="room-showcase-content">
+            <span class="room-showcase-subtitle">Guest House</span>
+            <h3 class="room-showcase-title">Casa Vita</h3>
+            <div class="room-showcase-desc">
+              <p>A veinte metros de la Casa Principal, seis habitaciones junior de 20 m² ofrecen un espacio más reservado.</p>
+              <p style="margin-top: 0.6rem;">Cuentan con baño privado, frigobar y Smart TV, y acceso a todos los servicios de Lares.</p>
             </div>
+
+            <!-- SERVICIOS CON ÍCONOS -->
+            <div class="room-amenities-grid">
+              <div class="amenity-item">
+                <i data-lucide="maximize" class="amenity-icon"></i>
+                <span>20 m² Junior Suites</span>
+              </div>
+              <div class="amenity-item">
+                <i data-lucide="volume-x" class="amenity-icon"></i>
+                <span>Silencio & privacidad</span>
+              </div>
+              <div class="amenity-item">
+                <i data-lucide="tv" class="amenity-icon"></i>
+                <span>Smart TV & Frigobar</span>
+              </div>
+              <div class="amenity-item">
+                <i data-lucide="users" class="amenity-icon"></i>
+                <span>Ideal parejas & reposo</span>
+              </div>
+              <div class="amenity-item">
+                <i data-lucide="wifi" class="amenity-icon"></i>
+                <span>Wi-Fi de alta velocidad</span>
+              </div>
+              <div class="amenity-item">
+                <i data-lucide="trees" class="amenity-icon"></i>
+                <span>Acceso libre al parque</span>
+              </div>
+            </div>
+
+            <div class="room-showcase-actions">
+              <a href="#casa-vita-detail" class="btn-outline">
+                Conocer Casa Vita
+                <i data-lucide="arrow-right" style="width:16px;height:16px"></i>
+              </a>
+            </div>
+          </div>
+          <!-- SLIDER DE FOTOS CASA VITA -->
+          <div class="room-showcase-img-wrap room-slider-wrap" id="casaVitaSlider">
+            <img src="assets/casa_vita_1.jpg" alt="Casa Vita Galería & Exteriores" class="slide-img active" />
+            <img src="assets/casa_vita_2.jpg" alt="Casa Vita Habitación Junior" class="slide-img" />
+            <img src="assets/casa_vita_3.jpg" alt="Casa Vita Vistas & Detalles" class="slide-img" />
+            <img src="assets/casa_vita_4.jpg" alt="Casa Vita Arquitectura" class="slide-img" />
+
+            <!-- Puntos de navegación (Dots) -->
+            <div class="slider-dots">
+              <span class="slider-dot active" data-index="0"></span>
+              <span class="slider-dot" data-index="1"></span>
+              <span class="slider-dot" data-index="2"></span>
+              <span class="slider-dot" data-index="3"></span>
+            </div>
+
+            <!-- Flechas de navegación -->
+            <button class="slider-arrow prev-arrow" aria-label="Anterior">&lsaquo;</button>
+            <button class="slider-arrow next-arrow" aria-label="Siguiente">&rsaquo;</button>
           </div>
         </article>
       </div>
@@ -1382,25 +1964,54 @@
   </section>
 
   <!-- ============================================================
-       BLOQUE 4: LA CAVA ("Una casa entre bodegas") - CLAVE (BANDERA)
+       BLOQUE 4: LA CAVA ("Una casa entre bodegas")
   ============================================================ -->
   <section id="cava">
-    <div class="container">
-      <div class="cava-grid">
-        <div class="cava-content">
-          <p class="section-label">Identidad Vitivinícola</p>
-          <h2 class="cava-title">Una casa entre bodegas</h2>
-          <p class="cava-body">
-            Estamos rodeados de bodegas, y eso se nota adentro. Tenemos cava propia, con una selección de vinos de la zona y un living con hogar a leña donde se juntan los que vuelven de recorrer. Conocemos a los que hacen esos vinos, sabemos cuál conviene visitar según el día y armamos el recorrido antes de que llegues.
-          </p>
-          <a href="/cava-y-vinos.html" class="btn-outline" style="border-color:var(--mauve); color:var(--mauve);">
-            Conocé la cava
-            <i data-lucide="arrow-right" style="width:16px;height:16px"></i>
-          </a>
+    <!-- CINTA DE TEXTO ANIMADO (MARQUEE TICKER) -->
+    <div class="cava-ticker-wrap">
+      <div class="cava-ticker-track">
+        <div class="cava-ticker-item">
+          <span>UNA CASA ENTRE BODEGAS</span><span>✦</span>
+          <span>CAVA PROPIA</span><span>✦</span>
+          <span>VINOS MENDOCINOS</span><span>✦</span>
+          <span>VIVIR MENDOZA</span><span>✦</span>
+          <span>HOGAR A LEÑA</span><span>✦</span>
+          <span>UNA CASA ENTRE BODEGAS</span><span>✦</span>
+          <span>CAVA PROPIA</span><span>✦</span>
+          <span>VINOS MENDOCINOS</span><span>✦</span>
+          <span>VIVIR MENDOZA</span><span>✦</span>
+          <span>HOGAR A LEÑA</span><span>✦</span>
         </div>
-        <div class="cava-img-wrap">
-          <img src="casa_entre_bodegas.jpg" alt="Cava propia y vinos mendocinos en Lares de Chacras - Una casa entre bodegas" class="cava-img" />
+        <div class="cava-ticker-item">
+          <span>UNA CASA ENTRE BODEGAS</span><span>✦</span>
+          <span>CAVA PROPIA</span><span>✦</span>
+          <span>VINOS MENDOCINOS</span><span>✦</span>
+          <span>VIVIR MENDOZA</span><span>✦</span>
+          <span>HOGAR A LEÑA</span><span>✦</span>
+          <span>UNA CASA ENTRE BODEGAS</span><span>✦</span>
+          <span>CAVA PROPIA</span><span>✦</span>
+          <span>VINOS MENDOCINOS</span><span>✦</span>
+          <span>VIVIR MENDOZA</span><span>✦</span>
+          <span>HOGAR A LEÑA</span><span>✦</span>
         </div>
+      </div>
+    </div>
+
+    <!-- ESTRUCTURA FULL BLEED A PANTALLA COMPLETA (SIN MARGENES LATERALES) -->
+    <div class="cava-card-wrapper">
+      <div class="cava-img-col">
+        <img src="assets/cava_v2.jpg" alt="Cava propia y vinos mendocinos en Lares de Chacras - Una casa entre bodegas" />
+      </div>
+      <div class="cava-info-col">
+        <p class="section-label">Identidad Vitivinícola</p>
+        <h2 class="section-title">Una casa entre bodegas</h2>
+        <p class="cava-info-body">
+          Estamos rodeados de bodegas, y eso se nota adentro. Tenemos cava propia, con una selección de vinos de la zona y un living con hogar a leña donde se juntan los que vuelven de recorrer. Conocemos a los que hacen esos vinos, sabemos cuál conviene visitar según el día y armamos el recorrido antes de que llegues.
+        </p>
+        <a href="/cava-y-vinos.html" class="btn-link">
+          Conocé la cava
+          <i data-lucide="arrow-right" style="width:16px;height:16px"></i>
+        </a>
       </div>
     </div>
   </section>
@@ -1441,7 +2052,7 @@
 
       <div class="experiences-grid">
         <article class="exp-card">
-          <img src="exp_bodegas.jpg" alt="Visita a Bodegas en Luján de Cuyo y Valle de Uco" class="exp-card-img" />
+          <img src="assets/exp_bodegas.jpg" alt="Visita a Bodegas en Luján de Cuyo y Valle de Uco" class="exp-card-img" />
           <div class="exp-card-body">
             <h4 class="exp-card-title">Visita a Bodegas</h4>
             <p class="exp-card-desc">Luján de Cuyo & Valle de Uco</p>
@@ -1449,7 +2060,7 @@
         </article>
 
         <article class="exp-card">
-          <img src="exp_montana.jpg" alt="Salidas a alta montaña y Aconcagua" class="exp-card-img" />
+          <img src="assets/exp_montana.jpg" alt="Salidas a alta montaña y Aconcagua" class="exp-card-img" />
           <div class="exp-card-body">
             <h4 class="exp-card-title">Alta Montaña</h4>
             <p class="exp-card-desc">Recorridos hacia el Aconcagua</p>
@@ -1457,7 +2068,7 @@
         </article>
 
         <article class="exp-card">
-          <img src="exp_cabalgatas.jpg" alt="Cabalgatas al atardecer en viñedos" class="exp-card-img" />
+          <img src="assets/exp_cabalgatas.jpg" alt="Cabalgatas al atardecer en viñedos" class="exp-card-img" />
           <div class="exp-card-body">
             <h4 class="exp-card-title">Cabalgatas</h4>
             <p class="exp-card-desc">Atardeceres en el pie de monte</p>
@@ -1465,7 +2076,7 @@
         </article>
 
         <article class="exp-card">
-          <img src="exp_bicicletas.webp" alt="Recorridos en bicicleta entre viñedos" class="exp-card-img" />
+          <img src="assets/exp_bicicletas.webp" alt="Recorridos en bicicleta entre viñedos" class="exp-card-img" />
           <div class="exp-card-body">
             <h4 class="exp-card-title">Bicicletas</h4>
             <p class="exp-card-desc">Paseos entre montañas y viñas</p>
@@ -1549,7 +2160,7 @@
       <!-- ESTADO 1 NOTA (Lanzamiento Octubre) -->
       <div class="guide-single-view" id="guideSingleView">
         <article class="single-note-card">
-          <img src="guia_bodegas_lujan.jpg" alt="Guía de bodegas de Luján de Cuyo" class="single-note-img" />
+          <img src="assets/guia_bodegas_lujan.jpg" alt="Guía de bodegas de Luján de Cuyo" class="single-note-img" />
           <div class="single-note-body">
             <span class="single-note-badge">Octubre · Nota Principal</span>
             <h3 class="single-note-title">Guía de bodegas de Luján de Cuyo</h3>
@@ -1566,7 +2177,7 @@
       <!-- ESTADO 6 NOTAS (Módulo Completo) -->
       <div class="guide-multi-view" id="guideMultiView">
         <article class="note-card">
-          <img src="guia_bodegas_lujan.jpg" alt="Guía de bodegas de Luján de Cuyo" class="note-card-img" />
+          <img src="assets/guia_bodegas_lujan.jpg" alt="Guía de bodegas de Luján de Cuyo" class="note-card-img" />
           <div class="note-card-body">
             <span class="note-card-month">Octubre</span>
             <h3 class="note-card-title">Guía de bodegas de Luján de Cuyo</h3>
@@ -1575,7 +2186,7 @@
         </article>
 
         <article class="note-card">
-          <img src="hero.jpg" alt="Hoteles entre bodegas en Mendoza" class="note-card-img" />
+          <img src="assets/hero.jpg" alt="Hoteles entre bodegas en Mendoza" class="note-card-img" />
           <div class="note-card-body">
             <span class="note-card-month">Noviembre</span>
             <h3 class="note-card-title">Hoteles entre bodegas en Mendoza</h3>
@@ -1584,7 +2195,7 @@
         </article>
 
         <article class="note-card">
-          <img src="welcome_accent.jpg" alt="Cuándo es la vendimia en Mendoza" class="note-card-img" />
+          <img src="assets/welcome_accent.jpg" alt="Cuándo es la vendimia en Mendoza" class="note-card-img" />
           <div class="note-card-body">
             <span class="note-card-month">Diciembre</span>
             <h3 class="note-card-title">Cuándo es la vendimia en Mendoza</h3>
@@ -1593,7 +2204,7 @@
         </article>
 
         <article class="note-card">
-          <img src="exp_services.jpg" alt="Bodegas para visitar en Chacras de Coria" class="note-card-img" />
+          <img src="assets/exp_services.jpg" alt="Bodegas para visitar en Chacras de Coria" class="note-card-img" />
           <div class="note-card-body">
             <span class="note-card-month">Enero</span>
             <h3 class="note-card-title">Bodegas para visitar en Chacras de Coria</h3>
@@ -1602,7 +2213,7 @@
         </article>
 
         <article class="note-card">
-          <img src="casa_vita.jpg" alt="La gastronomía de la zona" class="note-card-img" />
+          <img src="assets/casa_vita.jpg" alt="La gastronomía de la zona" class="note-card-img" />
           <div class="note-card-body">
             <span class="note-card-month">Febrero</span>
             <h3 class="note-card-title">La gastronomía de la zona</h3>
@@ -1611,7 +2222,7 @@
         </article>
 
         <article class="note-card">
-          <img src="exp_promos.jpg" alt="Qué hacer en Chacras de Coria" class="note-card-img" />
+          <img src="assets/exp_promos.jpg" alt="Qué hacer en Chacras de Coria" class="note-card-img" />
           <div class="note-card-body">
             <span class="note-card-month">Marzo</span>
             <h3 class="note-card-title">Qué hacer en Chacras de Coria</h3>
@@ -1633,7 +2244,7 @@
           <h2 class="section-title" style="margin-bottom:0">Catorce años de reconocimientos</h2>
         </div>
         <div class="ta-seal-wrap">
-          <img src="tripadvisor.png" alt="TripAdvisor Certificate of Excellence" class="ta-logo-img" />
+          <img src="assets/tripadvisor.png" alt="TripAdvisor Certificate of Excellence" class="ta-logo-img" />
           <div class="ta-seal-text">
             <strong>TripAdvisor Travelers Choice</strong>
             Distinciones durante catorce años seguidos
@@ -1871,7 +2482,11 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <img src="logo_footer.png" alt="Lares de Chacras Logo" class="footer-logo-img" />
+          <div class="footer-logos-row">
+            <img src="assets/logo_footer.png" alt="Lares de Chacras Logo" class="footer-logo-img" />
+            <img src="assets/michelin_key_2025.png" alt="Michelin Key 2025" class="footer-seal-img" title="Michelin Key 2025" />
+            <img src="assets/tripadvisor_travelers_choice.png" alt="TripAdvisor Travelers Choice" class="footer-seal-img" title="TripAdvisor Travelers Choice" />
+          </div>
           <p class="footer-brand-desc">
             Hotel boutique de dieciséis habitaciones en Chacras de Coria, Mendoza. Una casa entre bodegas con jardines frondosos, piscina exterior y cava propia.
           </p>
@@ -1910,7 +2525,7 @@
             <a href="tel:+542614961061">+54 261 496-1061</a>
           </div>
           <div class="footer-contact-item">
-            <img src="WhatsApp.svg" alt="WhatsApp" style="width:18px;height:18px;object-fit:contain;" />
+            <img src="assets/WhatsApp.svg" alt="WhatsApp" style="width:18px;height:18px;object-fit:contain;" />
             <a href="https://wa.me/5492613738750" target="_blank">+54 9 261 373 8750</a>
           </div>
           <div class="footer-contact-item">
@@ -1955,10 +2570,13 @@
       });
     }
 
-    // Header Navbar Scroll Effect
+    // Header Navbar & Fixed Wrapper Scroll Effect
+    const headerFixedWrapper = document.getElementById('headerFixedWrapper');
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
-      navbar.classList.toggle('scrolled', window.scrollY > 50);
+      const isScrolled = window.scrollY > 40;
+      if (headerFixedWrapper) headerFixedWrapper.classList.toggle('scrolled', isScrolled);
+      if (navbar) navbar.classList.toggle('scrolled', isScrolled);
     });
 
     // Mobile Hamburger Menu Toggle
@@ -2021,6 +2639,57 @@
 
     document.getElementById('modalClose').addEventListener('click', () => {
       bookingModal.classList.remove('open');
+    });
+
+    // Generic Image Sliders Auto-Transition & Controls (La Casa Principal & Casa Vita)
+    document.querySelectorAll('.room-slider-wrap').forEach(slider => {
+      const slides = slider.querySelectorAll('.slide-img');
+      const dots = slider.querySelectorAll('.slider-dot');
+      const prevBtn = slider.querySelector('.prev-arrow');
+      const nextBtn = slider.querySelector('.next-arrow');
+      if (!slides.length) return;
+
+      let currentSlide = 0;
+      let slideInterval;
+
+      function goToSlide(index) {
+        slides[currentSlide].classList.remove('active');
+        if (dots[currentSlide]) dots[currentSlide].classList.remove('active');
+        
+        currentSlide = (index + slides.length) % slides.length;
+        
+        slides[currentSlide].classList.add('active');
+        if (dots[currentSlide]) dots[currentSlide].classList.add('active');
+      }
+
+      function nextSlide() {
+        goToSlide(currentSlide + 1);
+      }
+
+      function prevSlide() {
+        goToSlide(currentSlide - 1);
+      }
+
+      function startAutoSlide() {
+        slideInterval = setInterval(nextSlide, 4500);
+      }
+
+      function stopAutoSlide() {
+        clearInterval(slideInterval);
+      }
+
+      if (nextBtn) nextBtn.addEventListener('click', () => { stopAutoSlide(); nextSlide(); startAutoSlide(); });
+      if (prevBtn) prevBtn.addEventListener('click', () => { stopAutoSlide(); prevSlide(); startAutoSlide(); });
+
+      dots.forEach(dot => {
+        dot.addEventListener('click', () => {
+          stopAutoSlide();
+          goToSlide(parseInt(dot.getAttribute('data-index')));
+          startAutoSlide();
+        });
+      });
+
+      startAutoSlide();
     });
   </script>
 </body>
