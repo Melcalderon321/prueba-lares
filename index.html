@@ -555,7 +555,7 @@
        BLOQUE 2: LA BIENVENIDA ("El alma del hotel") - ESTÉTICA EDITORIAL
     ============================================================ */
     #welcome {
-      padding: 8rem 0;
+      padding: 150px 0;
       background: var(--light-bg);
       position: relative;
       overflow: hidden;
@@ -640,7 +640,7 @@
        BLOQUE 3: HABITACIONES ("Dónde dormir") - FONDO OSCURO BOUTIQUE
     ============================================================ */
     #rooms {
-      padding: 8rem 0;
+      padding: 150px 0;
       background: var(--dark-bg);
       color: var(--white);
     }
@@ -674,11 +674,12 @@
       grid-template-columns: 1.15fr 0.85fr;
       gap: 4.5rem;
       align-items: center;
-      background: var(--dark-card);
-      border: 1px solid rgba(191, 143, 175, 0.2);
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.14);
       border-radius: var(--radius);
       overflow: hidden;
-      box-shadow: 0 15px 45px rgba(0, 0, 0, 0.25);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+      backdrop-filter: blur(14px);
       transition: all var(--transition);
     }
 
@@ -687,8 +688,9 @@
     }
 
     .room-showcase-item:hover {
-      box-shadow: 0 22px 55px rgba(0, 0, 0, 0.45);
-      border-color: rgba(191, 143, 175, 0.45);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+      border-color: rgba(255, 255, 255, 0.32);
+      background: rgba(255, 255, 255, 0.07);
     }
 
     .room-showcase-img-wrap {
@@ -713,8 +715,8 @@
       position: absolute;
       top: 1.5rem;
       left: 1.5rem;
-      background: rgba(18, 20, 24, 0.85);
-      backdrop-filter: blur(10px);
+      background: rgba(18, 20, 24, 0.75);
+      backdrop-filter: blur(12px);
       color: var(--white);
       font-family: var(--font-sans);
       font-size: 0.68rem;
@@ -723,7 +725,7 @@
       text-transform: uppercase;
       padding: 0.4rem 0.9rem;
       border-radius: var(--radius);
-      border: 1px solid rgba(191, 143, 175, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.25);
       z-index: 2;
     }
 
@@ -773,7 +775,7 @@
       gap: 1rem 1.5rem;
       margin-bottom: 2.5rem;
       padding-top: 1.5rem;
-      border-top: 1px solid rgba(191, 143, 175, 0.2);
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
     }
 
     .amenity-item {
@@ -1012,7 +1014,7 @@
        BLOQUE 5: EL RESTAURANTE ("Lares Restó") - TARJETA CONTENIDA OSCURA
     ============================================================ */
     #resto {
-      padding: 6rem 0;
+      padding: 150px 0 0 0;
       background: var(--white);
       color: var(--text-dark);
     }
@@ -1161,7 +1163,7 @@
        BLOQUE 6: EXPERIENCIAS ("Todo lo que se puede hacer desde acá") - NORMAL
     ============================================================ */
     #experiences {
-      padding: 8rem 0;
+      padding: 150px 0;
       background: var(--white);
     }
     .experiences-intro {
@@ -1176,7 +1178,7 @@
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 1.8rem;
-      margin-bottom: 3.2rem;
+      margin-bottom: 0;
     }
     .exp-card {
       background: #F7F4EF;
@@ -1272,8 +1274,9 @@
        BLOQUE 7: LA UBICACIÓN ("Con todo cerca") - CLAVE
     ============================================================ */
     #location {
-      padding: 8rem 0;
-      background: var(--light-bg);
+      padding: 150px 0;
+      background: var(--dark-bg);
+      color: var(--white);
     }
     .location-grid {
       display: grid;
@@ -1286,27 +1289,34 @@
       font-size: 0.94rem;
       font-weight: 300;
       line-height: 1.9;
-      color: var(--text-muted);
+      color: rgba(255, 255, 255, 0.78);
       display: flex;
       flex-direction: column;
       gap: 0;
     }
     .location-text .section-label {
+      color: var(--mauve);
       margin-bottom: 0.8rem;
     }
+    .location-text .section-label::before {
+      background: var(--mauve);
+    }
     .location-text .section-title {
+      color: var(--white);
       margin-bottom: 1.2rem;
     }
     .location-text p {
+      color: rgba(255, 255, 255, 0.78);
       margin-bottom: 0.9rem;
     }
     .location-distances {
-      background: #1A1D24;
-      border: 1px solid rgba(255, 255, 255, 0.08);
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.14);
       border-radius: var(--radius);
       padding: 2.2rem;
       margin-top: 1.2rem;
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+      backdrop-filter: blur(12px);
     }
     .distances-title {
       font-family: var(--font-serif);
@@ -1327,27 +1337,30 @@
       align-items: center;
       gap: 1rem;
       padding: 1rem 1.2rem;
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: var(--radius);
+      backdrop-filter: blur(12px);
       transition: all var(--transition);
     }
     .distance-item-card:hover {
       transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-      border-color: rgba(191, 143, 175, 0.4);
-      background: rgba(255, 255, 255, 0.08);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+      border-color: rgba(255, 255, 255, 0.35);
+      background: rgba(255, 255, 255, 0.14);
     }
     .distance-icon-wrap {
       width: 42px;
       height: 42px;
       border-radius: 50%;
-      background: rgba(191, 143, 175, 0.15);
-      color: var(--mauve);
+      background: var(--wine);
+      color: var(--white);
       display: flex;
       align-items: center;
       justify-content: center;
       flex-shrink: 0;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 4px 14px rgba(115, 32, 86, 0.45);
     }
     .distance-info {
       display: flex;
@@ -1358,32 +1371,53 @@
       font-family: var(--font-serif);
       font-size: 1.35rem;
       font-weight: 600;
-      color: var(--mauve);
+      color: var(--white);
       line-height: 1;
     }
     .distance-lbl {
       font-family: var(--font-sans);
       font-size: 0.78rem;
       font-weight: 400;
-      color: rgba(255, 255, 255, 0.9);
+      color: rgba(255, 255, 255, 0.85);
     }
-    .location-map-wrap {
+    .location-img-composition {
+      position: relative;
       width: 100%;
-      height: 100%;
-      min-height: 480px;
-      border: 1px solid var(--border-light);
-      overflow: hidden;
+      padding-bottom: 3.5rem;
+      padding-right: 3.5rem;
     }
-    .location-map-wrap iframe {
-      width: 100%; height: 100%; border: none;
-      filter: grayscale(0.5) contrast(1.1);
+    .location-img-primary {
+      position: relative;
+      z-index: 1;
+      width: 82%;
+      aspect-ratio: 4/5;
+      object-fit: cover;
+      border-radius: var(--radius);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.45);
+      display: block;
+    }
+    .location-img-secondary {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      z-index: 2;
+      width: 58%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      border: 6px solid var(--dark-bg);
+      border-radius: var(--radius);
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.55);
+      transition: transform var(--transition);
+    }
+    .location-img-composition:hover .location-img-secondary {
+      transform: translateY(-5px) scale(1.02);
     }
 
     /* ============================================================
        BLOQUE 8: LA GUÍA DE LA ZONA ("Lo que le recomendamos...") - CLAVE
     ============================================================ */
     #guide {
-      padding: 8rem 0;
+      padding: 150px 0;
       background: var(--white);
     }
     .guide-intro {
@@ -1431,21 +1465,27 @@
     }
     .single-note-card {
       display: grid;
-      grid-template-columns: 1.2fr 0.8fr;
+      grid-template-columns: 1.15fr 0.85fr;
       background: var(--light-bg);
       border: 1px solid var(--border-light);
+      border-radius: var(--radius);
       overflow: hidden;
+      align-items: center;
+      height: 380px;
+      max-height: 380px;
     }
     .single-note-img {
       width: 100%;
       height: 380px;
       object-fit: cover;
+      display: block;
     }
     .single-note-body {
-      padding: 3.5rem;
+      padding: 3rem 3.5rem;
       display: flex;
       flex-direction: column;
       justify-content: center;
+      height: 380px;
     }
     .single-note-badge {
       font-family: var(--font-sans);
@@ -1454,23 +1494,23 @@
       letter-spacing: 0.2em;
       text-transform: uppercase;
       color: var(--wine);
-      margin-bottom: 1rem;
+      margin-bottom: 0.6rem;
     }
     .single-note-title {
       font-family: var(--font-serif);
-      font-size: 2.2rem;
+      font-size: 1.75rem;
       font-weight: 400;
       color: var(--text-dark);
-      margin-bottom: 1.2rem;
+      margin-bottom: 0.7rem;
       line-height: 1.25;
     }
     .single-note-excerpt {
       font-family: var(--font-sans);
-      font-size: 0.88rem;
+      font-size: 0.86rem;
       font-weight: 300;
       color: var(--text-muted);
-      line-height: 1.8;
-      margin-bottom: 2rem;
+      line-height: 1.7;
+      margin-bottom: 1.2rem;
     }
 
     /* MULTI-NOTE VIEW (6 NOTES STATE) */
@@ -1518,22 +1558,42 @@
        BLOQUE 9: RECONOCIMIENTOS ("Catorce años...") - NORMAL
     ============================================================ */
     #recognition {
-      padding: 8rem 0;
+      padding: 150px 0;
       background: var(--light-bg);
     }
     .rec-header {
       display: flex;
       justify-content: space-between;
-      align-items: flex-end;
-      margin-bottom: 4rem;
+      align-items: flex-start;
+      gap: 3.5rem;
+      margin-bottom: 3.5rem;
+    }
+    .rec-header-text {
+      max-width: 780px;
+    }
+    .rec-header-text .section-label {
+      margin-bottom: 0.8rem;
+    }
+    .rec-header-text .section-title {
+      margin-bottom: 1.2rem;
+    }
+    .recognition-intro {
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+      font-weight: 300;
+      line-height: 1.85;
+      color: var(--text-muted);
     }
     .ta-seal-wrap {
       display: flex;
       align-items: center;
-      gap: 1.5rem;
+      gap: 1.2rem;
       background: var(--white);
-      padding: 1.2rem 2rem;
+      padding: 1.2rem 1.8rem;
       border: 1px solid var(--border-light);
+      border-radius: var(--radius);
+      flex-shrink: 0;
+      box-shadow: 0 4px 15px rgba(18, 20, 24, 0.03);
     }
     .ta-logo-img {
       height: 75px;
@@ -1550,99 +1610,248 @@
     .reviews-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
-      margin-bottom: 3rem;
+      gap: 2.2rem;
     }
     .review-card {
-      background: var(--white);
-      border: 1px solid var(--border-light);
-      padding: 2.4rem;
+      position: relative;
+      border-radius: var(--radius);
+      padding: 2.8rem 2.4rem;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      overflow: hidden;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.18);
+      transition: all var(--transition);
+      color: var(--white);
+      min-height: 350px;
+    }
+    .review-card-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
+      transition: transform 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .review-card-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(180deg, rgba(18, 20, 24, 0.72) 0%, rgba(18, 20, 24, 0.88) 100%);
+      z-index: 2;
+      transition: background 0.4s ease;
+    }
+    .review-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 22px 50px rgba(0, 0, 0, 0.32);
+    }
+    .review-card:hover .review-card-bg {
+      transform: scale(1.07);
+    }
+    .review-card:hover .review-card-overlay {
+      background: linear-gradient(180deg, rgba(18, 20, 24, 0.65) 0%, rgba(18, 20, 24, 0.82) 100%);
+    }
+    .review-card-header,
+    .review-text,
+    .review-card-footer {
+      position: relative;
+      z-index: 3;
+    }
+    .review-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.5rem;
+    }
+    .review-avatar-circle {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.15);
+      color: var(--white);
+      font-family: var(--font-serif);
+      font-weight: 500;
+      font-size: 1.05rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(4px);
     }
     .review-stars {
-      color: var(--wine);
+      color: #C4A47C;
       display: flex;
       gap: 3px;
-      margin-bottom: 1.2rem;
     }
     .review-text {
       font-family: var(--font-serif);
-      font-size: 1.1rem;
+      font-size: 1.08rem;
       font-style: italic;
-      color: var(--text-dark);
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.95);
       line-height: 1.7;
       margin-bottom: 1.8rem;
+      flex: 1;
+    }
+    .review-card-footer {
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      padding-top: 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
     }
     .review-author {
       font-family: var(--font-sans);
-      font-size: 0.8rem;
+      font-size: 0.92rem;
       font-weight: 600;
-      color: var(--text-dark);
+      color: var(--white);
     }
     .review-origin {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
       font-family: var(--font-sans);
       font-size: 0.72rem;
-      color: var(--text-muted);
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--mauve);
     }
 
     /* ============================================================
        BLOQUE 10: ANTES DE RESERVAR ("Escribinos antes de...") - CLAVE
     ============================================================ */
     #before-booking {
-      padding: 8rem 0;
+      padding: 150px 0;
       background: var(--dark-bg);
       color: var(--white);
+      overflow: hidden;
     }
     .bb-inner {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5rem;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 4.5rem;
       align-items: center;
     }
-    .bb-content .section-label { color: var(--mauve); }
-    .bb-content .section-label::before { background: var(--mauve); }
+    .bb-content .section-label {
+      color: var(--mauve);
+      margin-bottom: 0.8rem;
+    }
+    .bb-content .section-label::before {
+      background: var(--mauve);
+    }
     .bb-title {
       font-family: var(--font-serif);
       font-size: clamp(2.2rem, 3.8vw, 3.2rem);
       font-weight: 300;
       font-style: italic;
+      line-height: 1.15;
       color: var(--white);
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.2rem;
     }
     .bb-body {
       font-family: var(--font-sans);
       font-size: 0.94rem;
       font-weight: 300;
       line-height: 1.85;
-      color: rgba(255,255,255,0.75);
-      margin-bottom: 2.5rem;
+      color: rgba(255,255,255,0.78);
+      margin-bottom: 1.8rem;
     }
     .bb-ctas {
       display: flex;
       gap: 1.2rem;
       flex-wrap: wrap;
-      margin-bottom: 2rem;
+      margin-bottom: 1.5rem;
     }
 
-    .bb-benefits-list {
+    /* MEDIA PANEL: FOTO PRINCIPAL + 3 CARDS SUPERPUESTAS */
+    .bb-photo-with-cards {
+      position: relative;
+      display: flex;
+      align-items: center;
+      width: 100%;
+      min-height: 480px;
+    }
+    .bb-main-photo-wrap {
+      width: 58%;
+      aspect-ratio: 4/5;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      flex-shrink: 0;
+    }
+    .bb-main-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .bb-photo-with-cards:hover .bb-main-photo {
+      transform: scale(1.05);
+    }
+    .bb-stacked-cards {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 52%;
+      max-width: 350px;
       display: flex;
       flex-direction: column;
-      gap: 1.2rem;
-    }
-    .bb-benefit-item {
-      display: flex;
-      align-items: flex-start;
       gap: 1rem;
-      background: var(--dark-card);
-      padding: 1.4rem 1.8rem;
-      border: 1px solid rgba(191, 143, 175, 0.2);
+      z-index: 2;
     }
-    .bb-benefit-icon {
-      color: var(--mauve);
+    .bb-pillar-card {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: var(--radius);
+      padding: 1rem 1.4rem;
+      display: flex;
+      align-items: center;
+      gap: 1.1rem;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+      backdrop-filter: blur(12px);
+      transition: all var(--transition);
+    }
+    .bb-pillar-card.active,
+    .bb-pillar-card:hover {
+      background: rgba(255, 255, 255, 0.14);
+      border-color: rgba(255, 255, 255, 0.35);
+      transform: translateX(-8px);
+      box-shadow: 0 20px 45px rgba(0, 0, 0, 0.5);
+    }
+    .bb-pillar-icon-wrap {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--wine);
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
       flex-shrink: 0;
-      margin-top: 2px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0 4px 14px rgba(115, 32, 86, 0.45);
+    }
+    .bb-pillar-title {
+      font-family: var(--font-serif);
+      font-size: 1.08rem;
+      font-weight: 400;
+      color: var(--white);
+      line-height: 1.25;
+    }
+    .bb-pillar-desc {
+      font-family: var(--font-sans);
+      font-size: 0.78rem;
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.72);
+      line-height: 1.5;
     }
     .bb-benefit-title {
       font-family: var(--font-sans);
@@ -1717,6 +1926,51 @@
       display: block;
     }
 
+    /* ============================================================
+       GALERÍA DE FOTOS SLIDER (ANTES DEL FOOTER)
+    ============================================================ */
+    #photo-gallery {
+      padding: 0 0 1rem 0;
+      background: var(--white);
+      overflow: hidden;
+      position: relative;
+    }
+    .gallery-slider-wrap {
+      width: 100%;
+      overflow-x: auto;
+      scroll-behavior: smooth;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      padding: 0 2rem;
+    }
+    .gallery-slider-wrap::-webkit-scrollbar {
+      display: none;
+    }
+    .gallery-track {
+      display: flex;
+      gap: 1.8rem;
+      width: max-content;
+    }
+    .gallery-slide {
+      width: 380px;
+      height: 270px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      flex-shrink: 0;
+      box-shadow: 0 10px 30px rgba(18, 20, 24, 0.08);
+      position: relative;
+    }
+    .gallery-slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .gallery-slide:hover img {
+      transform: scale(1.06);
+    }
+
     /* FOOTER */
     #footer {
       background: var(--dark-bg);
@@ -1743,10 +1997,13 @@
       filter: brightness(0) invert(1);
     }
     .footer-seal-img {
-      height: 60px;
+      height: 65px;
       width: auto;
       object-fit: contain;
       transition: transform var(--transition);
+    }
+    .footer-seal-img.ta-seal {
+      height: 76px;
     }
     .footer-seal-img:hover {
       transform: scale(1.08);
@@ -1964,7 +2221,7 @@
         Hotel boutique en Chacras de Coria Mendoza
       </h1>
       <p class="hero-subtitle">
-        Una casa entre bodegas, con jardines, piscina y cava propia. Dieciséis habitaciones en Chacras de Coria, a quince minutos de Luján de Cuyo y a veinte de las bodegas de Luján de Cuyo.
+        Dieciséis habitaciones, jardines, piscina y una cava propia en Chacras de Coria. Un hotel boutique desde donde descubrir el vino, la gastronomía y los paisajes de Mendoza.
       </p>
       <div class="hero-booking-wrap">
         <button class="btn-primary hero-btn-reserve trigger-booking">
@@ -2325,9 +2582,6 @@
           <p>
             Lares está en Chacras de Coria, a pocos minutos de la ciudad de Mendoza y rodeado de bodegas, restaurantes y paisajes de viñedos.
           </p>
-          <p>
-            Desde el hotel, podés llegar en pocos minutos a las bodegas de Luján de Cuyo, recorrer el Valle de Uco o conectar fácilmente con el aeropuerto. Y al volver, la tranquilidad de los jardines queda a un paso.
-          </p>
 
           <div class="location-distances">
             <h4 class="distances-title">Distancias de referencia</h4>
@@ -2373,15 +2627,18 @@
               </div>
             </div>
           </div>
+
+          <div style="margin-top: 1.6rem;">
+            <a href="https://maps.google.com/?q=Lares+de+Chacras+Mendoza" target="_blank" rel="noopener" class="btn-primary" style="display:inline-flex; align-items:center; gap:0.6rem;">
+              Ver en Google Maps
+              <i data-lucide="map-pin" style="width:16px;height:16px"></i>
+            </a>
+          </div>
         </div>
 
-        <div class="location-map-wrap">
-          <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3352.2946!2d-68.9026!3d-32.9843!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x967e099dce7ca3d1%3A0x9b1745b79c3f0b29!2sLares%20de%20Chacras!5e0!3m2!1ses!2sar!4v1234567890"
-            allowfullscreen
-            loading="lazy"
-            title="Lares de Chacras en Google Maps"
-          ></iframe>
+        <div class="location-img-composition">
+          <img src="assets/location_primary.jpg" alt="Lares de Chacras Ubicación y Mendoza" class="location-img-primary" />
+          <img src="assets/location_secondary.jpg" alt="Entorno Lares de Chacras" class="location-img-secondary" />
         </div>
       </div>
     </div>
@@ -2393,25 +2650,26 @@
   <section id="guide">
     <div class="container">
       <p class="section-label">Contenido exclusivo</p>
-      <h2 class="section-title">Lo que le recomendamos a nuestros huéspedes</h2>
+      <h2 class="section-title">Nuestra mirada sobre Mendoza</h2>
       <p class="guide-intro">
-        Nos preguntan siempre lo mismo: qué bodegas visitar, cuántos días quedarse, cuándo es la vendimia, dónde se come bien. Así que lo escribimos.
+        Compartimos recomendaciones, recorridos y lugares que conocemos bien para ayudarte a descubrir Mendoza más allá de lo habitual.
       </p>
-
-
 
       <!-- ESTADO 1 NOTA (Lanzamiento Octubre) -->
       <div class="guide-single-view" id="guideSingleView">
         <article class="single-note-card">
           <img src="assets/guia_bodegas_lujan.jpg" alt="Guía de bodegas de Luján de Cuyo" class="single-note-img" />
           <div class="single-note-body">
-            <span class="single-note-badge">Octubre · Nota Principal</span>
+            <span class="single-note-badge">Octubre · Guía</span>
             <h3 class="single-note-title">Guía de bodegas de Luján de Cuyo</h3>
             <p class="single-note-excerpt">
-              Una selección detallada de bodegas históricas y de autor situadas a minutos de Lares de Chacras, con itinerarios recomendados para recorrer en el día.
+              Una selección de bodegas históricas y de autor, con recorridos pensados para disfrutar Luján de Cuyo desde Lares.
             </p>
             <div>
-              <a href="/guia/bodegas-lujan-de-cuyo.html" class="btn-link">Leer nota completa →</a>
+              <a href="/guia/bodegas-lujan-de-cuyo.html" class="btn-link">
+                Leer nota completa
+                <i data-lucide="arrow-right" style="width:16px;height:16px"></i>
+              </a>
             </div>
           </div>
         </article>
@@ -2482,78 +2740,90 @@
   <section id="recognition">
     <div class="container">
       <div class="rec-header">
-        <div>
+        <div class="rec-header-text">
           <p class="section-label">Trayectoria y Opiniones</p>
-          <h2 class="section-title" style="margin-bottom:0">Catorce años de reconocimientos</h2>
-        </div>
-        <div class="ta-seal-wrap">
-          <img src="assets/tripadvisor.png" alt="TripAdvisor Certificate of Excellence" class="ta-logo-img" />
-          <div class="ta-seal-text">
-            <strong>TripAdvisor Travelers Choice</strong>
-            Distinciones durante catorce años seguidos
-          </div>
+          <h2 class="section-title">Una experiencia que perdura</h2>
+          <p class="recognition-intro">
+            Durante años, Lares ha sido reconocido por quienes nos visitan y por referentes de la industria. Distinciones como el <strong>TripAdvisor Travelers’ Choice</strong>, recibidas durante catorce años consecutivos, acompañan lo que realmente define nuestra experiencia: la mirada de nuestros huéspedes.
+          </p>
         </div>
       </div>
-
-      <p style="max-width:750px; font-weight:300; color:var(--text-muted); margin-bottom:3rem">
-        Recibimos distinciones de TripAdvisor durante catorce años seguidos. Pero lo que más nos importa es lo que escriben nuestros huéspedes cuando se van.
-      </p>
 
       <div class="reviews-grid">
         <article class="review-card">
-          <div class="review-stars">
-            <i data-lucide="star" style="width:16px;height:16px;fill:currentColor"></i>
-            <i data-lucide="star" style="width:16px;height:16px;fill:currentColor"></i>
-            <i data-lucide="star" style="width:16px;height:16px;fill:currentColor"></i>
-            <i data-lucide="star" style="width:16px;height:16px;fill:currentColor"></i>
-            <i data-lucide="star" style="width:16px;height:16px;fill:currentColor"></i>
+          <img src="assets/review_sd.jpg" alt="Sarah & Mark Davies en Lares" class="review-card-bg" />
+          <div class="review-card-overlay"></div>
+          <div class="review-card-header">
+            <div class="review-avatar-circle">SD</div>
+            <div class="review-stars">
+              <i data-lucide="star" style="width:16px;height:16px;fill:currentColor"></i>
+              <i data-lucide="star" style="width:16px;height:16px;fill:currentColor"></i>
+              <i data-lucide="star" style="width:16px;height:16px;fill:currentColor"></i>
+              <i data-lucide="star" style="width:16px;height:16px;fill:currentColor"></i>
+              <i data-lucide="star" style="width:16px;height:16px;fill:currentColor"></i>
+            </div>
           </div>
           <p class="review-text">
-            "Un lugar donde te atienden por tu nombre y resolvieron cada detalle de nuestro itinerario de bodegas. La sombra de los plátanos y la paz de la cava son inigualables."
+            "La atención fue excepcional desde el primer momento. Nos ayudaron a organizar cada visita a las bodegas y cuidaron cada detalle de nuestra estadía. Un lugar al que definitivamente volveríamos."
           </p>
-          <div>
+          <div class="review-card-footer">
             <p class="review-author">Sarah & Mark Davies</p>
-            <p class="review-origin">Reino Unido</p>
+            <div class="review-origin">
+              <i data-lucide="map-pin" style="width:13px;height:13px"></i>
+              Reino Unido
+            </div>
           </div>
         </article>
 
         <article class="review-card">
-          <div class="review-stars">
-            <i data-lucide="star" style="width:16px;height:16px;fill:currentColor"></i>
-            <i data-lucide="star" style="width:16px;height:16px;fill:currentColor"></i>
-            <i data-lucide="star" style="width:16px;height:16px;fill:currentColor"></i>
-            <i data-lucide="star" style="width:16px;height:16px;fill:currentColor"></i>
-            <i data-lucide="star" style="width:16px;height:16px;fill:currentColor"></i>
+          <img src="assets/casa_vita.jpg" alt="Casa Vita Lares" class="review-card-bg" />
+          <div class="review-card-overlay"></div>
+          <div class="review-card-header">
+            <div class="review-avatar-circle">JM</div>
+            <div class="review-stars">
+              <i data-lucide="star" style="width:16px;height:16px;fill:currentColor"></i>
+              <i data-lucide="star" style="width:16px;height:16px;fill:currentColor"></i>
+              <i data-lucide="star" style="width:16px;height:16px;fill:currentColor"></i>
+              <i data-lucide="star" style="width:16px;height:16px;fill:currentColor"></i>
+              <i data-lucide="star" style="width:16px;height:16px;fill:currentColor"></i>
+            </div>
           </div>
           <p class="review-text">
-            "Nos alojamos en Casa Vita. Privacidad absoluta, un desayuno exquisito sin apuros de horario y una copa de vino junto al fuego por las noches."
+            "Casa Vita fue exactamente lo que buscábamos: tranquilidad, privacidad y una atención impecable. El desayuno, los jardines y las tardes junto al fuego hicieron que la estadía fuera inolvidable."
           </p>
-          <div>
+          <div class="review-card-footer">
             <p class="review-author">John Miller</p>
-            <p class="review-origin">Estados Unidos</p>
+            <div class="review-origin">
+              <i data-lucide="map-pin" style="width:13px;height:13px"></i>
+              Estados Unidos
+            </div>
           </div>
         </article>
 
         <article class="review-card">
-          <div class="review-stars">
-            <i data-lucide="star" style="width:16px;height:16px;fill:currentColor"></i>
-            <i data-lucide="star" style="width:16px;height:16px;fill:currentColor"></i>
-            <i data-lucide="star" style="width:16px;height:16px;fill:currentColor"></i>
-            <i data-lucide="star" style="width:16px;height:16px;fill:currentColor"></i>
-            <i data-lucide="star" style="width:16px;height:16px;fill:currentColor"></i>
+          <img src="assets/exp_bodegas.jpg" alt="Visita a Bodegas Mendoza" class="review-card-bg" />
+          <div class="review-card-overlay"></div>
+          <div class="review-card-header">
+            <div class="review-avatar-circle">CF</div>
+            <div class="review-stars">
+              <i data-lucide="star" style="width:16px;height:16px;fill:currentColor"></i>
+              <i data-lucide="star" style="width:16px;height:16px;fill:currentColor"></i>
+              <i data-lucide="star" style="width:16px;height:16px;fill:currentColor"></i>
+              <i data-lucide="star" style="width:16px;height:16px;fill:currentColor"></i>
+              <i data-lucide="star" style="width:16px;height:16px;fill:currentColor"></i>
+            </div>
           </div>
           <p class="review-text">
-            "La mejor experiencia en Mendoza. Estar a minutos de las bodegas principales de Luján de Cuyo y volver a la calidez de esta casa fue perfecto."
+            "Una experiencia maravillosa en Mendoza. La ubicación, la cercanía a las bodegas y la calidez de Lares hicieron que todo fuera perfecto."
           </p>
-          <div>
+          <div class="review-card-footer">
             <p class="review-author">Carolina Ferreyra</p>
-            <p class="review-origin">Brasil / Argentina</p>
+            <div class="review-origin">
+              <i data-lucide="map-pin" style="width:13px;height:13px"></i>
+              Brasil / Argentina
+            </div>
           </div>
         </article>
-      </div>
-
-      <div>
-        <a href="/galeria.html" class="btn-link">Ver la galería →</a>
       </div>
     </div>
   </section>
@@ -2566,45 +2836,46 @@
       <div class="bb-inner">
         <div class="bb-content">
           <p class="section-label">Atención directa</p>
-          <h2 class="bb-title">Escribinos antes de reservar</h2>
+          <h2 class="bb-title">Hagamos de tu estadía una experiencia única</h2>
           <p class="bb-body">
-            Si tenés una duda sobre las habitaciones, sobre cómo organizar los días o sobre a qué hora te conviene llegar, mandanos un WhatsApp. Contestamos rápido, y ayuda a que llegues con todo resuelto.
+            ¿Querés conocer una habitación, organizar una visita a bodegas o resolver alguna duda antes de tu llegada? Escribinos directamente por WhatsApp. Nuestro equipo puede ayudarte a planificar tu estadía y coordinar cada detalle.
           </p>
 
           <div class="bb-ctas">
             <a href="https://wa.me/5492613738750" target="_blank" class="btn-primary">
               Enviar WhatsApp
             </a>
-            <button class="btn-outline trigger-booking" style="border-color:var(--white); color:var(--white)">
-              Reservar directo
-            </button>
+            <a href="/promos.html" class="btn-outline" style="border-color:rgba(255,255,255,0.4); color:var(--white)">
+              Ver promociones
+            </a>
           </div>
-
-          <p style="margin-top:1.5rem">
-            <a href="/promos.html" class="btn-link" style="color:var(--mauve); border-color:var(--mauve)">Conocé nuestras promociones y ofertas especiales →</a>
-          </p>
         </div>
 
-        <div class="bb-benefits-list">
-          <div class="bb-benefit-item">
-            <i data-lucide="shield-check" class="bb-benefit-icon" style="width:22px;height:22px"></i>
-            <div>
-              <h4 class="bb-benefit-title">Mejor tarifa garantizada</h4>
-              <p class="bb-benefit-desc">Reservando directamente en la web del hotel sin comisiones ni intermediarios.</p>
-            </div>
+        <div class="bb-photo-with-cards">
+          <div class="bb-main-photo-wrap">
+            <img src="assets/before_booking_main.jpg" alt="Lares de Chacras Experiencia" class="bb-main-photo" />
           </div>
-          <div class="bb-benefit-item">
-            <i data-lucide="compass" class="bb-benefit-icon" style="width:22px;height:22px"></i>
-            <div>
-              <h4 class="bb-benefit-title">Asesoramiento previo de itinerario</h4>
-              <p class="bb-benefit-desc">Te ayudamos a planificar visitas a bodegas y traslados antes de tu llegada.</p>
+
+          <div class="bb-stacked-cards">
+            <div class="bb-pillar-card">
+              <div class="bb-pillar-icon-wrap">
+                <i data-lucide="shield-check" style="width:20px;height:20px"></i>
+              </div>
+              <h4 class="bb-pillar-title">Mejor tarifa garantizada</h4>
             </div>
-          </div>
-          <div class="bb-benefit-item">
-            <i data-lucide="clock" class="bb-benefit-icon" style="width:22px;height:22px"></i>
-            <div>
-              <h4 class="bb-benefit-title">Flexibilidad y atención personalizada</h4>
-              <p class="bb-benefit-desc">Trato humano directo por tu nombre para coordinar horarios e ingresos.</p>
+
+            <div class="bb-pillar-card active">
+              <div class="bb-pillar-icon-wrap">
+                <i data-lucide="compass" style="width:20px;height:20px"></i>
+              </div>
+              <h4 class="bb-pillar-title">Un itinerario pensado para vos</h4>
+            </div>
+
+            <div class="bb-pillar-card">
+              <div class="bb-pillar-icon-wrap">
+                <i data-lucide="user-check" style="width:20px;height:20px"></i>
+              </div>
+              <h4 class="bb-pillar-title">Atención personalizada</h4>
             </div>
           </div>
         </div>
@@ -2719,6 +2990,26 @@
   </section>
 
   <!-- ============================================================
+       GALERÍA DE FOTOS (CARRUSEL SLIDER ANTES DEL FOOTER)
+  ============================================================ -->
+  <section id="photo-gallery">
+    <div class="gallery-slider-wrap" id="gallery-slider-wrap">
+      <div class="gallery-track">
+        <div class="gallery-slide"><img src="assets/casa_principal_1.jpg" alt="Habitación Lares de Chacras" /></div>
+        <div class="gallery-slide"><img src="assets/welcome_accent.jpg" alt="Piscina y Jardines" /></div>
+        <div class="gallery-slide"><img src="assets/casa_entre_bodegas.jpg" alt="Bodegas en Mendoza" /></div>
+        <div class="gallery-slide"><img src="assets/casa_vita.jpg" alt="Casa Vita" /></div>
+        <div class="gallery-slide"><img src="assets/cava_v2.jpg" alt="Cava Subterránea" /></div>
+        <div class="gallery-slide"><img src="assets/resto_banner.jpg" alt="Lares Restó" /></div>
+        <div class="gallery-slide"><img src="assets/hero.jpg" alt="Exteriores Hotel" /></div>
+        <div class="gallery-slide"><img src="assets/exp_experiences.jpg" alt="Entorno Natural" /></div>
+        <div class="gallery-slide"><img src="assets/casa_principal_2.jpg" alt="Suite Principal" /></div>
+        <div class="gallery-slide"><img src="assets/exp_services.jpg" alt="Servicios Lares" /></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
        FOOTER GLOBAL
   ============================================================ -->
   <footer id="footer">
@@ -2728,7 +3019,7 @@
           <div class="footer-logos-row">
             <img src="assets/logo_footer.png" alt="Lares de Chacras Logo" class="footer-logo-img" />
             <img src="assets/michelin_key_2025.png" alt="Michelin Key 2025" class="footer-seal-img" title="Michelin Key 2025" />
-            <img src="assets/tripadvisor_travelers_choice_v2.png" alt="TripAdvisor Travelers Choice" class="footer-seal-img" title="TripAdvisor Travelers Choice" />
+            <img src="assets/tripadvisor_travelers_choice_v2.png" alt="TripAdvisor Travelers Choice" class="footer-seal-img ta-seal" title="TripAdvisor Travelers Choice" />
           </div>
           <p class="footer-brand-desc">
             Hotel boutique de dieciséis habitaciones en Chacras de Coria, Mendoza. Una casa entre bodegas con jardines frondosos, piscina exterior y cava propia.
@@ -2768,7 +3059,10 @@
             <a href="tel:+542614961061">+54 261 496-1061</a>
           </div>
           <div class="footer-contact-item">
-            <img src="assets/WhatsApp.svg" alt="WhatsApp" style="width:18px;height:18px;object-fit:contain;" />
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0;">
+              <path d="M17.498 14.382c-.301-.15-1.781-.879-2.056-.979-.275-.1-.475-.15-.675.15-.2.299-.775.979-.95 1.179-.175.2-.35.225-.65.075-.3-.15-1.267-.467-2.414-1.488-.893-.795-1.496-1.777-1.671-2.077-.175-.3-.019-.462.13-.611.135-.134.301-.35.45-.525.15-.175.2-.299.3-.5.1-.2.05-.375-.025-.525-.075-.15-.675-1.628-.925-2.228-.243-.583-.49-.504-.675-.513-.175-.008-.375-.008-.575-.008-.2 0-.525.075-.8.375-.275.3-1.05 1.026-1.05 2.501 0 1.475 1.075 2.899 1.225 3.1.15.2 2.113 3.227 5.118 4.527.714.309 1.272.494 1.706.632.716.228 1.368.196 1.883.119.574-.086 1.781-.728 2.031-1.431.25-.703.25-1.303.175-1.43-.075-.128-.275-.203-.575-.353z"/>
+              <path d="M12 2a10 10 0 0 0-8.49 15.31L2 22l4.82-1.47A10 10 0 1 0 12 2z"/>
+            </svg>
             <a href="https://wa.me/5492613738750" target="_blank">+54 9 261 373 8750</a>
           </div>
           <div class="footer-contact-item">
@@ -2934,6 +3228,48 @@
 
       startAutoSlide();
     });
+
+    // GALERÍA CARRUSEL SLIDER AUTO-SCROLL
+    (function initGallerySlider() {
+      const slider = document.getElementById('gallery-slider-wrap');
+      const prevBtn = document.getElementById('gallery-prev-btn');
+      const nextBtn = document.getElementById('gallery-next-btn');
+
+      if (!slider) return;
+
+      const scrollAmount = 400;
+
+      if (nextBtn) {
+        nextBtn.addEventListener('click', () => {
+          slider.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        });
+      }
+
+      if (prevBtn) {
+        prevBtn.addEventListener('click', () => {
+          slider.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        });
+      }
+
+      let autoScroll = setInterval(() => {
+        if (slider.scrollLeft + slider.clientWidth >= slider.scrollWidth - 15) {
+          slider.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+          slider.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        }
+      }, 3500);
+
+      slider.addEventListener('mouseenter', () => clearInterval(autoScroll));
+      slider.addEventListener('mouseleave', () => {
+        autoScroll = setInterval(() => {
+          if (slider.scrollLeft + slider.clientWidth >= slider.scrollWidth - 15) {
+            slider.scrollTo({ left: 0, behavior: 'smooth' });
+          } else {
+            slider.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+          }
+        }, 3500);
+      });
+    })();
   </script>
 </body>
 </html>
