@@ -838,8 +838,8 @@
        BLOQUE 4: LA CAVA ("Un hotel entre viñedos") - ESTILO REFERENCIA
     ============================================================ */
     #cava {
-      padding: 4rem 0 0 0;
-      background: #FAFAFA;
+      padding: 0;
+      background: var(--light-bg);
       color: var(--text-dark);
       position: relative;
       overflow: hidden;
@@ -894,6 +894,7 @@
       position: relative;
       overflow: hidden;
       height: 600px;
+      max-height: 600px;
     }
 
     .cava-img-col img {
@@ -908,15 +909,16 @@
     }
 
     .cava-info-col {
-      background: #FAFAFA;
+      background: var(--light-bg);
       color: var(--text-dark);
-      padding: 5rem 5.5rem;
+      padding: 4.5rem 5.5rem;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
       justify-content: center;
       text-align: left;
       height: 600px;
+      max-height: 600px;
     }
 
     .cava-info-col .section-label {
@@ -936,7 +938,7 @@
       font-family: var(--font-sans);
       font-size: 1rem;
       font-weight: 300;
-      line-height: 1.9;
+      line-height: 1.85;
       color: var(--text-muted);
       max-width: 580px;
       margin-bottom: 2rem;
@@ -2315,7 +2317,7 @@
           </a>
           <ul class="nav-links">
             <li><a href="#rooms">Habitaciones</a></li>
-            <li><a href="#cava">Atención Personalizada</a></li>
+            <li><a href="#cava">Identidad Vitivinícola</a></li>
             <li><a href="#experiences">Experiencias</a></li>
             <li><a href="https://www.laresresto.com/" target="_blank">Restaurante</a></li>
             <li><a href="#welcome">El Hotel</a></li>
@@ -2399,10 +2401,9 @@
   </section>
 
   <!-- ============================================================
-  <!-- ============================================================
        BLOQUE 4: ATENCIÓN PERSONALIZADA ("Una estadía pensada para vos")
   ============================================================ -->
-  <section id="cava">
+  <section id="atencion">
     <!-- CINTA DE TEXTO ANIMADO (MARQUEE TICKER) -->
     <div class="cava-ticker-wrap">
       <div class="cava-ticker-track">
@@ -2536,6 +2537,30 @@
         <a href="/habitaciones.html" class="btn-primary">
           Conocé todas las habitaciones
           <i data-lucide="arrow-right" style="width:18px;height:18px"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       BLOQUE: IDENTIDAD VITIVINÍCOLA ("Una casa entre viñedos")
+  ============================================================ -->
+  <section id="cava">
+    <div class="cava-card-wrapper">
+      <div class="cava-img-col">
+        <img src="assets/cava_identidad.jpg" alt="Identidad Vitivinícola - Una casa entre viñedos en Lares de Chacras" />
+      </div>
+      <div class="cava-info-col">
+        <p class="section-label">Identidad Vitivinícola</p>
+        <h2 class="section-title">Vivir la cultura del vino</h2>
+        <div class="cava-info-body">
+          <p>El vino es parte de la experiencia Lares. Nuestra cava reúne una selección de etiquetas de Mendoza y un espacio pensado para descubrir, compartir y disfrutar sin apuro.</p>
+          <p style="margin-top: 0.8rem;">Conocemos las bodegas de la región y podemos ayudarte a elegir cuáles visitar según tus gustos.</p>
+          <p style="margin-top: 0.8rem;">Al regresar, la cava y el living con hogar a leña son el lugar perfecto para cerrar el día con una copa.</p>
+        </div>
+        <a href="https://www.laresresto.com/#cava" target="_blank" rel="noopener" class="btn-link">
+          Conocé la cava
+          <i data-lucide="arrow-right" style="width:16px;height:16px"></i>
         </a>
       </div>
     </div>
