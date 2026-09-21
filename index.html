@@ -534,15 +534,15 @@
       inset: 0;
       background: linear-gradient(
         to bottom,
-        rgba(18, 20, 24, 0.40) 0%,
-        rgba(18, 20, 24, 0.25) 50%,
-        rgba(18, 20, 24, 0.65) 100%
+        rgba(18, 20, 24, 0.46) 0%,
+        rgba(18, 20, 24, 0.36) 50%,
+        rgba(18, 20, 24, 0.70) 100%
       );
     }
     .hero-container {
       position: relative;
       z-index: 2;
-      max-width: 960px;
+      max-width: 1040px;
       text-align: center;
       padding: 0 1.5rem;
       display: flex;
@@ -551,13 +551,14 @@
     }
     .hero-seo-title {
       font-family: var(--font-sans);
-      font-size: clamp(2.4rem, 6.2vw, 4.8rem);
+      font-size: clamp(2.35rem, 4.7vw, 4.2rem);
       font-weight: 400;
       color: var(--white);
-      line-height: 1.02;
+      line-height: 1.08;
       letter-spacing: 0.02em;
       margin-bottom: 1.4rem;
       text-shadow: 0 4px 20px rgba(0,0,0,0.6);
+      max-width: 1020px;
     }
     .hero-seo-title em {
       font-family: var(--font-serif);
@@ -569,10 +570,11 @@
       font-family: var(--font-sans);
       font-size: clamp(0.92rem, 1.8vw, 1.12rem);
       font-weight: 400;
-      color: rgba(255, 255, 255, 0.96);
+      color: rgba(255, 255, 255, 0.98);
       line-height: 1.7;
-      max-width: 780px;
+      max-width: 820px;
       margin-bottom: 2.4rem;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
     }
     .hero-booking-wrap {
       display: flex;
@@ -905,6 +907,7 @@
       font-family: var(--font-serif);
       font-size: 1.25rem;
       font-style: italic;
+      font-weight: 600;
       color: var(--wine);
       margin-top: 1.25rem;
       margin-bottom: 0;
@@ -1462,9 +1465,7 @@
       font-size: 0.74rem;
       font-weight: 400;
       color: rgba(255, 255, 255, 0.85);
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
+      line-height: 1.25;
     }
     .location-img-composition {
       position: relative;
@@ -2462,8 +2463,10 @@
         min-height: -webkit-fill-available;
         padding-top: 6.8rem;
       }
-      .hero-title {
-        font-size: clamp(2.4rem, 8vw, 3.4rem);
+      .hero-title,
+      .hero-seo-title {
+        font-size: clamp(1.55rem, 6.2vw, 2.35rem);
+        line-height: 1.14;
       }
       .hero-subtitle {
         margin-bottom: 1.8rem;
@@ -2598,7 +2601,7 @@
           </a>
           <ul class="nav-links">
             <li><a href="#rooms">Habitaciones</a></li>
-            <li><a href="#cava">Identidad Vitivinícola</a></li>
+            <li><a href="#cava">Cava y Vinos</a></li>
             <li><a href="#experiences">Experiencias</a></li>
             <li><a href="https://www.laresresto.com/" target="_blank">Restaurante</a></li>
             <li><a href="#welcome">El Hotel</a></li>
@@ -2606,11 +2609,6 @@
             <li><a href="#before-booking">Contacto</a></li>
           </ul>
           <div class="nav-right">
-            <select class="lang-selector" aria-label="Idioma">
-              <option value="es" selected>ES</option>
-              <option value="en">EN</option>
-              <option value="pt">PT</option>
-            </select>
             <button class="nav-cta trigger-booking">Reservar</button>
             <button class="nav-hamburger" id="hamburgerBtn" aria-label="Abrir Menú">
               <span></span><span></span><span></span>
@@ -2627,10 +2625,10 @@
   <section id="hero" style="background-image: url('assets/hero.jpg');">
     <div class="hero-container">
       <h1 class="hero-seo-title">
-        Hotel boutique en Chacras de Coria, Mendoza
+        Lares, hotel boutique en<br>Chacras de Coria, Mendoza
       </h1>
       <p class="hero-subtitle">
-        Una casa de familia con jardín, piscina y cava propia, a dos cuadras de la plaza de Chacras de Coria y entre las bodegas de Luján de Cuyo. Dieciséis habitaciones, y una mesa esperando a la vuelta de cada día en Mendoza.
+        Entre los Caminos del Vino, a quince kilómetros de la ciudad de Mendoza: un lugar con<br>jardines, piscina y cava propia para recorrer las bodegas de Luján de Cuyo a tu manera.
       </p>
       <div class="hero-booking-wrap">
         <button class="btn-primary hero-btn-reserve trigger-booking">
@@ -2655,18 +2653,18 @@
 
         <!-- CONTENIDO DE TEXTO -->
         <div class="welcome-text">
-          <p class="section-label">UN DÍA EN LARES</p>
+          <p class="section-label">LA CASA</p>
           <h2 class="section-title">Un día en Lares</h2>
 
           <div class="welcome-narrative">
             <p>
-              El día empieza despacio. Hay un jardín al que le da el sol de mañana y un desayuno que no tiene apuro. Los que prefieren salir a las bodegas parten temprano; los que eligen quedarse encuentran la piscina y los espacios comunes siempre disponibles.
+              Las mañanas son del jardín, con el desayuno servido y el sol entre los árboles. Los que salen a las bodegas parten temprano. Los que se quedan tienen la piscina, el parque y una casa en silencio.
             </p>
             <p>
-              Desde Lares, las bodegas de Luján de Cuyo están a pocos minutos. Organizamos el recorrido, reservamos las degustaciones y coordinamos los traslados para que el día salga bien sin que tengas que pensar en la logística.
+              Las bodegas de Luján de Cuyo quedan a pocos minutos, y lo que hay que reservar queda reservado antes: las degustaciones, los traslados, la mesa de esa noche.
             </p>
             <p>
-              Al volver, la cava y el restaurante están ahí. Una copa con la etiqueta que elegiste durante la visita, una cena con productos de la región, la conversación que cierra el día bien.
+              A la vuelta están la cava y el restaurante, en la misma casa. Una botella elegida abajo, una cena con productos de la región y la conversación que sigue después.
             </p>
           </div>
 
@@ -2721,12 +2719,12 @@
         <img src="assets/_NZ75885.jpg" alt="Equipo de Lares de Chacras recibiendo a sus huéspedes en Chacras de Coria" />
       </div>
       <div class="cava-info-col">
-        <p class="section-label">QUIÉNES RECIBEN</p>
+        <p class="section-label">ESPAÑOL, INGLÉS Y PORTUGUÉS</p>
         <h2 class="section-title">Quiénes reciben</h2>
         <div class="cava-info-body">
-          <p>Lares es una casa con nombre de familia porque desde que abrió la recibe una. Detrás de cada estadía hay personas que conocen el hotel de punta a punta y que se acuerdan de los nombres.</p>
-          <p style="margin-top: 0.7rem;">Nuestro equipo puede ayudarte a elegir una bodega según el tipo de vino que te interesa, recomendarte dónde comer en el pueblo o resolver cualquier duda antes de llegar. La atención es cercana sin ser invasiva.</p>
-          <p style="margin-top: 0.7rem;">Hablamos español, inglés y portugués, y la recepción funciona las veinticuatro horas.</p>
+          <p>Lares es una casa de familia, y eso también se siente en quienes reciben: un equipo que conoce la casa, la zona y a los huéspedes que vuelven. A la segunda mañana, ya saben tu nombre.</p>
+          <p style="margin-top: 0.7rem;">Basta con contar qué vino te gusta para que aparezca la bodega indicada, ya sea en Luján de Cuyo o en el Valle de Uco. Lo mismo si buscás dónde comer en Chacras de Coria o necesitás resolver cualquier detalle antes de llegar.</p>
+          <p style="margin-top: 0.7rem;">Hablamos español, inglés y portugués, y nuestra recepción funciona las 24 horas.</p>
         </div>
         <a href="/el-hotel.html" class="btn-link">
           Conocé nuestro equipo
@@ -2741,13 +2739,14 @@
   ============================================================ -->
   <section id="rooms">
     <div class="container">
-      <p class="section-label">LAS HABITACIONES</p>
-      <h2 class="section-title">Dieciséis habitaciones, ninguna igual a la otra</h2>
+      <p class="section-label">DIECISÉIS HABITACIONES</p>
+      <h2 class="section-title">Ninguna es igual a la otra</h2>
       <div class="rooms-intro">
-        <p>Diez habitaciones en el edificio principal y seis en Casa Vita. Distintas en tamaño, en orientación y en carácter: algunas dan al jardín interior, otras tienen balcón, otras tienen estufa a leña. Ninguna es igual a la otra.</p>
-        <p style="margin-top: 0.7rem;">Las cuatro categorías comparten el mismo nivel de cuidado y los mismos servicios. La diferencia está en el espacio y en los detalles de cada una.</p>
+        <p>Cada habitación se acomodó al lugar que tenía en la casa: una tiene estufa a leña, otra un balcón sobre los árboles, otras dan directamente al jardín. Cada una tiene algo propio.</p>
+        <p style="margin-top: 0.7rem;">Todas incluyen desayuno y el uso de la piscina, el parque y el gimnasio.</p>
+        <p style="margin-top: 0.7rem;">Seis de las dieciséis están en Casa Vita, la casa de al lado, con parque y piscina propios y un living con hogar a leña.</p>
         <p class="rooms-rest-text">
-          <strong>La casa está pensada para el descanso: recibimos huéspedes desde los doce años.</strong>
+          La casa está pensada para el descanso: se reciben huéspedes desde los doce años.
         </p>
       </div>
 
@@ -2762,7 +2761,7 @@
           </div>
           <div class="room-card-v4-body">
             <h3 class="room-card-v4-title">Clásica</h3>
-            <p class="room-card-v4-desc">Cálidas y luminosas, con todo lo necesario para una estadía confortable. Dan al jardín interior o a los espacios verdes del hotel.</p>
+            <p class="room-card-v4-desc">Veintitrés metros con piso de madera, en cama queen o en dos camas twin. Se puede sumar una cama extra a pedido.</p>
             <a href="/habitaciones.html" class="btn-link room-card-v4-link">
               Tour virtual <i data-lucide="arrow-right" style="width:15px;height:15px"></i>
             </a>
@@ -2777,7 +2776,7 @@
           </div>
           <div class="room-card-v4-body">
             <h3 class="room-card-v4-title">Especial</h3>
-            <p class="room-card-v4-desc">Más espacio y acceso a balcón o terraza para disfrutar del entorno desde la habitación. Pensadas para quienes quieren un poco más de aire.</p>
+            <p class="room-card-v4-desc">Cinco metros más y salida propia al jardín: balcón en la planta alta, galería en la planta baja.</p>
             <a href="/habitaciones.html" class="btn-link room-card-v4-link">
               Tour virtual <i data-lucide="arrow-right" style="width:15px;height:15px"></i>
             </a>
@@ -2799,7 +2798,7 @@
           </div>
           <div class="room-card-v4-body">
             <h3 class="room-card-v4-title">Superior</h3>
-            <p class="room-card-v4-desc">Las más amplias del edificio principal. Algunas tienen estufa a leña; otras, un balcón grande con vista al jardín. Dos versiones distintas de la misma categoría.</p>
+            <p class="room-card-v4-desc">Son dos y son distintas: una tiene estufa a leña y la otra un balcón grande. Las dos con hidromasaje, frigobar y servicio de café.</p>
             <a href="/habitaciones.html" class="btn-link room-card-v4-link">
               Tour virtual <i data-lucide="arrow-right" style="width:15px;height:15px"></i>
             </a>
@@ -2823,7 +2822,7 @@
           </div>
           <div class="room-card-v4-body">
             <h3 class="room-card-v4-title">Junior · Casa Vita</h3>
-            <p class="room-card-v4-desc">Seis habitaciones en un edificio separado a veinte metros del principal. Con jardín propio, piscina y living con hogar a leña. Un entorno más reservado con acceso a todos los servicios de Lares.</p>
+            <p class="room-card-v4-desc">Habitaciones dobles en la casa de al lado, con Smart TV y frigobar, parque y piscina propios y un living con hogar a leña.</p>
             <a href="/habitaciones.html" class="btn-link room-card-v4-link">
               Tour virtual <i data-lucide="arrow-right" style="width:15px;height:15px"></i>
             </a>
@@ -2843,11 +2842,11 @@
         <img src="assets/cava_new.jpg" alt="Cava de Lares de Chacras con etiquetas de bodegas de Luján de Cuyo y Valle de Uco" />
       </div>
       <div class="cava-info-col">
-        <p class="section-label">LA CAVA</p>
-        <h2 class="section-title">De la cava a la mesa</h2>
+        <p class="section-label">VIÑA LARES, BODEGA PROPIA</p>
+        <h2 class="section-title">El vino como parte de la experiencia</h2>
         <div class="cava-info-body">
-          <p>La cava de Lares reúne una selección de etiquetas de bodegas de Luján de Cuyo y el Valle de Uco. Tintos, blancos y espumantes elegidos con criterio, pensados para acompañar tanto las noches en el hotel como las visitas a las bodegas de la zona.</p>
-          <p style="margin-top: 0.8rem;">Podemos orientarte sobre qué abrir antes de una cena, o sugerirte qué buscar durante una degustación. El vino es parte de la experiencia Lares.</p>
+          <p>El piso de la entrada es de vidrio, y un nivel más abajo están las botellas. Bajar a elegir una antes de la cena es una costumbre de la casa.</p>
+          <p style="margin-top: 0.8rem;">El vino de la casa se hace en Viña Lares, a ocho kilómetros, en Luján de Cuyo. Se abre una botella por día para probarla y los martes la bodega recibe visitas con reserva.</p>
         </div>
         <a href="/cava-y-vinos.html" class="btn-link">
           Conocé la cava
@@ -2864,11 +2863,11 @@
     <div class="container">
       <div class="resto-split-card">
         <div class="resto-info-col">
-          <p class="section-label">Gastronomía local</p>
-          <h2 class="resto-info-title">Lares Restó</h2>
+          <p class="section-label">LARES RESTÓ</p>
+          <h2 class="resto-info-title">La cena está a treinta pasos</h2>
           <div class="resto-info-body">
-            <p>El restaurante abre todas las noches, con cocina de la región y el vino que se eligió en la cava. Se cena sin salir de la casa.</p>
-            <p style="margin-top: 0.7rem;">También recibe a quien no se aloja, con reserva.</p>
+            <p>El restaurante funciona en la misma casa. La sobremesa se estira lo que haga falta y el camino de vuelta a la habitación es el jardín.</p>
+            <p style="margin-top: 0.7rem;">Cocina de la región y menú a la carta, también para quien no se aloja.</p>
           </div>
           <a href="https://www.laresresto.com/" target="_blank" rel="noopener" class="btn-primary">
             Descubrí Lares Restó
@@ -2887,10 +2886,10 @@
   ============================================================ -->
   <section id="experiences">
     <div class="container">
-      <p class="section-label">LAS SALIDAS</p>
-      <h2 class="section-title">Lo que dejamos armado antes de la llegada</h2>
+      <p class="section-label">BICICLETAS, CABALLOS Y MONTAÑA</p>
+      <h2 class="section-title">Para los días que no son de bodegas</h2>
       <p class="experiences-intro">
-        Antes de llegar, ya organizamos lo que se puede organizar. Las degustaciones, los traslados, los recorridos: todo queda reservado para que el viaje empiece con el día libre.
+        El viaje también tiene días sin vino. Hay recorridos en bicicleta entre viñedos, cabalgatas y salidas a la cordillera, y todos se coordinan desde la recepción.
       </p>
 
       <div class="experiences-grid">
@@ -2904,8 +2903,8 @@
             </div>
           </div>
           <div class="exp-card-body">
-            <h4 class="exp-card-title">Bodegas</h4>
-            <p class="exp-card-desc">Recorridos a bodegas de Luján de Cuyo seleccionadas según tus preferencias. Reservamos la degustación y coordinamos el traslado.</p>
+            <h4 class="exp-card-title">Wine Tasting Time</h4>
+            <p class="exp-card-desc">La copa diaria de Viña Lares, la bodega de la familia, servida en la casa.</p>
           </div>
         </article>
 
@@ -2920,7 +2919,7 @@
           </div>
           <div class="exp-card-body">
             <h4 class="exp-card-title">Bike Wine Tour</h4>
-            <p class="exp-card-desc">Un recorrido en bicicleta entre viñedos y bodegas, combinando paisaje y vino. Una de las experiencias más queridas de la zona.</p>
+            <p class="exp-card-desc">Bicicletas y mapa para las bodegas más cercanas. Dos visitas y un almuerzo maridado.</p>
           </div>
         </article>
 
@@ -2935,7 +2934,7 @@
           </div>
           <div class="exp-card-body">
             <h4 class="exp-card-title">Transfer INOUT</h4>
-            <p class="exp-card-desc">Traslados del aeropuerto al hotel y del hotel al aeropuerto, coordinados de antemano para que no tengas que pensar en nada.</p>
+            <p class="exp-card-desc">Traslados privados en van desde el aeropuerto y recorridos de bodegas sin manejar.</p>
           </div>
         </article>
 
@@ -2950,7 +2949,7 @@
           </div>
           <div class="exp-card-body">
             <h4 class="exp-card-title">Alta montaña y cabalgatas</h4>
-            <p class="exp-card-desc">Salidas a los caminos de altura y recorridos a caballo para ver Mendoza desde otra perspectiva.</p>
+            <p class="exp-card-desc">Salidas a la cordillera y paseos a caballo, coordinados a pedido.</p>
           </div>
         </article>
       </div>
@@ -2965,10 +2964,10 @@
     <div class="container">
       <div class="location-grid">
         <div class="location-text">
-          <p class="section-label">DÓNDE ESTAMOS</p>
-          <h2 class="section-title">A dos cuadras de la plaza de Chacras</h2>
+          <p class="section-label">CHACRAS DE CORIA, LUJÁN DE CUYO</p>
+          <h2 class="section-title">Un pueblo a la sombra, entre viñedos</h2>
           <p>
-            Lares está en el corazón de Chacras de Coria, a dos cuadras de la plaza principal del pueblo. Las bodegas de Luján de Cuyo se alcanzan en minutos, la ciudad de Mendoza en un cuarto de hora y el Valle de Uco en menos de dos horas.
+            Chacras de Coria es de los lugares más arbolados del Gran Mendoza: casas bajas, veredas anchas y una plaza con ferias los fines de semana. Las bodegas de Luján de Cuyo empiezan acá mismo y siguen por los caminos de alrededor, que es lo que hace del pueblo la base para recorrer la zona.
           </p>
 
           <div class="location-distances">
@@ -3010,8 +3009,8 @@
                   <i data-lucide="wine" style="width:20px;height:20px"></i>
                 </div>
                 <div class="distance-info">
-                  <span class="distance-val">— km</span>
-                  <span class="distance-lbl">Bodegas de Luján de Cuyo</span>
+                  <span class="distance-val">5 a 25 km</span>
+                  <span class="distance-lbl">Bodegas de Luján de Cuyo (Agrelo, Perdriel)</span>
                 </div>
               </div>
             </div>
@@ -3038,10 +3037,10 @@
   ============================================================ -->
   <section id="guide">
     <div class="container">
-      <p class="section-label">LA ZONA</p>
-      <h2 class="section-title">Lo que le recomendamos a nuestros huéspedes</h2>
+      <p class="section-label">LA GUÍA</p>
+      <h2 class="section-title">La zona</h2>
       <p class="guide-intro">
-        Lo que recomendamos no es una lista genérica. Son los lugares que conocemos, los recorridos que hacemos con tiempo y las notas que escribimos después de visitarlos.
+        Vamos sumando lo que puede hacer mejor el viaje: qué bodegas elegir, dónde comer cerca, cómo moverse por Luján de Cuyo y qué conviene dejar reservado antes de llegar.
       </p>
 
       <!-- NOTA Única activa -->
@@ -3073,10 +3072,10 @@
     <div class="container">
       <div class="rec-header">
         <div class="rec-header-text">
-          <p class="section-label">RECONOCIMIENTOS</p>
+          <p class="section-label">LLAVE MICHELIN Y TRAVELERS' CHOICE</p>
           <h2 class="section-title">Lo que dicen los que ya vinieron</h2>
           <p class="recognition-intro">
-            <strong>4,9 ⭐</strong> sobre <strong>1.788 opiniones</strong> en TripAdvisor. El <strong>Travelers' Choice</strong> y la <strong>Llave Michelin</strong> acompañan lo que más nos importa: la experiencia de quienes vinieron.
+            La <strong>Guía Michelin</strong> entregó sus primeras Llaves en Argentina en octubre de 2025 y una quedó acá. Pero lo que se lee todos los días son las opiniones de <strong>TripAdvisor</strong>: 4,9 ⭐ sobre 1.788.
           </p>
         </div>
       </div>
@@ -3096,7 +3095,7 @@
             </div>
           </div>
           <p class="review-text">
-            "Exceptional place. The team made every moment feel personal — they knew our preferences, organized our winery visits and were always available without being intrusive. One of the best stays of our travels."
+            "La comunicación con el equipo del hotel fue excelente desde que estábamos investigando la propiedad hasta que nos fuimos."
           </p>
           <div class="review-card-footer">
             <div>
@@ -3123,7 +3122,7 @@
             </div>
           </div>
           <p class="review-text">
-            "We came for the wine region and stayed for the hotel. Lares is exactly what you want a boutique hotel to be: quiet, beautiful, with staff that genuinely cares. The breakfast alone is worth the stay."
+            "Los jardines estaban bien cuidados y el personal fue muy servicial reservándonos excursiones, alquiler de bicicletas y traslados todos los días."
           </p>
           <div class="review-card-footer">
             <div>
@@ -3150,7 +3149,7 @@
             </div>
           </div>
           <p class="review-text">
-            "El hotel más lindo en el que me hospedé. El jardín, la piscina, el desayuno y sobre todo el equipo. Nos ayudaron a organizar todo el viaje desde el primer día. Volvería sin dudarlo."
+            "Es todo lo que está bien para descansar y ser mimado."
           </p>
           <div class="review-card-footer">
             <div>
@@ -3173,10 +3172,10 @@
     <div class="container">
       <div class="bb-inner">
         <div class="bb-content">
-          <p class="section-label">ANTES DE RESERVAR</p>
-          <h2 class="bb-title">Un mensaje antes de reservar</h2>
+          <p class="section-label">WHATSAPP</p>
+          <h2 class="bb-title">Antes de reservar, hablemos</h2>
           <p class="bb-body">
-            Antes de confirmar, podemos ayudarte a elegir la habitación, coordinar los traslados y dejar organizado lo que se puede organizar. Escribínos por WhatsApp o por mail.
+            Muchos huéspedes escriben antes de decidir: para ver una habitación por dentro, para saber cuántos días conviene quedarse o para preguntar cualquier cosa del viaje. Se contesta todo, sin necesidad de reservar nada.
           </p>
 
           <div class="bb-ctas">
@@ -3197,21 +3196,21 @@
           <div class="bb-stacked-cards">
             <div class="bb-pillar-card">
               <div class="bb-pillar-icon-wrap">
-                <i data-lucide="calendar-check" style="width:20px;height:20px"></i>
+                <i data-lucide="percent" style="width:20px;height:20px"></i>
               </div>
               <div>
-                <p class="bb-benefit-title">Cancelación flexible</p>
-                <p class="bb-benefit-desc">La tarifa flexible se cancela sin cargo hasta 14 días antes de la llegada.</p>
+                <p class="bb-benefit-title">2% reservando acá</p>
+                <p class="bb-benefit-desc">Reservando en esta web la tarifa baja un 2%.</p>
               </div>
             </div>
 
             <div class="bb-pillar-card active">
               <div class="bb-pillar-icon-wrap">
-                <i data-lucide="compass" style="width:20px;height:20px"></i>
+                <i data-lucide="calendar-check" style="width:20px;height:20px"></i>
               </div>
               <div>
-                <p class="bb-benefit-title">El viaje, resuelto</p>
-                <p class="bb-benefit-desc">Dejamos reservadas las degustaciones y los traslados antes de la llegada.</p>
+                <p class="bb-benefit-title">Cancelación flexible</p>
+                <p class="bb-benefit-desc">La tarifa flexible se cancela sin cargo hasta 14 días antes de llegar.</p>
               </div>
             </div>
 
@@ -3221,7 +3220,7 @@
               </div>
               <div>
                 <p class="bb-benefit-title">En tu idioma, a cualquier hora</p>
-                <p class="bb-benefit-desc">Atendemos en español, inglés y portugués, con recepción las veinticuatro horas.</p>
+                <p class="bb-benefit-desc">Español, inglés y portugués, con recepción las veinticuatro horas.</p>
               </div>
             </div>
           </div>
@@ -3236,7 +3235,7 @@
   <section id="faq">
     <div class="container">
       <div class="faq-container">
-        <p class="section-label" style="justify-content:center">PREGUNTAS FRECUENTES</p>
+        <p class="section-label" style="justify-content:center">FAQs</p>
         <h2 class="section-title" style="text-align:center">Preguntas frecuentes</h2>
 
         <div class="faq-accordion">
@@ -3247,7 +3246,7 @@
               <i data-lucide="chevron-down" class="icon" style="width:20px;height:20px"></i>
             </header>
             <div class="faq-body">
-              Lares de Chacras está ubicado en Larrea 1266, en el corazón de Chacras de Coria, Luján de Cuyo, a dos cuadras de la plaza del pueblo. La ciudad de Mendoza se encuentra a 15 kilómetros (aproximadamente 15 a 20 minutos en auto).
+              Lares es un hotel boutique en Larrea 1266, Chacras de Coria, Luján de Cuyo, a dos cuadras de la plaza del pueblo y dentro de los Caminos del Vino. La ciudad de Mendoza queda a quince kilómetros, unos veinte minutos en auto.
             </div>
           </article>
 
@@ -3257,7 +3256,7 @@
               <i data-lucide="chevron-down" class="icon" style="width:20px;height:20px"></i>
             </header>
             <div class="faq-body">
-              Son dos casas separadas por veinte metros. En el edificio principal se encuentran diez habitaciones alrededor del jardín central, la recepción, la cava, la piscina principal y el salón de desayuno. Casa Vita cuenta con seis habitaciones junior, más reservadas, con su propio jardín, piscina y un living con hogar a leña. Los huéspedes de ambas casas tienen acceso a todas las instalaciones y servicios del hotel.
+              Son dos casas separadas por veinte metros y unidas por un camino interno. En la principal están las diez habitaciones alrededor del jardín, el desayuno, la conserjería, la cava y la piscina. Casa Vita tiene seis habitaciones dobles, jardín con piscina propia y un living con hogar a leña. Desde las dos se usan todos los servicios.
             </div>
           </article>
 
@@ -3267,7 +3266,7 @@
               <i data-lucide="chevron-down" class="icon" style="width:20px;height:20px"></i>
             </header>
             <div class="faq-body">
-              Sí, en todas las habitaciones. Es un desayuno buffet y se sirve en el edificio principal.
+              Sí, en todas las habitaciones de las dos casas. Es buffet y se sirve en el edificio principal.
             </div>
           </article>
 
@@ -3277,7 +3276,7 @@
               <i data-lucide="chevron-down" class="icon" style="width:20px;height:20px"></i>
             </header>
             <div class="faq-body">
-              Piscina, parque, gimnasio, jacuzzi, wifi, estacionamiento, recepción las 24 horas y servicio de conserjería. El desayuno está incluido y el restaurante funciona para cenas.
+              Piscina exterior, jacuzzi, gimnasio, cava, un salón para reuniones de hasta ocho personas, jardín, conserjería, wifi y estacionamiento privado sin cargo. Con cargo aparte hay masajes, bicicletas, traslados en van propia y lavandería.
             </div>
           </article>
 
@@ -3287,7 +3286,7 @@
               <i data-lucide="chevron-down" class="icon" style="width:20px;height:20px"></i>
             </header>
             <div class="faq-body">
-              Sí. Reservamos las degustaciones, coordinamos los traslados y armamos el recorrido según los días que tengas y el tipo de vino que te interese.
+              Sí, con reserva previa. Se reservan las degustaciones, se arman recorridos en bicicleta por las bodegas cercanas y se hacen traslados privados desde y hacia el aeropuerto. También se puede recorrer bodegas con chofer para no tener que manejar.
             </div>
           </article>
 
@@ -3297,7 +3296,7 @@
               <i data-lucide="chevron-down" class="icon" style="width:20px;height:20px"></i>
             </header>
             <div class="faq-body">
-              Sí. Contamos con una cava subterránea con una cuidada selección de etiquetas mendocinas, vinos de autor y partidas exclusivas de la casa para degustar en la cava, acompañar las cenas o disfrutar en el jardín.
+              Sí. El vino de la casa se hace en Viña Lares, una bodega garage a ocho kilómetros. Se abre una botella por día para probarla y los martes la bodega recibe visitas con reserva.
             </div>
           </article>
 
@@ -3307,7 +3306,7 @@
               <i data-lucide="chevron-down" class="icon" style="width:20px;height:20px"></i>
             </header>
             <div class="faq-body">
-              Sí. Lares Restó recibe también a comensales de afuera, con reserva previa.
+              Sí, con reserva previa. Abre todas las noches con menú a la carta.
             </div>
           </article>
 
@@ -3317,7 +3316,7 @@
               <i data-lucide="chevron-down" class="icon" style="width:20px;height:20px"></i>
             </header>
             <div class="faq-body">
-              La casa está pensada para el descanso: recibimos huéspedes desde los doce años.
+              Se reciben huéspedes desde los doce años. La casa y el restaurante están pensados para un ambiente tranquilo, orientado a adultos.
             </div>
           </article>
 
@@ -3327,7 +3326,7 @@
               <i data-lucide="chevron-down" class="icon" style="width:20px;height:20px"></i>
             </header>
             <div class="faq-body">
-              Para preservar la tranquilidad y el descanso de todos nuestros huéspedes, no aceptamos mascotas.
+              No.
             </div>
           </article>
 
@@ -3337,7 +3336,7 @@
               <i data-lucide="chevron-down" class="icon" style="width:20px;height:20px"></i>
             </header>
             <div class="faq-body">
-              Sí, hay estacionamiento en el predio.
+              Sí, privado, dentro del predio y sin cargo.
             </div>
           </article>
 
@@ -3347,7 +3346,7 @@
               <i data-lucide="chevron-down" class="icon" style="width:20px;height:20px"></i>
             </header>
             <div class="faq-body">
-              El aeropuerto de Mendoza está a unos treinta minutos (25 km). Podemos coordinar el traslado, o indicarte la ruta si venís en auto.
+              El aeropuerto de Mendoza está a veinticinco kilómetros, unos treinta minutos en auto. También hay traslado en la van del hotel: alcanza con mandar el número de vuelo antes de viajar.
             </div>
           </article>
 
@@ -3357,7 +3356,7 @@
               <i data-lucide="chevron-down" class="icon" style="width:20px;height:20px"></i>
             </header>
             <div class="faq-body">
-              Al tratarse de una casona tradicional con arquitectura de estilo andino en dos plantas, el hotel no posee ascensor. El acceso a las habitaciones de planta alta es por escalera. Si requerís una habitación en planta baja, por favor avisanos al momento de la reserva.
+              No. El edificio principal es de dos plantas y se sube por escalera.
             </div>
           </article>
 
@@ -3367,7 +3366,7 @@
               <i data-lucide="chevron-down" class="icon" style="width:20px;height:20px"></i>
             </header>
             <div class="faq-body">
-              El horario de check-in es a partir de las 15:00 hs y el check-out hasta las 11:00 hs. Si llegás antes o querés partir más tarde, podés guardar tu equipaje en recepción y disfrutar de las instalaciones y jardines.
+              El check-in es a partir de las 15 y el check-out, a las 12.
             </div>
           </article>
 
@@ -3377,7 +3376,7 @@
               <i data-lucide="chevron-down" class="icon" style="width:20px;height:20px"></i>
             </header>
             <div class="faq-body">
-              Cancelación gratuita hasta 14 días antes de la llegada con la tarifa flexible. Te sugerimos consultar las condiciones específicas según la tarifa seleccionada al momento de reservar.
+              Hay dos tarifas. La flexible se cancela sin cargo hasta 14 días antes de la llegada, dentro de los 14 días se cobra el 50% y, si no se presenta, el 100%. La no reembolsable es más económica y no admite cambios ni devolución.
             </div>
           </article>
 
@@ -3387,7 +3386,7 @@
               <i data-lucide="chevron-down" class="icon" style="width:20px;height:20px"></i>
             </header>
             <div class="faq-body">
-              Atendemos en español, inglés y portugués, con recepción las veinticuatro horas.
+              Español, inglés y portugués, a cualquier hora.
             </div>
           </article>
 
@@ -3397,7 +3396,7 @@
               <i data-lucide="chevron-down" class="icon" style="width:20px;height:20px"></i>
             </header>
             <div class="faq-body">
-              La temporada alta va de octubre a marzo, con el pico en marzo por la vendimia. El otoño, entre abril y junio, tiene menos gente y los viñedos con color. El invierno es la época más tranquila y la mejor para quienes buscan descanso.
+              La temporada alta va de octubre a marzo, con el pico en marzo por la vendimia. Entre abril y junio hay menos gente y los viñedos cambian de color. El invierno es la época más tranquila.
             </div>
           </article>
 
@@ -3411,8 +3410,8 @@
   ============================================================ -->
   <section id="photo-gallery">
     <div class="container" style="margin-bottom: 2.5rem; text-align: center;">
-      <p class="section-label" style="justify-content:center">LA CASA</p>
-      <h2 class="section-title" style="text-align:center">De punta a punta</h2>
+      <p class="section-label" style="justify-content:center">LA CASA EN FOTOS</p>
+      <h2 class="section-title" style="text-align:center">De la entrada al jardín</h2>
     </div>
     <div class="gallery-slider-wrap" id="gallery-slider-wrap">
       <div class="gallery-track">
@@ -3464,9 +3463,9 @@
           </div>
 
           <div class="footer-subgroup">
-            <p class="footer-col-title">La guía</p>
+            <p class="footer-col-title">La zona</p>
             <ul class="footer-links">
-              <li><a href="/guia/bodegas-lujan-de-cuyo.html">La guía</a></li>
+              <li><a href="#guide">La zona</a></li>
               <li><a href="#location">Cómo llegar</a></li>
               <li><a href="#faq">Preguntas frecuentes</a></li>
             </ul>
@@ -3481,7 +3480,6 @@
               <li><a href="/cava-y-vinos.html">La cava</a></li>
               <li><a href="https://www.laresresto.com/" target="_blank" rel="noopener">Lares Restó</a></li>
               <li><a href="#experiences">Experiencias</a></li>
-              <li><a href="#guide">La zona</a></li>
             </ul>
           </div>
 
@@ -3499,13 +3497,13 @@
         <div>
           <p class="footer-col-title">Ubicación y contacto</p>
           <div class="footer-contact-list">
-            <a href="https://maps.google.com/?q=Larrea+1266,+Chacras+de+Coria,+Mendoza" target="_blank" rel="noopener" class="footer-contact-card" title="Abrir ubicación en Google Maps">
+            <a href="https://maps.google.com/?q=Larrea+1266,+M5505+Chacras+de+Coria,+Luj%C3%A1n+de+Cuyo,+Mendoza,+Argentina" target="_blank" rel="noopener" class="footer-contact-card" title="Abrir ubicación en Google Maps">
               <div class="footer-contact-icon">
                 <i data-lucide="map-pin" style="width:15px;height:15px"></i>
               </div>
               <div class="footer-contact-info">
                 <span class="footer-contact-lbl">Dirección</span>
-                <span class="footer-contact-val">Larrea 1266, Chacras de Coria, Mendoza</span>
+                <span class="footer-contact-val">Larrea 1266, M5505 Chacras de Coria, Luján de Cuyo, Mendoza, Argentina</span>
               </div>
             </a>
 
