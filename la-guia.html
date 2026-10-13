@@ -1,0 +1,1693 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>La Guía de Mendoza · Notas, Rutas y Sabores | Lares de Chacras</title>
+  <meta name="description" content="Recorridos, bodegas, gastronomía y recomendaciones para conocer Mendoza a tu ritmo. Una guía editorial creada desde Lares de Chacras Hotel Boutique." />
+  <link rel="canonical" href="https://laresdechacras.com/la-guia.html" />
+
+  <!-- Open Graph / SEO -->
+  <meta property="og:type" content="blog" />
+  <meta property="og:title" content="La Guía de Mendoza · Lares de Chacras" />
+  <meta property="og:description" content="Ideas para descubrir. Tiempo para disfrutar. Guía editorial de viajes, vinos y gastronomía mendocina." />
+  <meta property="og:image" content="assets/location_primary.jpg" />
+
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "La Guía · Mendoza desde Lares",
+    "description": "Recorridos, sabores y recomendaciones para conocer Mendoza a tu ritmo.",
+    "publisher": {
+      "@type": "Hotel",
+      "name": "Lares de Chacras",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://laresdechacras.com/assets/logo.png"
+      }
+    }
+  }
+  </script>
+
+  <style>
+    :root {
+      --wine:        #732056;
+      --wine-dark:   #471335;
+      --wine-deep:   #320B24;
+      --wine-soft:   rgba(115,32,86,0.08);
+      --mauve:       #BF8FAF;
+      --taupe:       #A69C8A;
+      --taupe-light: #D8D2C7;
+      --sand-bg:     #F5F2EB;
+      --light-bg:    #F8F6F2;
+      --white:       #FFFFFF;
+      --text-dark:   #1C1E22;
+      --text-muted:  #5C6470;
+      --border-light: rgba(166,156,138,0.22);
+      --font-serif:  'Cormorant Garamond', Georgia, serif;
+      --font-sans:   'Jost', 'Helvetica Neue', sans-serif;
+      --transition:  0.38s cubic-bezier(0.25,0.46,0.45,0.94);
+      --radius:      2px;
+      --dark-bg:     #121418;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body {
+      font-family: var(--font-sans);
+      background: var(--light-bg);
+      color: var(--text-dark);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+    img { display: block; max-width: 100%; height: auto; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    .container { max-width: 1360px; margin: 0 auto; padding: 0 2.5rem; }
+
+    /* BOTONES */
+    .btn-primary {
+      display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem;
+      padding: 0.9rem 2rem; background: var(--wine); color: var(--white);
+      font-family: var(--font-sans); font-size: 0.72rem; font-weight: 600;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      border: 1px solid var(--wine); cursor: pointer; border-radius: var(--radius);
+      transition: all var(--transition); box-shadow: 0 4px 16px rgba(115,32,86,0.25);
+    }
+    .btn-primary:hover {
+      background: var(--wine-dark); border-color: var(--wine-dark);
+      transform: translateY(-2px); color: var(--white);
+    }
+
+    .btn-outline-wine {
+      display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem;
+      padding: 0.85rem 1.8rem; background: transparent; color: var(--wine);
+      font-family: var(--font-sans); font-size: 0.72rem; font-weight: 600;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      border: 1px solid var(--wine); cursor: pointer; border-radius: var(--radius);
+      transition: all var(--transition);
+    }
+    .btn-outline-wine:hover {
+      background: var(--wine); color: var(--white);
+      transform: translateY(-2px);
+    }
+
+    .btn-text-link {
+      display: inline-flex; align-items: center; gap: 0.55rem;
+      font-family: var(--font-sans); font-size: 0.74rem; font-weight: 700;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--wine); transition: all var(--transition);
+    }
+    .btn-text-link:hover {
+      color: var(--wine-dark);
+      transform: translateX(4px);
+    }
+
+    /* HEADER Y NAVEGACIÓN FIJA */
+    .header-fixed-wrapper { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; transition: all var(--transition); }
+    .top-promo-bar {
+      background: linear-gradient(90deg,#320B24 0%,#732056 35%,#8C286A 50%,#732056 65%,#320B24 100%);
+      background-size: 200% 100%; animation: promoGlow 8s ease infinite;
+      color: var(--white); padding: 0.32rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.12); z-index: 1001;
+    }
+    @keyframes promoGlow { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
+    .promo-inner { display: flex; align-items: center; justify-content: center; }
+    .promo-text { color: var(--white); font-family: var(--font-sans); font-weight: 300; font-size: 0.76rem; text-align: center; }
+    .promo-text strong { font-weight: 600; }
+    #navbar {
+      width: 100%; padding: 0.45rem 0; transition: all var(--transition);
+      background: rgba(18,20,24,0.96); backdrop-filter: blur(16px);
+      border-bottom: 1px solid rgba(191,143,175,0.18);
+    }
+    .header-fixed-wrapper.scrolled #navbar { background: rgba(18,20,24,0.98); padding: 0.25rem 0; }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo-img { height: 52px; width: auto; object-fit: contain; }
+    .nav-links { display: flex; align-items: center; gap: 2.2rem; }
+    .nav-links a {
+      font-family: var(--font-sans); font-size: 0.72rem; font-weight: 500;
+      letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.88);
+      transition: color var(--transition); position: relative;
+    }
+    .nav-links a::after {
+      content: ''; position: absolute; bottom: -6px; left: 0; width: 0;
+      height: 1px; background: var(--mauve); transition: width var(--transition);
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--mauve); }
+    .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+    .nav-right { display: flex; align-items: center; gap: 1.4rem; }
+    .nav-cta {
+      display: inline-block; padding: 0.65rem 1.6rem; background: var(--wine);
+      color: var(--white); font-family: var(--font-sans); font-size: 0.68rem;
+      font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase;
+      border-radius: var(--radius); transition: all var(--transition); border: none; cursor: pointer;
+    }
+    .nav-cta:hover { background: var(--wine-dark); transform: translateY(-1px); }
+    .nav-hamburger { display: none; flex-direction: column; gap: 6px; cursor: pointer; background: none; border: none; padding: 6px; }
+    .nav-hamburger span { display: block; width: 26px; height: 1.5px; background: var(--white); }
+
+    .mobile-menu {
+      display: none; position: fixed; inset: 0; background: var(--dark-bg);
+      z-index: 9999; flex-direction: column; align-items: center; justify-content: center; gap: 1.8rem;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { font-family: var(--font-serif); font-size: 2rem; font-weight: 300; font-style: italic; color: var(--white); }
+    .mobile-menu a:hover, .mobile-menu a.active { color: var(--mauve); }
+    .mobile-close { position: absolute; top: 2rem; right: 2rem; background: none; border: none; color: var(--white); font-size: 2rem; cursor: pointer; }
+
+    /* FLOATING WIDGET */
+    .floating-widget-wrap {
+      position: fixed; bottom: 2rem; right: 2rem; z-index: 900;
+      display: flex; flex-direction: column; align-items: center; gap: 0.75rem;
+    }
+    .floating-seals { display: flex; flex-direction: column; align-items: center; gap: 0.8rem; }
+    .floating-seal-img {
+      height: 62px; width: auto; object-fit: contain;
+      filter: drop-shadow(0 4px 14px rgba(0,0,0,0.4)); cursor: default; user-select: none;
+    }
+    .floating-seal-img.ta-seal { height: 72px; }
+    .floating-whatsapp {
+      width: 56px; height: 56px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 6px 25px rgba(37,211,102,0.45); transition: all var(--transition);
+    }
+    .floating-whatsapp img { width: 100%; height: 100%; object-fit: contain; }
+    .floating-whatsapp:hover { transform: scale(1.08) translateY(-2px); }
+
+    /* TYPOGRAPHY HELPERS */
+    .section-label {
+      font-family: var(--font-sans); font-size: 0.72rem; font-weight: 600;
+      letter-spacing: 0.24em; text-transform: uppercase; color: var(--wine);
+      display: inline-flex; align-items: center; gap: 0.75rem; margin-bottom: 0.9rem;
+    }
+    .section-label::before {
+      content: ''; display: inline-block; width: 1.8rem; height: 1px; background: var(--mauve);
+    }
+
+    /* ============================================================
+       1. ENCABEZADO EDITORIAL
+    ============================================================ */
+    #guia-hero {
+      padding: 10.5rem 0 4.5rem;
+      background: var(--light-bg);
+      border-bottom: 1px solid var(--border-light);
+    }
+    .editorial-head-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      align-items: flex-end;
+      gap: 4.5rem;
+    }
+    .editorial-head-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.8rem, 5vw, 4.2rem);
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.08;
+      color: var(--text-dark);
+      letter-spacing: -0.01em;
+    }
+    .editorial-head-right {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      gap: 1.4rem;
+    }
+    .editorial-head-lead {
+      font-family: var(--font-sans);
+      font-size: 1.05rem;
+      font-weight: 300;
+      line-height: 1.85;
+      color: var(--text-muted);
+    }
+
+    /* ============================================================
+       2. NOTA DESTACADA (MAGAZINE HERO)
+    ============================================================ */
+    #featured-article {
+      padding: 4.5rem 0 3.5rem;
+      background: var(--white);
+      border-bottom: 1px solid var(--border-light);
+    }
+    .featured-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    .featured-media-col {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--radius);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.06);
+    }
+    .featured-media-col a {
+      display: block;
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 16 / 10;
+    }
+    .featured-media-col img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 30%;
+      transition: transform 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .featured-media-col:hover img {
+      transform: scale(1.035);
+    }
+    .featured-badge-overlay {
+      position: absolute;
+      top: 1.5rem;
+      left: 1.5rem;
+      background: rgba(18,20,24,0.85);
+      backdrop-filter: blur(8px);
+      color: var(--white);
+      padding: 0.4rem 0.9rem;
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      z-index: 2;
+    }
+    .featured-content-col {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding-right: 1.5rem;
+    }
+    .article-cat-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--wine);
+      margin-bottom: 1rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .article-cat-label::before {
+      content: '';
+      display: inline-block;
+      width: 12px;
+      height: 2px;
+      background: var(--wine);
+    }
+    .featured-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.1rem, 3.4vw, 2.9rem);
+      font-weight: 400;
+      font-style: italic;
+      line-height: 1.16;
+      color: var(--text-dark);
+      margin-bottom: 1.25rem;
+      transition: color var(--transition);
+    }
+    .featured-title a:hover {
+      color: var(--wine);
+    }
+    .featured-summary {
+      font-size: 1.02rem;
+      font-weight: 300;
+      line-height: 1.85;
+      color: var(--text-muted);
+      margin-bottom: 1.8rem;
+    }
+    .featured-footer-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      padding-top: 1.2rem;
+      border-top: 1px solid var(--border-light);
+    }
+    .read-time-pill {
+      font-size: 0.74rem;
+      color: var(--taupe);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+
+    /* ============================================================
+       3. EXPLORAR POR TEMA & BUSCADOR
+    ============================================================ */
+    #topics-filter {
+      padding: 3.2rem 0 0.5rem;
+      background: var(--light-bg);
+      border-bottom: none;
+    }
+    .topics-header-row {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 2rem;
+      margin-bottom: 1.8rem;
+      flex-wrap: wrap;
+    }
+    .topics-title-block {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+    .topics-subtitle {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      font-weight: 300;
+    }
+    .filter-chips-list {
+      display: flex;
+      align-items: center;
+      gap: 0.65rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.4rem;
+      padding: 0;
+    }
+    
+    .filter-chip {
+      padding: 0.6rem 1.35rem;
+      background: var(--white);
+      color: var(--text-dark);
+      font-family: var(--font-sans);
+      font-size: 0.74rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border: 1px solid var(--border-light);
+      border-radius: 40px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all var(--transition);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .filter-chip:hover {
+      border-color: var(--mauve);
+      color: var(--wine);
+      background: #FAF6F8;
+      transform: translateY(-1px);
+    }
+    .filter-chip.active {
+      background: var(--wine);
+      color: var(--white);
+      border-color: var(--wine);
+      box-shadow: 0 4px 14px rgba(115,32,86,0.22);
+      transform: none;
+    }
+
+    /* Buscador discreto */
+    .search-block {
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      min-width: 290px;
+    }
+    .search-label {
+      font-size: 0.65rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: var(--text-muted);
+    }
+    .search-input-wrap {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+    .search-icon {
+      position: absolute;
+      left: 1rem;
+      color: var(--taupe);
+      pointer-events: none;
+      display: flex;
+      align-items: center;
+    }
+    .search-input {
+      width: 100%;
+      padding: 0.62rem 2.4rem 0.62rem 2.5rem;
+      background: var(--white);
+      border: 1px solid var(--border-light);
+      border-radius: 30px;
+      font-family: var(--font-sans);
+      font-size: 0.82rem;
+      color: var(--text-dark);
+      transition: all var(--transition);
+      outline: none;
+    }
+    .search-input:focus {
+      border-color: var(--wine);
+      box-shadow: 0 0 0 3px rgba(115,32,86,0.12);
+    }
+    .search-clear-btn {
+      position: absolute;
+      right: 0.85rem;
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      display: none;
+      align-items: center;
+      padding: 4px;
+    }
+    .search-clear-btn:hover { color: var(--wine); }
+
+    #articles-grid-section {
+      padding: 1.5rem 0 3.2rem;
+      background: var(--light-bg);
+    }
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3.2rem 2.5rem;
+    }
+
+    /* Tarjeta abierta sobre el fondo (editorial magazine card) */
+    .article-card {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      background: transparent;
+      transition: transform var(--transition);
+    }
+    .article-card:hover {
+      transform: translateY(-4px);
+    }
+    .card-media-wrap {
+      position: relative;
+      overflow: hidden;
+      aspect-ratio: 16 / 10;
+      border-radius: var(--radius);
+      margin-bottom: 1.4rem;
+      background: #E8E3DA;
+    }
+    .card-media-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 30%;
+      transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .article-card:hover .card-media-wrap img {
+      transform: scale(1.05);
+    }
+    .card-meta-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      margin-bottom: 0.85rem;
+    }
+    .card-cat {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--wine);
+    }
+    .card-read-time {
+      font-size: 0.68rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--taupe);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .card-title {
+      font-family: var(--font-serif);
+      font-size: 1.55rem;
+      font-weight: 400;
+      font-style: italic;
+      line-height: 1.24;
+      color: var(--text-dark);
+      margin-bottom: 0.85rem;
+      transition: color var(--transition);
+    }
+    .article-card:hover .card-title {
+      color: var(--wine);
+    }
+    .card-excerpt {
+      font-family: var(--font-sans);
+      font-size: 0.92rem;
+      font-weight: 300;
+      line-height: 1.75;
+      color: var(--text-muted);
+      margin-bottom: 1.3rem;
+      flex-grow: 1;
+    }
+    .card-action-row {
+      margin-top: auto;
+      padding-top: 0.6rem;
+    }
+    .card-link {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--wine);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      transition: transform var(--transition);
+    }
+    .article-card:hover .card-link {
+      transform: translateX(4px);
+    }
+
+    /* Estado vacío sin resultados */
+    .no-results-box {
+      grid-column: 1 / -1;
+      padding: 5rem 2rem;
+      text-align: center;
+      background: var(--white);
+      border: 1px dashed var(--border-light);
+      border-radius: var(--radius);
+      display: none;
+    }
+    .no-results-icon {
+      color: var(--mauve);
+      margin-bottom: 1.2rem;
+    }
+    .no-results-title {
+      font-family: var(--font-serif);
+      font-size: 2rem;
+      font-style: italic;
+      font-weight: 300;
+      color: var(--text-dark);
+      margin-bottom: 0.6rem;
+    }
+    .no-results-desc {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      max-width: 520px;
+      margin: 0 auto 1.8rem;
+      line-height: 1.7;
+    }
+
+
+    /* ============================================================
+       6. PAGINACIÓN
+    ============================================================ */
+    .pagination-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 2.5rem;
+      padding-top: 0;
+      border: none;
+    }
+    .page-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border: 1px solid var(--border-light);
+      background: var(--white);
+      color: var(--text-dark);
+      font-family: var(--font-sans);
+      font-size: 0.78rem;
+      font-weight: 600;
+      border-radius: var(--radius);
+      cursor: pointer;
+      transition: all var(--transition);
+    }
+    .page-btn:hover {
+      border-color: var(--wine);
+      color: var(--wine);
+      background: #FAF6F8;
+    }
+    .page-btn.active {
+      background: var(--wine);
+      color: var(--white);
+      border-color: var(--wine);
+    }
+    .page-btn-nav {
+      width: auto;
+      padding: 0 1.2rem;
+      gap: 0.4rem;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    /* ============================================================
+       7. CIERRE EDITORIAL (BANNER CTA ESTILO SERVICIOS)
+    ============================================================ */
+    #guia-closing {
+      position: relative;
+      min-height: 480px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 5.5rem 2rem;
+      text-align: center;
+      background: #14171d url('assets/cta_garden_bg.jpg') center 45% / cover no-repeat;
+      color: var(--white);
+      overflow: hidden;
+    }
+    #guia-closing::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(18, 20, 24, 0.65) 0%,
+        rgba(66, 17, 48, 0.76) 50%,
+        rgba(18, 20, 24, 0.9) 100%
+      );
+      z-index: 1;
+    }
+    .closing-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .closing-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.2rem, 3.8vw, 3.2rem);
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.15;
+      margin-bottom: 0.75rem;
+      color: var(--white);
+    }
+    .closing-desc {
+      font-family: var(--font-sans);
+      font-size: 1.02rem;
+      font-weight: 300;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 2rem;
+    }
+    .closing-actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+    }
+    .btn-cta-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.95rem 2.2rem;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      color: var(--white);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      border-radius: var(--radius);
+      font-family: var(--font-sans);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all var(--transition);
+      text-decoration: none;
+    }
+    .btn-cta-secondary:hover {
+      background: rgba(255, 255, 255, 0.22);
+      border-color: var(--white);
+      color: var(--white);
+      transform: translateY(-2px);
+    }
+
+    /* ============================================================
+       FOOTER GLOBAL - EDITORIAL BOUTIQUE
+    ============================================================ */
+    #footer {
+      background: #111216;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 5.5rem 0 2.5rem;
+      color: rgba(255, 255, 255, 0.7);
+      position: relative;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.35fr 1fr 1fr 1.25fr;
+      gap: 3.5rem;
+      margin-bottom: 4.5rem;
+    }
+    .footer-brand {
+      display: flex;
+      flex-direction: column;
+    }
+    .footer-brand .footer-logo-img {
+      height: 78px;
+      width: auto;
+      object-fit: contain;
+      filter: brightness(0) invert(1);
+      margin-bottom: 1.4rem;
+      align-self: flex-start;
+    }
+    .footer-brand-desc {
+      font-family: var(--font-sans);
+      font-size: 0.84rem;
+      font-weight: 300;
+      line-height: 1.85;
+      color: rgba(255, 255, 255, 0.55);
+      margin-bottom: 1.8rem;
+      max-width: 320px;
+    }
+    .footer-seals-block {
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+    .footer-seals-label {
+      font-family: var(--font-sans);
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--mauve);
+    }
+    .footer-seals-row {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+    }
+    .footer-seal-img {
+      height: 56px;
+      width: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 4px 10px rgba(0,0,0,0.35));
+      transition: transform var(--transition);
+      cursor: default;
+      user-select: none;
+    }
+    .footer-seal-img.ta-seal { height: 66px; }
+    .footer-seal-img:hover { transform: scale(1.05); }
+
+    .footer-nav-col {
+      display: flex;
+      flex-direction: column;
+    }
+    .footer-subgroup {
+      display: flex;
+      flex-direction: column;
+    }
+    .footer-nav-col .footer-subgroup:first-child { min-height: 180px; }
+    .footer-subgroup + .footer-subgroup { margin-top: 2rem; }
+    .footer-col-title {
+      font-family: var(--font-sans);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--mauve);
+      margin-bottom: 1.15rem;
+    }
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .footer-links a {
+      font-family: var(--font-sans);
+      font-size: 0.83rem;
+      color: rgba(255, 255, 255, 0.62);
+      transition: all 0.22s ease;
+      display: inline-block;
+      text-decoration: none;
+    }
+    .footer-links a:hover, .footer-links a.active {
+      color: var(--white);
+      transform: translateX(4px);
+    }
+    .footer-contact-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      margin-bottom: 1.8rem;
+    }
+    .footer-contact-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.85rem;
+      padding: 0;
+      background: transparent;
+      border: none;
+      transition: all var(--transition);
+      text-decoration: none;
+      color: rgba(255, 255, 255, 0.7);
+    }
+    .footer-contact-card:hover {
+      transform: translateX(3px);
+      color: var(--white);
+    }
+    .footer-contact-icon {
+      color: var(--mauve);
+      width: 20px;
+      height: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .footer-contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+    }
+    .footer-contact-lbl {
+      font-size: 0.62rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--mauve);
+      font-weight: 600;
+    }
+    .footer-contact-val {
+      font-size: 0.82rem;
+      line-height: 1.45;
+      color: rgba(255, 255, 255, 0.82);
+      transition: color var(--transition);
+    }
+    .footer-contact-card:hover .footer-contact-val { color: var(--white); }
+    .footer-social-row {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      margin-top: 0.5rem;
+    }
+    .footer-social-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+      border: none;
+      color: rgba(255, 255, 255, 0.65);
+      text-decoration: none;
+      transition: all var(--transition);
+    }
+    .footer-social-link:hover {
+      color: var(--white);
+      transform: translateY(-2px);
+    }
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.07);
+      padding-top: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      font-family: var(--font-sans);
+      font-size: 0.75rem;
+      color: rgba(255, 255, 255, 0.4);
+    }
+    .footer-bottom a {
+      color: rgba(255, 255, 255, 0.5);
+      text-decoration: none;
+      transition: color var(--transition);
+    }
+    .footer-bottom a:hover { color: var(--mauve); }
+
+    /* ANIMACIONES FADE-UP */
+    .fade-up { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .fade-up.in { opacity: 1; transform: translateY(0); }
+
+    /* RESPONSIVE */
+    @media (max-width: 1024px) {
+      .editorial-head-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .featured-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .featured-content-col { padding-right: 0; }
+      .articles-grid { grid-template-columns: repeat(2, 1fr); gap: 2.5rem 1.8rem; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+      #topics-filter { top: 78px; }
+    }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+      #guia-hero { padding: 8.5rem 0 3.5rem; }
+      .featured-grid { gap: 1.8rem; }
+      .articles-grid { grid-template-columns: 1fr; gap: 2.4rem; }
+      .topics-header-row { flex-direction: column; align-items: stretch; gap: 1.4rem; }
+      .search-block { min-width: 100%; max-width: 100%; }
+      .filter-chips-list { gap: 0.5rem; }
+      .filter-chip { padding: 0.5rem 1.1rem; font-size: 0.7rem; }
+      #guia-closing { min-height: 420px; padding: 4.5rem 1.5rem; }
+      .closing-actions { flex-direction: column; width: 100%; gap: 0.9rem; }
+      .closing-actions .btn-primary,
+      .closing-actions .btn-cta-secondary { width: 100%; }
+      .footer-grid { grid-template-columns: 1fr; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .fade-up { opacity: 1; transform: none; transition: none; }
+      * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Floating Widget (Sellos + WhatsApp) -->
+  <div class="floating-widget-wrap">
+    <div class="floating-seals">
+      <img src="assets/michelin_key_2025.png" alt="Llave Michelin 2025" class="floating-seal-img" title="Guía Michelin 2025 — Una Llave Michelin" />
+      <img src="assets/tripadvisor_travelers_choice_v2.png" alt="TripAdvisor Travelers Choice" class="floating-seal-img ta-seal" title="TripAdvisor Travellers' Choice 2026" />
+    </div>
+    <a href="https://wa.me/5492613738750?text=Hola%20Lares%20de%20Chacras,%20estoy%20leyendo%20La%20Gu%C3%ADa%20y%20me%20gustar%C3%ADa%20hacer%20una%20consulta." target="_blank" rel="noopener" class="floating-whatsapp" aria-label="WhatsApp">
+      <img src="assets/WhatsApp.webp" alt="WhatsApp" />
+    </a>
+  </div>
+
+  <!-- Menú Mobile -->
+  <nav class="mobile-menu" id="mobileMenu" aria-label="Navegación móvil">
+    <button class="mobile-close" id="mobileClose" aria-label="Cerrar menú">&times;</button>
+    <a href="el-hotel.html">El Hotel</a>
+    <a href="habitaciones.html">Habitaciones</a>
+    <a href="servicios.html">Servicios</a>
+    <a href="index.html#cava">Cava y Vinos</a>
+    <a href="experiencias.html">Experiencias</a>
+    <a href="https://www.laresresto.com/" target="_blank" rel="noopener">Restaurante</a>
+    <a href="la-guia.html" class="active">La Guía</a>
+    <a href="contacto.html">Contacto</a>
+    <button class="btn-primary trigger-booking" style="margin-top:1.5rem">Reservar</button>
+  </nav>
+
+  <!-- Header Fijo -->
+  <div class="header-fixed-wrapper" id="headerFixedWrapper">
+    <div class="top-promo-bar">
+      <div class="container promo-inner">
+        <p class="promo-text">Cancelación gratuita hasta 14 días antes con la <strong>tarifa flexible.</strong></p>
+      </div>
+    </div>
+    <header id="navbar">
+      <div class="container">
+        <div class="nav-inner">
+          <a href="index.html"><img src="assets/logo.png" alt="Lares de Chacras Hotel Boutique" class="nav-logo-img" /></a>
+          <ul class="nav-links">
+            <li><a href="el-hotel.html">El Hotel</a></li>
+            <li><a href="habitaciones.html">Habitaciones</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="index.html#cava">Cava y Vinos</a></li>
+            <li><a href="experiencias.html">Experiencias</a></li>
+            <li><a href="https://www.laresresto.com/" target="_blank" rel="noopener">Restaurante</a></li>
+            <li><a href="la-guia.html" class="active">La Guía</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+          <div class="nav-right">
+            <button class="nav-cta trigger-booking">Reservar</button>
+            <button class="nav-hamburger" id="hamburgerBtn" aria-label="Abrir Menú">
+              <span></span><span></span><span></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+  </div>
+
+  <main id="main-content">
+
+    <!-- ============================================================
+         1. ENCABEZADO EDITORIAL
+    ============================================================ -->
+    <section id="guia-hero" aria-label="Encabezado editorial La Guía">
+      <div class="container">
+        <div class="editorial-head-grid">
+          <div class="editorial-head-left fade-up">
+            <p class="section-label">LA GUÍA · MENDOZA DESDE LARES</p>
+            <h1 class="editorial-head-title">Ideas para descubrir.<br>Tiempo para disfrutar.</h1>
+          </div>
+          <div class="editorial-head-right fade-up">
+            <p class="editorial-head-lead">
+              Recorridos, sabores y recomendaciones para conocer Mendoza a tu ritmo. Una guía para empezar a imaginar tu viaje y seguir descubriendo durante tu estadía.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         2. NOTA DESTACADA (HERO EDITORIAL)
+    ============================================================ -->
+    <section id="featured-article" aria-label="Artículo destacado">
+      <div class="container">
+        <article class="featured-grid fade-up">
+          <div class="featured-media-col">
+            <a href="que-hacer-en-mendoza-en-3-dias.html" aria-label="Leer nota destacada: Qué hacer en Mendoza en 3 días">
+              <span class="featured-badge-overlay">
+                <i data-lucide="star" style="width:12px;height:12px"></i> Nota destacada
+              </span>
+              <img src="assets/location_primary.jpg" alt="Viñedos y paisajes de Mendoza desde Chacras de Coria" width="760" height="475" loading="eager" />
+            </a>
+          </div>
+          <div class="featured-content-col">
+            <div class="article-cat-label">PLANIFICÁ TU VIAJE</div>
+            <h2 class="featured-title">
+              <a href="que-hacer-en-mendoza-en-3-dias.html">
+                Qué hacer en Mendoza en 3 días: vino, montaña y una pausa en Chacras
+              </a>
+            </h2>
+            <p class="featured-summary">
+              Una propuesta para combinar bodegas, paisajes y momentos de descanso, tomando Chacras de Coria como punto de partida.
+            </p>
+            <div class="featured-footer-row">
+              <span class="read-time-pill">
+                <i data-lucide="clock" style="width:13px;height:13px"></i> 7 min de lectura
+              </span>
+              <a href="que-hacer-en-mendoza-en-3-dias.html" class="btn-text-link">
+                LEER LA GUÍA →
+              </a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============================================================
+         3. EXPLORAR POR TEMA & BUSCADOR
+    ============================================================ -->
+    <section id="topics-filter" aria-label="Filtros y buscador de artículos">
+      <div class="container">
+        <div class="topics-header-row">
+          <div class="topics-title-block">
+            <span class="section-label" style="margin-bottom:0.25rem;">EXPLORAR POR TEMA</span>
+            <p class="topics-subtitle">Elegí una categoría o explorá todas las publicaciones</p>
+          </div>
+
+          <div class="search-block">
+            <label for="guideSearchInput" class="search-label">¿Qué te gustaría descubrir?</label>
+            <div class="search-input-wrap">
+              <span class="search-icon"><i data-lucide="search" style="width:15px;height:15px"></i></span>
+              <input type="text" id="guideSearchInput" class="search-input" placeholder="Buscar en la guía" aria-label="Buscar artículos en la guía" autocomplete="off" />
+              <button type="button" id="searchClearBtn" class="search-clear-btn" aria-label="Limpiar búsqueda">
+                <i data-lucide="x" style="width:14px;height:14px"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <nav class="filter-chips-list" id="filterChips" aria-label="Filtrar por categoría">
+          <button class="filter-chip active" data-category="todas" type="button">Todas las notas</button>
+          <button class="filter-chip" data-category="chacras-de-coria" type="button">Chacras de Coria</button>
+          <button class="filter-chip" data-category="vinos-y-bodegas" type="button">Vinos y bodegas</button>
+          <button class="filter-chip" data-category="sabores-de-mendoza" type="button">Sabores de Mendoza</button>
+          <button class="filter-chip" data-category="naturaleza-y-recorridos" type="button">Naturaleza y recorridos</button>
+          <button class="filter-chip" data-category="consejos-de-viaje" type="button">Consejos de viaje</button>
+          <button class="filter-chip" data-category="en-lares" type="button">En Lares</button>
+        </nav>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         4. GRILLA DE ARTÍCULOS (PARTE 1: NOTAS 1 A 3)
+    ============================================================ -->
+    <section id="articles-grid-section" aria-label="Artículos de La Guía">
+      <div class="container">
+        
+        <div class="articles-grid" id="articlesGrid">
+
+          <!-- NOTA 1 -->
+          <article class="article-card fade-up" data-category="chacras-de-coria" data-keywords="chacras de coria paseo pueblo ritmo bicicletas descanso jardin lares">
+            <div class="card-media-wrap">
+              <a href="que-hacer-en-mendoza-en-3-dias.html#chacras-ritmo" aria-label="Leer nota: Chacras de Coria: una invitación a bajar el ritmo">
+                <img src="assets/casa_principal.jpg" alt="Entorno sereno y arquitectura cálida de Lares en Chacras de Coria" width="480" height="300" loading="lazy" />
+              </a>
+            </div>
+            <div class="card-meta-top">
+              <span class="card-cat">Chacras de Coria</span>
+              <span class="card-read-time"><i data-lucide="clock" style="width:11px;height:11px"></i> 4 min</span>
+            </div>
+            <h3 class="card-title">
+              <a href="que-hacer-en-mendoza-en-3-dias.html#chacras-ritmo">Chacras de Coria: una invitación a bajar el ritmo</a>
+            </h3>
+            <p class="card-excerpt">
+              Paseos tranquilos, rincones para descubrir y una forma más pausada de disfrutar Mendoza.
+            </p>
+            <div class="card-action-row">
+              <a href="que-hacer-en-mendoza-en-3-dias.html#chacras-ritmo" class="card-link">Leer nota →</a>
+            </div>
+          </article>
+
+          <!-- NOTA 2 -->
+          <article class="article-card fade-up" data-category="vinos-y-bodegas" data-keywords="vinos bodegas lujan de cuyo copas degustacion traslados visitas">
+            <div class="card-media-wrap">
+              <a href="que-hacer-en-mendoza-en-3-dias.html#bodegas-lujan" aria-label="Leer nota: Cómo organizar un día de bodegas en Luján de Cuyo">
+                <img src="assets/guia_bodegas_lujan.jpg" alt="Viñedos y copas de vino en Luján de Cuyo Mendoza" width="480" height="300" loading="lazy" />
+              </a>
+            </div>
+            <div class="card-meta-top">
+              <span class="card-cat">Vinos y bodegas</span>
+              <span class="card-read-time"><i data-lucide="clock" style="width:11px;height:11px"></i> 6 min</span>
+            </div>
+            <h3 class="card-title">
+              <a href="que-hacer-en-mendoza-en-3-dias.html#bodegas-lujan">Cómo organizar un día de bodegas en Luján de Cuyo</a>
+            </h3>
+            <p class="card-excerpt">
+              Qué tener en cuenta al elegir visitas, coordinar traslados y dejar tiempo para disfrutar cada parada.
+            </p>
+            <div class="card-action-row">
+              <a href="que-hacer-en-mendoza-en-3-dias.html#bodegas-lujan" class="card-link">Leer nota →</a>
+            </div>
+          </article>
+
+          <!-- NOTA 3 -->
+          <article class="article-card fade-up" data-category="vinos-y-bodegas" data-keywords="bicicleta bike wine tour viñedos paseos lujan chacras">
+            <div class="card-media-wrap">
+              <a href="experiencias.html" aria-label="Leer nota: Bodegas en bicicleta: otra forma de recorrer Mendoza">
+                <img src="assets/exp_bicicletas.webp" alt="Paseo en bicicleta entre viñedos de Chacras de Coria" width="480" height="300" loading="lazy" />
+              </a>
+            </div>
+            <div class="card-meta-top">
+              <span class="card-cat">Vinos y bodegas</span>
+              <span class="card-read-time"><i data-lucide="clock" style="width:11px;height:11px"></i> 4 min</span>
+            </div>
+            <h3 class="card-title">
+              <a href="experiencias.html">Bodegas en bicicleta: otra forma de recorrer Mendoza</a>
+            </h3>
+            <p class="card-excerpt">
+              Ideas para planear un paseo entre viñedos, combinar visitas y consultar las opciones disponibles desde Lares.
+            </p>
+            <div class="card-action-row">
+              <a href="experiencias.html" class="card-link">Leer nota →</a>
+            </div>
+          </article>
+
+          <!-- NOTA 4 -->
+          <article class="article-card fade-up" data-category="sabores-de-mendoza" data-keywords="gastronomia cocina restaurante lares resto sabores maridaje mesa cena almuerzo">
+            <div class="card-media-wrap">
+              <a href="https://www.laresresto.com/" target="_blank" rel="noopener" aria-label="Leer nota: Vino y cocina mendocina: el placer de compartir la mesa">
+                <img src="assets/resto_plato_vino.jpg" alt="Platos de cocina mendocina y copa de vino en Lares Restó" width="480" height="300" loading="lazy" />
+              </a>
+            </div>
+            <div class="card-meta-top">
+              <span class="card-cat">Sabores de Mendoza</span>
+              <span class="card-read-time"><i data-lucide="clock" style="width:11px;height:11px"></i> 5 min</span>
+            </div>
+            <h3 class="card-title">
+              <a href="https://www.laresresto.com/" target="_blank" rel="noopener">Vino y cocina mendocina: el placer de compartir la mesa</a>
+            </h3>
+            <p class="card-excerpt">
+              Una mirada a los sabores y momentos que hacen de la gastronomía parte del viaje.
+            </p>
+            <div class="card-action-row">
+              <a href="https://www.laresresto.com/" target="_blank" rel="noopener" class="card-link">Leer nota →</a>
+            </div>
+          </article>
+
+          <!-- NOTA 5 -->
+          <article class="article-card fade-up" data-category="naturaleza-y-recorridos" data-keywords="cordillera andes montaña excursion alta montaña potrerillos paisaje naturaleza">
+            <div class="card-media-wrap">
+              <a href="que-hacer-en-mendoza-en-3-dias.html#salida-cordillera" aria-label="Leer nota: Una salida a la cordillera: cómo preparar tu día">
+                <img src="assets/banner_montana.jpg" alt="Cordillera de los Andes imponente en Mendoza" width="480" height="300" loading="lazy" />
+              </a>
+            </div>
+            <div class="card-meta-top">
+              <span class="card-cat">Naturaleza y recorridos</span>
+              <span class="card-read-time"><i data-lucide="clock" style="width:11px;height:11px"></i> 5 min</span>
+            </div>
+            <h3 class="card-title">
+              <a href="que-hacer-en-mendoza-en-3-dias.html#salida-cordillera">Una salida a la cordillera: cómo preparar tu día</a>
+            </h3>
+            <p class="card-excerpt">
+              Recomendaciones generales para organizar una excursión y consultar las condiciones del recorrido antes de salir.
+            </p>
+            <div class="card-action-row">
+              <a href="que-hacer-en-mendoza-en-3-dias.html#salida-cordillera" class="card-link">Leer nota →</a>
+            </div>
+          </article>
+
+          <!-- NOTA 6 -->
+          <article class="article-card fade-up" data-category="consejos-de-viaje" data-keywords="consejos viaje reserva estadia hotel alojamiento ubicacion movilidad">
+            <div class="card-media-wrap">
+              <a href="habitaciones.html#rooms-conditions" aria-label="Leer nota: Qué tener en cuenta antes de reservar tu estadía en Mendoza">
+                <img src="assets/before_booking_main.jpg" alt="Entorno del hotel Lares de Chacras en Mendoza" width="480" height="300" loading="lazy" />
+              </a>
+            </div>
+            <div class="card-meta-top">
+              <span class="card-cat">Consejos de viaje</span>
+              <span class="card-read-time"><i data-lucide="clock" style="width:11px;height:11px"></i> 6 min</span>
+            </div>
+            <h3 class="card-title">
+              <a href="habitaciones.html#rooms-conditions">Qué tener en cuenta antes de reservar tu estadía en Mendoza</a>
+            </h3>
+            <p class="card-excerpt">
+              Ubicación, movilidad y tipo de viaje: algunas decisiones que ayudan a elegir dónde alojarte.
+            </p>
+            <div class="card-action-row">
+              <a href="habitaciones.html#rooms-conditions" class="card-link">Leer nota →</a>
+            </div>
+          </article>
+
+          <!-- NOTA 7 -->
+          <article class="article-card fade-up" data-category="en-lares" data-keywords="vina lares vino cava botella identidad familia bodega">
+            <div class="card-media-wrap">
+              <a href="index.html#cava" aria-label="Leer nota: Viña Lares: una copa que cuenta nuestra identidad">
+                <img src="assets/cava_identidad.jpg" alt="Copa de vino Viña Lares en la cava subterránea" width="480" height="300" loading="lazy" />
+              </a>
+            </div>
+            <div class="card-meta-top">
+              <span class="card-cat">En Lares</span>
+              <span class="card-read-time"><i data-lucide="clock" style="width:11px;height:11px"></i> 3 min</span>
+            </div>
+            <h3 class="card-title">
+              <a href="index.html#cava">Viña Lares: una copa que cuenta nuestra identidad</a>
+            </h3>
+            <p class="card-excerpt">
+              El vino de la bodega familiar y su lugar en la experiencia de nuestra casa.
+            </p>
+            <div class="card-action-row">
+              <a href="index.html#cava" class="card-link">Leer nota →</a>
+            </div>
+          </article>
+
+          <!-- NOTA 8 -->
+          <article class="article-card fade-up" data-category="en-lares" data-keywords="dia en lares jardin piscina desayuno calma descanso relajacion">
+            <div class="card-media-wrap">
+              <a href="servicios.html" aria-label="Leer nota: Un día en Lares: jardín, sabores y tiempo para vos">
+                <img src="assets/desayuno_lares.jpg" alt="Desayuno artesanal y momentos de descanso en Lares de Chacras" width="480" height="300" loading="lazy" />
+              </a>
+            </div>
+            <div class="card-meta-top">
+              <span class="card-cat">En Lares</span>
+              <span class="card-read-time"><i data-lucide="clock" style="width:11px;height:11px"></i> 4 min</span>
+            </div>
+            <h3 class="card-title">
+              <a href="servicios.html">Un día en Lares: jardín, sabores y tiempo para vos</a>
+            </h3>
+            <p class="card-excerpt">
+              Una invitación a disfrutar los espacios de la casa y encontrar tu propio ritmo durante la estadía.
+            </p>
+            <div class="card-action-row">
+              <a href="servicios.html" class="card-link">Leer nota →</a>
+            </div>
+          </article>
+
+          <!-- Mensaje de no resultados -->
+          <div class="no-results-box" id="noResultsBox">
+            <div class="no-results-icon">
+              <i data-lucide="search-x" style="width:48px;height:48px;margin:0 auto"></i>
+            </div>
+            <h4 class="no-results-title">No encontramos publicaciones que coincidan</h4>
+            <p class="no-results-desc">
+              Probá con otro término de búsqueda o restablecé los filtros para descubrir todas las notas de nuestra guía.
+            </p>
+            <button type="button" class="btn-primary" id="emptyResetBtn">
+              Ver todas las notas
+            </button>
+          </div>
+
+        </div>
+
+        <!-- PAGINACIÓN ACCESIBLE -->
+        <nav class="pagination-wrapper" aria-label="Paginación de la guía">
+          <button class="page-btn page-btn-nav" id="prevPageBtn" disabled aria-label="Página anterior">
+            <i data-lucide="chevron-left" style="width:14px;height:14px"></i> Anterior
+          </button>
+          <a href="la-guia.html?page=1" class="page-btn active" aria-current="page">1</a>
+          <a href="la-guia.html?page=2" class="page-btn">2</a>
+          <button class="page-btn page-btn-nav" id="nextPageBtn" aria-label="Página siguiente">
+            Siguiente <i data-lucide="chevron-right" style="width:14px;height:14px"></i>
+          </button>
+        </nav>
+
+      </div>
+    </section>
+
+    <!-- ============================================================
+         7. CIERRE EDITORIAL (BANNER CTA ESTILO SERVICIOS)
+    ============================================================ -->
+    <section id="guia-closing" aria-label="Invitación a descansar en Lares">
+      <div class="container closing-inner fade-up">
+        <h2 class="closing-title">Del recorrido a tu lugar de descanso.</h2>
+        <p class="closing-desc">
+          Conocé nuestras habitaciones y encontrá tu espacio para disfrutar Mendoza.
+        </p>
+        <div class="closing-actions">
+          <a href="habitaciones.html" class="btn-cta-secondary">
+            EXPLORAR HABITACIONES
+          </a>
+          <a href="https://wa.me/5492613738750?text=Hola%20Lares%20de%20Chacras,%20estoy%20viendo%20las%20habitaciones%20desde%20La%20Gu%C3%ADa." target="_blank" rel="noopener" class="btn-primary">
+            CONSULTAR POR WHATSAPP
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER GLOBAL - EDITORIAL BOUTIQUE
+  ============================================================ -->
+  <footer id="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- COLUMNA 1: MARCA & SELLOS -->
+        <div class="footer-brand">
+          <img src="assets/logo.png" alt="Lares de Chacras" class="footer-logo-img" />
+          <p class="footer-brand-desc">
+            Hotel boutique en Chacras de Coria, Mendoza. Un refugio donde el vino, la gastronomía y la calidez del hogar se encuentran.
+          </p>
+          <div class="footer-seals-block">
+            <span class="footer-seals-label">Reconocimientos</span>
+            <div class="footer-seals-row">
+              <img src="assets/michelin_key_2025.png" alt="Una Llave Michelin 2025" class="footer-seal-img" title="Guía Michelin 2025 — Una Llave Michelin" />
+              <img src="assets/tripadvisor_travelers_choice_v2.png" alt="TripAdvisor Travelers Choice" class="footer-seal-img ta-seal" title="TripAdvisor Travellers' Choice 2026" />
+            </div>
+          </div>
+        </div>
+
+        <!-- COLUMNA 2: EL HOTEL & LA ZONA -->
+        <div class="footer-nav-col">
+          <div class="footer-subgroup">
+            <p class="footer-col-title">El Hotel</p>
+            <ul class="footer-links">
+              <li><a href="el-hotel.html">El Hotel</a></li>
+              <li><a href="habitaciones.html">Habitaciones</a></li>
+              <li><a href="habitaciones.html#junior">Casa Vita</a></li>
+              <li><a href="servicios.html">Servicios</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-subgroup">
+            <p class="footer-col-title">La zona</p>
+            <ul class="footer-links">
+              <li><a href="la-guia.html" class="active">La guía</a></li>
+              <li><a href="contacto.html#ubicacion">Cómo llegar</a></li>
+              <li><a href="index.html#faq">Preguntas frecuentes</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- COLUMNA 3: VINO Y MESA + RESERVAS -->
+        <div class="footer-nav-col">
+          <div class="footer-subgroup">
+            <p class="footer-col-title">Vino y mesa</p>
+            <ul class="footer-links">
+              <li><a href="index.html#cava">La cava</a></li>
+              <li><a href="https://www.laresresto.com/" target="_blank" rel="noopener">Lares Restó</a></li>
+              <li><a href="experiencias.html">Experiencias</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-subgroup">
+            <p class="footer-col-title">Reservas</p>
+            <ul class="footer-links">
+              <li><a href="index.html#rooms">Promociones</a></li>
+              <li><a href="contacto.html">Contacto</a></li>
+              <li><a href="https://engine.mews.com/or/laresdechacras" target="_blank" rel="noopener">Check-in online</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- COLUMNA 4: CONTACTO & UBICACIÓN -->
+        <div>
+          <p class="footer-col-title">Ubicación y contacto</p>
+          <div class="footer-contact-list">
+            <a href="https://maps.google.com/?q=Larrea+1266,+M5505+Chacras+de+Coria,+Luj%C3%A1n+de+Cuyo,+Mendoza,+Argentina" target="_blank" rel="noopener" class="footer-contact-card" title="Abrir ubicación en Google Maps">
+              <div class="footer-contact-icon">
+                <i data-lucide="map-pin" style="width:15px;height:15px"></i>
+              </div>
+              <div class="footer-contact-info">
+                <span class="footer-contact-lbl">Dirección</span>
+                <span class="footer-contact-val">Larrea 1266, M5505 Chacras de Coria, Luján de Cuyo, Mendoza, Argentina</span>
+              </div>
+            </a>
+
+            <a href="tel:+542614961061" class="footer-contact-card" title="Llamar a recepción">
+              <div class="footer-contact-icon">
+                <i data-lucide="phone" style="width:15px;height:15px"></i>
+              </div>
+              <div class="footer-contact-info">
+                <span class="footer-contact-lbl">Teléfono</span>
+                <span class="footer-contact-val">+54 261 496-1061</span>
+              </div>
+            </a>
+
+            <a href="https://wa.me/5492613738750" target="_blank" rel="noopener" class="footer-contact-card" title="Conversar por WhatsApp">
+              <div class="footer-contact-icon">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M17.498 14.382c-.301-.15-1.781-.879-2.056-.979-.275-.1-.475-.15-.675.15-.2.299-.775.979-.95 1.179-.175.2-.35.225-.65.075-.3-.15-1.267-.467-2.414-1.488-.893-.795-1.496-1.777-1.671-2.077-.175-.3-.019-.462.13-.611.135-.134.301-.35.45-.525.15-.175.2-.299.3-.5.1-.2.05-.375-.025-.525-.075-.15-.675-1.628-.925-2.228-.243-.583-.49-.504-.675-.513-.175-.008-.375-.008-.575-.008-.2 0-.525.075-.8.375-.275.3-1.05 1.026-1.05 2.501 0 1.475 1.075 2.899 1.225 3.1.15.2 2.113 3.227 5.118 4.527.714.309 1.272.494 1.706.632.716.228 1.368.196 1.883.119.574-.086 1.781-.728 2.031-1.431.25-.703.25-1.303.175-1.43-.075-.128-.275-.203-.575-.353z"/>
+                  <path d="M12 2a10 10 0 0 0-8.49 15.31L2 22l4.82-1.47A10 10 0 1 0 12 2z"/>
+                </svg>
+              </div>
+              <div class="footer-contact-info">
+                <span class="footer-contact-lbl">WhatsApp</span>
+                <span class="footer-contact-val">+54 9 261 373 8750</span>
+              </div>
+            </a>
+
+            <a href="mailto:recepcion@laresdechacras.com" class="footer-contact-card" title="Escribir correo">
+              <div class="footer-contact-icon">
+                <i data-lucide="mail" style="width:15px;height:15px"></i>
+              </div>
+              <div class="footer-contact-info">
+                <span class="footer-contact-lbl">Correo</span>
+                <span class="footer-contact-val">recepcion@laresdechacras.com</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="footer-social-row">
+            <a href="https://www.instagram.com/laresdechacras" target="_blank" rel="noopener" class="footer-social-link" title="Instagram" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+              </svg>
+            </a>
+            <a href="https://www.facebook.com/laresdechacras" target="_blank" rel="noopener" class="footer-social-link" title="Facebook" aria-label="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Lares de Chacras Hotel Boutique. Todos los derechos reservados.</p>
+        <div style="display:flex; gap:1.5rem">
+          <a href="contacto.html">Contacto</a>
+          <a href="habitaciones.html">Habitaciones</a>
+          <a href="la-guia.html">La Guía</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       SCRIPTS: FILTROS, BUSCADOR EN VIVO Y ESTADO
+  ============================================================ -->
+  <script>
+    lucide.createIcons();
+
+    // Scroll Navbar Effect
+    const headerWrapper = document.getElementById('headerFixedWrapper');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 40) {
+        headerWrapper.classList.add('scrolled');
+      } else {
+        headerWrapper.classList.remove('scrolled');
+      }
+    });
+
+    // Mobile Menu Toggle
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const mobileClose = document.getElementById('mobileClose');
+    const mobileMenu = document.getElementById('mobileMenu');
+    if (hamburgerBtn && mobileMenu) {
+      hamburgerBtn.addEventListener('click', () => mobileMenu.classList.add('open'));
+    }
+    if (mobileClose && mobileMenu) {
+      mobileClose.addEventListener('click', () => mobileMenu.classList.remove('open'));
+    }
+
+    // Scroll Animation (Fade Up)
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    // Booking trigger
+    document.querySelectorAll('.trigger-booking').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.open('https://engine.mews.com/or/laresdechacras', '_blank');
+      });
+    });
+
+    // ============================================================
+    // SISTEMA DE FILTRADO, BÚSQUEDA Y ESTADO
+    // ============================================================
+    const filterChips = document.querySelectorAll('.filter-chip');
+    const searchInput = document.getElementById('guideSearchInput');
+    const searchClearBtn = document.getElementById('searchClearBtn');
+    const articles = document.querySelectorAll('.article-card');
+    const resultsCountEl = document.getElementById('resultsCount');
+    const noResultsBox = document.getElementById('noResultsBox');
+    const resetFiltersBtn = document.getElementById('resetFiltersBtn');
+    const emptyResetBtn = document.getElementById('emptyResetBtn');
+
+    let currentCategory = 'todas';
+    let searchQuery = '';
+
+    // Normalizar texto para búsqueda sin tildes
+    function normalizeStr(str) {
+      return (str || '')
+        .toLowerCase()
+        .normalize('NFD')
+        .replace(/[\u0300-\u036f]/g, '')
+        .trim();
+    }
+
+    function applyFilterAndSearch() {
+      const q = normalizeStr(searchQuery);
+      let visibleCount = 0;
+
+      articles.forEach(card => {
+        const cardCategory = card.getAttribute('data-category') || '';
+        const cardTitle = normalizeStr(card.querySelector('.card-title')?.innerText);
+        const cardExcerpt = normalizeStr(card.querySelector('.card-excerpt')?.innerText);
+        const cardKeywords = normalizeStr(card.getAttribute('data-keywords') || '');
+
+        const matchesCategory = (currentCategory === 'todas' || cardCategory === currentCategory);
+        const matchesSearch = !q || cardTitle.includes(q) || cardExcerpt.includes(q) || cardKeywords.includes(q);
+
+        if (matchesCategory && matchesSearch) {
+          card.style.display = 'flex';
+          visibleCount++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+
+      // Actualizar contador
+      if (resultsCountEl) {
+        resultsCountEl.textContent = visibleCount;
+      }
+
+      // Estado vacío
+      if (visibleCount === 0) {
+        noResultsBox.style.display = 'block';
+      } else {
+        noResultsBox.style.display = 'none';
+      }
+
+      // Botón restablecer
+      const hasActiveFilters = currentCategory !== 'todas' || searchQuery !== '';
+      if (resetFiltersBtn) {
+        resetFiltersBtn.style.display = hasActiveFilters ? 'inline-flex' : 'none';
+      }
+
+      // Actualizar URL sin recargar para persistir estado
+      const url = new URL(window.location);
+      if (currentCategory !== 'todas') {
+        url.searchParams.set('categoria', currentCategory);
+      } else {
+        url.searchParams.delete('categoria');
+      }
+      if (searchQuery) {
+        url.searchParams.set('q', searchQuery);
+      } else {
+        url.searchParams.delete('q');
+      }
+      window.history.replaceState({}, '', url);
+    }
+
+    // Click en categorías
+    filterChips.forEach(chip => {
+      chip.addEventListener('click', () => {
+        filterChips.forEach(c => c.classList.remove('active'));
+        chip.classList.add('active');
+        currentCategory = chip.getAttribute('data-category');
+        applyFilterAndSearch();
+      });
+    });
+
+    // Input en buscador
+    if (searchInput) {
+      searchInput.addEventListener('input', (e) => {
+        searchQuery = e.target.value;
+        if (searchClearBtn) {
+          searchClearBtn.style.display = searchQuery ? 'inline-flex' : 'none';
+        }
+        applyFilterAndSearch();
+      });
+    }
+
+    // Botón borrar búsqueda
+    if (searchClearBtn) {
+      searchClearBtn.addEventListener('click', () => {
+        searchInput.value = '';
+        searchQuery = '';
+        searchClearBtn.style.display = 'none';
+        applyFilterAndSearch();
+        searchInput.focus();
+      });
+    }
+
+    // Restablecer filtros
+    function resetAllFilters() {
+      currentCategory = 'todas';
+      searchQuery = '';
+      if (searchInput) searchInput.value = '';
+      if (searchClearBtn) searchClearBtn.style.display = 'none';
+      filterChips.forEach(c => {
+        if (c.getAttribute('data-category') === 'todas') {
+          c.classList.add('active');
+        } else {
+          c.classList.remove('active');
+        }
+      });
+      applyFilterAndSearch();
+    }
+
+    if (resetFiltersBtn) resetFiltersBtn.addEventListener('click', resetAllFilters);
+    if (emptyResetBtn) emptyResetBtn.addEventListener('click', resetAllFilters);
+
+    // Inicializar estado desde URL params si existen
+    const urlParams = new URLSearchParams(window.location.search);
+    const initialCat = urlParams.get('categoria');
+    const initialQ = urlParams.get('q');
+    if (initialCat) {
+      const matchChip = document.querySelector(`.filter-chip[data-category="${initialCat}"]`);
+      if (matchChip) {
+        filterChips.forEach(c => c.classList.remove('active'));
+        matchChip.classList.add('active');
+        currentCategory = initialCat;
+      }
+    }
+    if (initialQ && searchInput) {
+      searchInput.value = initialQ;
+      searchQuery = initialQ;
+      if (searchClearBtn) searchClearBtn.style.display = 'inline-flex';
+    }
+    applyFilterAndSearch();
+  </script>
+</body>
+</html>

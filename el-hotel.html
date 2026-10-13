@@ -1,0 +1,1374 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>El Hotel · Nuestra Esencia | Lares de Chacras Hotel Boutique</title>
+  <meta name="description" content="Conocé quiénes están detrás de Lares de Chacras en Mendoza: hospitalidad familiar, calidez y el encanto de una casa boutique entre los Caminos del Vino." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    /* ============================================================
+       SISTEMA DE DISEÑO GLOBAL LARES DE CHACRAS
+    ============================================================ */
+    :root {
+      --wine: #732056;
+      --wine-dark: #50133c;
+      --wine-deep: #320B24;
+      --mauve: #BF8FAF;
+      --light-bg: #F9F7F5;
+      --sand-bg: #F4EFEB;
+      --white: #FFFFFF;
+      --text-dark: #121418;
+      --text-muted: #5C5558;
+      --border-light: rgba(115, 32, 86, 0.12);
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-sans: 'Jost', sans-serif;
+      --transition: 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      --radius: 6px;
+      --radius-sm: 4px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body { font-family: var(--font-sans); background: var(--white); color: var(--text-dark); overflow-x: hidden; line-height: 1.6; }
+    img { display: block; max-width: 100%; height: auto; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    .container { max-width: 1360px; margin: 0 auto; padding: 0 2.5rem; }
+
+    /* BOTONES */
+    .btn-primary {
+      display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem;
+      padding: 0.95rem 2.2rem; background: var(--wine); color: var(--white);
+      font-family: var(--font-sans); font-size: 0.72rem; font-weight: 600;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      border: 1px solid var(--wine); cursor: pointer; border-radius: var(--radius);
+      transition: all var(--transition); box-shadow: 0 4px 16px rgba(115,32,86,0.25);
+    }
+    .btn-primary:hover {
+      background: var(--wine-dark); border-color: var(--wine-dark); transform: translateY(-2px);
+      box-shadow: 0 6px 22px rgba(115,32,86,0.38); color: var(--white);
+    }
+
+    .btn-secondary, .btn-outline {
+      display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem;
+      padding: 0.95rem 2.2rem; background: transparent; color: var(--wine);
+      font-family: var(--font-sans); font-size: 0.72rem; font-weight: 600;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      border: 1px solid var(--wine); cursor: pointer; border-radius: var(--radius);
+      transition: all var(--transition);
+    }
+    .btn-secondary:hover, .btn-outline:hover {
+      background: var(--wine); color: var(--white); transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(115,32,86,0.25);
+    }
+
+    .btn-text-link {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-family: var(--font-sans); font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--wine); transition: all var(--transition); background: none; border: none; cursor: pointer; padding: 0;
+    }
+    .btn-text-link:hover { color: var(--wine-dark); transform: translateX(3px); }
+
+    /* TYPOGRAPHY UTILITIES */
+    .section-label {
+      font-family: var(--font-sans);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--wine);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.9rem;
+    }
+    .section-label::before {
+      content: '';
+      display: inline-block;
+      width: 1.8rem;
+      height: 1px;
+      background: var(--mauve);
+    }
+    .section-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.4rem, 4vw, 3.4rem);
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.1;
+      color: var(--text-dark);
+      letter-spacing: -0.01em;
+    }
+
+    /* HEADER & TOP PROMO */
+    .header-fixed-wrapper { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; transition: all var(--transition); }
+    .top-promo-bar {
+      background: linear-gradient(90deg,#320B24 0%,#732056 35%,#8C286A 50%,#732056 65%,#320B24 100%);
+      background-size: 200% 100%; animation: promoGlow 8s ease infinite;
+      color: var(--white); padding: 0.32rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.12); z-index: 1001;
+    }
+    @keyframes promoGlow { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
+    .promo-inner { display: flex; align-items: center; justify-content: center; }
+    .promo-text { color: var(--white); font-family: var(--font-sans); font-weight: 300; font-size: 0.76rem; text-align: center; }
+    .promo-text strong { font-weight: 600; }
+    #navbar { width: 100%; padding: 0.45rem 0; transition: all var(--transition); background: rgba(18,20,24,0.96); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(191,143,175,0.18); }
+    .header-fixed-wrapper.scrolled #navbar { background: rgba(18,20,24,0.98); padding: 0.25rem 0; }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo-img { height: 52px; width: auto; object-fit: contain; }
+    .nav-links { display: flex; align-items: center; gap: 2rem; list-style: none; }
+    .nav-links a { font-family: var(--font-sans); font-size: 0.74rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.85); transition: color var(--transition); position: relative; padding: 0.3rem 0; }
+    .nav-links a:hover, .nav-links a.active { color: var(--white); }
+    .nav-links a::after { content: ''; position: absolute; bottom: 0; left: 0; width: 0; height: 1.5px; background: var(--mauve); transition: width var(--transition); }
+    .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+    .nav-right { display: flex; align-items: center; gap: 1.4rem; }
+    .nav-cta { display: inline-block; padding: 0.65rem 1.6rem; background: var(--wine); color: var(--white); font-family: var(--font-sans); font-size: 0.68rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; border-radius: var(--radius); transition: all var(--transition); border: none; cursor: pointer; }
+    .nav-cta:hover { background: var(--wine-dark); transform: translateY(-1px); }
+    .nav-hamburger { display: none; flex-direction: column; gap: 6px; cursor: pointer; background: none; border: none; padding: 6px; }
+    .nav-hamburger span { display: block; width: 26px; height: 1.5px; background: var(--white); }
+    .mobile-menu { display: none; position: fixed; inset: 0; background: #121418; z-index: 9999; flex-direction: column; align-items: center; justify-content: center; gap: 1.8rem; }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { font-family: var(--font-serif); font-size: 2rem; font-weight: 300; font-style: italic; color: var(--white); }
+    .mobile-menu a:hover, .mobile-menu a.active { color: var(--mauve); }
+    .mobile-close { position: absolute; top: 2rem; right: 2rem; background: none; border: none; color: var(--white); font-size: 2rem; cursor: pointer; }
+
+    /* FLOATING WIDGET */
+    .floating-widget-wrap {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      z-index: 900;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .floating-seals {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    .floating-seal-img {
+      height: 62px;
+      width: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 4px 14px rgba(0,0,0,0.4));
+      cursor: default;
+      user-select: none;
+    }
+    .floating-seal-img.ta-seal { height: 72px; }
+    .floating-whatsapp {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 25px rgba(37,211,102,0.45);
+      transition: all var(--transition);
+    }
+    .floating-whatsapp img { width: 100%; height: 100%; object-fit: contain; }
+    .floating-whatsapp:hover { transform: scale(1.08) translateY(-2px); }
+
+    /* ============================================================
+       1. ENCABEZADO EDITORIAL
+    ============================================================ */
+    #hotel-hero {
+      padding: 10.5rem 0 5.5rem;
+      background: var(--light-bg);
+      border-bottom: 1px solid var(--border-light);
+    }
+    .editorial-head-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: flex-end;
+      gap: 5rem;
+    }
+    .editorial-head-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.8rem, 5vw, 4.4rem);
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.06;
+      color: var(--text-dark);
+      letter-spacing: -0.01em;
+    }
+    .editorial-head-right {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      gap: 1.5rem;
+    }
+    .editorial-head-lead {
+      font-family: var(--font-sans);
+      font-size: 1.05rem;
+      font-weight: 300;
+      line-height: 1.8;
+      color: var(--text-muted);
+    }
+    .editorial-head-actions {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+    }
+
+    /* ============================================================
+       2. LA ESENCIA FAMILIAR
+    ============================================================ */
+    #esencia {
+      background: var(--white);
+      padding: 4.5rem 0;
+      overflow: hidden;
+    }
+    .esencia-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: stretch;
+      width: 100%;
+    }
+    .esencia-photo-col {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      height: 100%;
+      min-height: 440px;
+      max-height: 500px;
+    }
+    .esencia-photo-col img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 20%;
+      border-radius: 0;
+      display: block;
+      transition: transform 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .esencia-photo-col:hover img {
+      transform: scale(1.03);
+    }
+    .esencia-text-col {
+      display: flex;
+      align-items: center;
+      padding: 1.5rem 5vw 1.5rem 5rem;
+    }
+    .esencia-text-inner {
+      max-width: 540px;
+    }
+    .esencia-text-inner .section-title {
+      margin-bottom: 2rem;
+    }
+    .esencia-body-p {
+      font-size: 1.05rem;
+      font-weight: 300;
+      line-height: 1.9;
+      color: var(--text-muted);
+      margin-bottom: 1.3rem;
+    }
+    .esencia-body-p:last-of-type {
+      margin-bottom: 0;
+    }
+
+    /* CINTA DE TEXTO ANIMADO (MARQUEE TICKER) */
+    .cava-ticker-wrap {
+      overflow: hidden;
+      background: var(--wine);
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      padding: 0.85rem 0;
+      margin-bottom: 0;
+      white-space: nowrap;
+    }
+    .cava-ticker-track {
+      display: inline-flex;
+      align-items: center;
+      gap: 1.5rem;
+      animation: cavaMarquee 35s linear infinite;
+    }
+    @keyframes cavaMarquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    .cava-ticker-item {
+      font-family: var(--font-serif);
+      font-size: 0.88rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--white);
+      display: inline-flex;
+      align-items: center;
+      gap: 1.5rem;
+      flex-shrink: 0;
+    }
+
+    /* ============================================================
+       3. LAS PERSONAS DETRÁS DE CADA ESTADÍA (EQUIPO)
+    ============================================================ */
+    #equipo {
+      padding: 7rem 0 7.5rem;
+      background: var(--light-bg);
+      border-top: 1px solid var(--border-light);
+    }
+    .team-header {
+      max-width: 720px;
+      margin-bottom: 4rem;
+    }
+    .team-header .section-title {
+      margin-bottom: 1.2rem;
+    }
+    .team-header-desc {
+      font-size: 1.05rem;
+      font-weight: 300;
+      line-height: 1.85;
+      color: var(--text-muted);
+    }
+
+    /* COMPOSICIÓN FOTOGRÁFICA EDITORIAL */
+    .team-editorial-mosaic {
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      gap: 1.5rem;
+      align-items: stretch;
+      height: clamp(480px, 38vw, 550px);
+    }
+    .mosaic-primary-card {
+      position: relative;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 14px 40px rgba(0,0,0,0.07);
+      background: var(--white);
+      height: 100%;
+      min-height: 0;
+    }
+    .mosaic-primary-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .mosaic-primary-card:hover img {
+      transform: scale(1.04);
+    }
+    .mosaic-subgrid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 1.5rem;
+      height: 100%;
+      min-height: 0;
+    }
+    .mosaic-subcard {
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: var(--white);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+      position: relative;
+      height: 100%;
+      min-height: 0;
+    }
+    .mosaic-subcard img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .mosaic-subcard:hover img {
+      transform: scale(1.06);
+    }
+
+    /* ============================================================
+       4. NUESTRA FORMA DE SER (BLOQUE CIRUELA)
+    ============================================================ */
+    #forma-de-ser {
+      padding: 7.5rem 0;
+      background: linear-gradient(135deg, #320B24 0%, #50133c 55%, #732056 100%);
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+    }
+    #forma-de-ser::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at center, transparent 40%, rgba(18,20,24,0.4) 100%);
+      pointer-events: none;
+    }
+    .forma-inner {
+      position: relative;
+      z-index: 2;
+    }
+    .forma-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.4rem, 4.4vw, 3.8rem);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--white);
+      line-height: 1.15;
+      text-align: center;
+      max-width: 820px;
+      margin: 0 auto 5rem;
+    }
+    .forma-pillars-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3.5rem;
+    }
+    .forma-pillar-col {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    .forma-pillar-col:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      top: 10%;
+      right: -1.75rem;
+      height: 80%;
+      width: 1px;
+      background: rgba(255, 255, 255, 0.16);
+    }
+    .forma-pillar-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      color: var(--mauve);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.6rem;
+    }
+    .forma-pillar-title {
+      font-family: var(--font-serif);
+      font-size: 1.75rem;
+      font-weight: 300;
+      font-style: italic;
+      color: var(--white);
+      margin-bottom: 0.9rem;
+    }
+    .forma-pillar-desc {
+      font-family: var(--font-sans);
+      font-size: 0.98rem;
+      font-weight: 300;
+      line-height: 1.8;
+      color: rgba(255, 255, 255, 0.82);
+    }
+
+    /* ============================================================
+       5. MENDOZA EN NUESTRA CASA
+    ============================================================ */
+    #mendoza-casa {
+      padding: 7.5rem 0;
+      background: var(--white);
+    }
+    .mendoza-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 5.5rem;
+      align-items: center;
+    }
+    .mendoza-img-composition {
+      position: relative;
+      width: 100%;
+      padding-bottom: 3.5rem;
+      padding-right: 3.5rem;
+    }
+    .mendoza-img-primary {
+      position: relative;
+      z-index: 1;
+      width: 84%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      border-radius: var(--radius);
+      box-shadow: 0 18px 45px rgba(18, 20, 24, 0.12);
+      display: block;
+    }
+    .mendoza-img-secondary {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      z-index: 2;
+      width: 54%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      border: 6px solid var(--white);
+      border-radius: var(--radius);
+      box-shadow: 0 25px 60px rgba(18, 20, 24, 0.22);
+      transition: transform var(--transition);
+    }
+    .mendoza-img-composition:hover .mendoza-img-secondary {
+      transform: translateY(-5px) scale(1.02);
+    }
+    .mendoza-text-col {
+      display: flex;
+      flex-direction: column;
+    }
+    .mendoza-text-col .section-title {
+      margin-bottom: 1.8rem;
+    }
+    .mendoza-body-p {
+      font-size: 1.05rem;
+      font-weight: 300;
+      line-height: 1.9;
+      color: var(--text-muted);
+      margin-bottom: 1.3rem;
+    }
+    .mendoza-links-row {
+      display: flex;
+      flex-direction: column;
+      gap: 1.1rem;
+      margin-top: 1.6rem;
+    }
+    .mendoza-text-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.55rem;
+      font-family: var(--font-sans);
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--wine);
+      transition: all var(--transition);
+    }
+    .mendoza-text-link:hover {
+      color: var(--wine-dark);
+      transform: translateX(4px);
+    }
+
+    /* ============================================================
+       6. CIERRE FOTOGRÁFICO
+    ============================================================ */
+    .hotel-cta-sec {
+      position: relative;
+      min-height: 500px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6rem 2rem;
+      text-align: center;
+      background: #14171d url('assets/cta_garden_bg.jpg') center 45% / cover no-repeat;
+      color: var(--white);
+      overflow: hidden;
+    }
+    .hotel-cta-sec::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(18, 20, 24, 0.65) 0%,
+        rgba(66, 17, 48, 0.76) 50%,
+        rgba(18, 20, 24, 0.9) 100%
+      );
+      z-index: 1;
+    }
+    .hotel-cta-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+    .hotel-cta-label {
+      font-family: var(--font-sans);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--mauve);
+      margin-bottom: 0.8rem;
+      display: inline-block;
+    }
+    .hotel-cta-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.4rem, 4.4vw, 3.6rem);
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.12;
+      margin-bottom: 0.85rem;
+      color: var(--white);
+    }
+    .hotel-cta-desc {
+      font-family: var(--font-sans);
+      font-size: 1.05rem;
+      font-weight: 300;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 2.2rem;
+    }
+    .hotel-cta-actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1.3rem;
+    }
+    .btn-cta-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.95rem 2.2rem;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      color: var(--white);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      border-radius: var(--radius);
+      font-family: var(--font-sans);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all var(--transition);
+    }
+    .btn-cta-secondary:hover {
+      background: rgba(255, 255, 255, 0.22);
+      border-color: var(--white);
+      color: var(--white);
+      transform: translateY(-2px);
+    }
+
+    /* FOOTER GLOBAL - EDITORIAL BOUTIQUE (IDÉNTICO A HOME) */
+    #footer {
+      background: #111216;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 5.5rem 0 2.5rem;
+      color: rgba(255, 255, 255, 0.7);
+      position: relative;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.35fr 1fr 1fr 1.25fr;
+      gap: 3.5rem;
+      margin-bottom: 4.5rem;
+    }
+    .footer-brand {
+      display: flex;
+      flex-direction: column;
+    }
+    .footer-brand .footer-logo-img {
+      height: 78px;
+      width: auto;
+      object-fit: contain;
+      filter: brightness(0) invert(1);
+      margin-bottom: 1.4rem;
+      align-self: flex-start;
+    }
+    .footer-brand-desc {
+      font-family: var(--font-sans);
+      font-size: 0.84rem;
+      font-weight: 300;
+      line-height: 1.85;
+      color: rgba(255, 255, 255, 0.55);
+      margin-bottom: 1.8rem;
+      max-width: 320px;
+    }
+    .footer-seals-block {
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+    .footer-seals-label {
+      font-family: var(--font-sans);
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--mauve);
+    }
+    .footer-seals-row {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+    }
+    .footer-seal-img {
+      height: 56px;
+      width: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 4px 10px rgba(0,0,0,0.35));
+      transition: transform var(--transition);
+      cursor: default;
+      user-select: none;
+      -webkit-user-drag: none;
+    }
+    .footer-seal-img.ta-seal {
+      height: 66px;
+    }
+    .footer-seal-img:hover {
+      transform: scale(1.05);
+    }
+    .footer-nav-col {
+      display: flex;
+      flex-direction: column;
+    }
+    .footer-subgroup {
+      display: flex;
+      flex-direction: column;
+    }
+    .footer-nav-col .footer-subgroup:first-child {
+      min-height: 180px;
+    }
+    .footer-subgroup + .footer-subgroup {
+      margin-top: 2rem;
+    }
+    .footer-col-title {
+      font-family: var(--font-sans);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--mauve);
+      margin-bottom: 1.15rem;
+    }
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .footer-links a {
+      font-family: var(--font-sans);
+      font-size: 0.83rem;
+      color: rgba(255, 255, 255, 0.62);
+      transition: all 0.22s ease;
+      display: inline-block;
+      text-decoration: none;
+    }
+    .footer-links a:hover {
+      color: var(--white);
+      transform: translateX(4px);
+    }
+    .footer-contact-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      margin-bottom: 1.8rem;
+    }
+    .footer-contact-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.85rem;
+      padding: 0;
+      background: transparent;
+      border: none;
+      border-radius: 0;
+      transition: all var(--transition);
+      text-decoration: none;
+      color: rgba(255, 255, 255, 0.7);
+    }
+    .footer-contact-card:hover {
+      background: transparent;
+      transform: translateX(3px);
+      color: var(--white);
+    }
+    .footer-contact-icon {
+      color: var(--mauve);
+      width: 20px;
+      height: 20px;
+      background: transparent;
+      border-radius: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .footer-contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+    }
+    .footer-contact-lbl {
+      font-size: 0.62rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--mauve);
+      font-weight: 600;
+    }
+    .footer-contact-val {
+      font-size: 0.82rem;
+      line-height: 1.45;
+      color: rgba(255, 255, 255, 0.82);
+      transition: color var(--transition);
+    }
+    .footer-contact-card:hover .footer-contact-val {
+      color: var(--white);
+    }
+    .footer-social-row {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      margin-top: 0.5rem;
+    }
+    .footer-social-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+      border: none;
+      color: rgba(255, 255, 255, 0.65);
+      text-decoration: none;
+      transition: all var(--transition);
+      padding: 0;
+    }
+    .footer-social-link:hover {
+      background: transparent;
+      color: var(--white);
+      transform: translateY(-2px);
+    }
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.07);
+      padding-top: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      font-family: var(--font-sans);
+      font-size: 0.75rem;
+      color: rgba(255, 255, 255, 0.4);
+    }
+    .footer-bottom a {
+      color: rgba(255, 255, 255, 0.5);
+      text-decoration: none;
+      transition: color var(--transition);
+    }
+    .footer-bottom a:hover {
+      color: var(--mauve);
+    }
+
+    /* ANIMACIONES */
+    .fade-up { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .fade-up.in { opacity: 1; transform: translateY(0); }
+
+    @media (prefers-reduced-motion: reduce) {
+      .fade-up { opacity: 1; transform: none; transition: none; }
+      .cava-ticker-track { animation: none; }
+      * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 1024px) {
+      .editorial-head-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .esencia-split { grid-template-columns: 1fr; }
+      .esencia-photo-col { height: 380px; max-height: 380px; }
+      .esencia-text-col { padding: 4rem 2rem; }
+      .esencia-text-inner { max-width: 100%; }
+      .team-editorial-mosaic { grid-template-columns: 1fr; height: auto; gap: 1.5rem; }
+      .mosaic-primary-card { height: 380px; }
+      .mosaic-subgrid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; height: auto; gap: 1.2rem; }
+      .mosaic-subcard { aspect-ratio: 4/3; height: auto; }
+      .forma-pillars-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .forma-pillar-col:not(:last-child)::after { display: none; }
+      .mendoza-grid { grid-template-columns: 1fr; gap: 3.5rem; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+    }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+      #hotel-hero { padding: 8.5rem 0 4.5rem; }
+      #esencia { padding: 3rem 0; }
+      .esencia-photo-col { height: 300px; max-height: 300px; }
+      .esencia-text-col { padding: 2.5rem 1.5rem 0.5rem; }
+      #equipo, #forma-de-ser, #mendoza-casa { padding: 5rem 0; }
+      .mosaic-primary-card { height: 280px; }
+      .mosaic-subgrid { grid-template-columns: 1fr 1fr; gap: 0.85rem; }
+      .mosaic-subcard { aspect-ratio: 4/3; }
+      .mendoza-img-composition { padding-bottom: 2rem; padding-right: 2rem; }
+      .hotel-cta-sec { min-height: 420px; padding: 4.5rem 1.5rem; }
+      .footer-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Floating Widget (Sellos + WhatsApp) -->
+  <div class="floating-widget-wrap">
+    <div class="floating-seals">
+      <img src="assets/michelin_key_2025.png" alt="Llave Michelin 2025" class="floating-seal-img" title="Guía Michelin 2025 — Una Llave Michelin" />
+      <img src="assets/tripadvisor_travelers_choice_v2.png" alt="TripAdvisor Travelers Choice" class="floating-seal-img ta-seal" title="TripAdvisor Travellers' Choice 2026" />
+    </div>
+    <a href="https://wa.me/5492613738750?text=Hola%20Lares%20de%20Chacras,%20me%20gustar%C3%ADa%20hacer%20una%20consulta." target="_blank" rel="noopener" class="floating-whatsapp" aria-label="WhatsApp">
+      <img src="assets/WhatsApp.webp" alt="WhatsApp" />
+    </a>
+  </div>
+
+  <!-- Mobile Menu -->
+  <nav class="mobile-menu" id="mobileMenu">
+    <button class="mobile-close" id="mobileClose" aria-label="Cerrar menú">&times;</button>
+    <a href="el-hotel.html" class="active">El Hotel</a>
+    <a href="habitaciones.html">Habitaciones</a>
+    <a href="servicios.html">Servicios</a>
+    <a href="index.html#cava">Cava y Vinos</a>
+    <a href="experiencias.html">Experiencias</a>
+    <a href="https://www.laresresto.com/" target="_blank" rel="noopener">Restaurante</a>
+    <a href="la-guia.html">La Guía</a>
+    <a href="contacto.html">Contacto</a>
+    <button class="btn-primary trigger-booking" style="margin-top:1.5rem">Reservar</button>
+  </nav>
+
+  <!-- Header Fijo -->
+  <div class="header-fixed-wrapper" id="headerFixedWrapper">
+    <div class="top-promo-bar">
+      <div class="container promo-inner">
+        <p class="promo-text">Cancelación gratuita hasta 14 días antes con la <strong>tarifa flexible.</strong></p>
+      </div>
+    </div>
+    <header id="navbar">
+      <div class="container">
+        <div class="nav-inner">
+          <a href="index.html"><img src="assets/logo.png" alt="Lares de Chacras Hotel Boutique" class="nav-logo-img" /></a>
+          <ul class="nav-links">
+            <li><a href="el-hotel.html" class="active">El Hotel</a></li>
+            <li><a href="habitaciones.html">Habitaciones</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="index.html#cava">Cava y Vinos</a></li>
+            <li><a href="experiencias.html">Experiencias</a></li>
+            <li><a href="https://www.laresresto.com/" target="_blank" rel="noopener">Restaurante</a></li>
+            <li><a href="la-guia.html">La Guía</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+          <div class="nav-right">
+            <button class="nav-cta trigger-booking">Reservar</button>
+            <button class="nav-hamburger" id="hamburgerBtn" aria-label="Abrir Menú">
+              <span></span><span></span><span></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+  </div>
+
+  <!-- ============================================================
+       1. ENCABEZADO EDITORIAL
+  ============================================================ -->
+  <section id="hotel-hero">
+    <div class="container">
+      <div class="editorial-head-grid">
+        <div class="editorial-head-left fade-up">
+          <p class="section-label">EL HOTEL · NUESTRA ESENCIA</p>
+          <h1 class="editorial-head-title">Una casa en Mendoza.<br>Una manera de recibirte.</h1>
+        </div>
+        <div class="editorial-head-right fade-up">
+          <p class="editorial-head-lead">
+            Lares de Chacras es un hotel boutique familiar en el corazón de Chacras de Coria. Compartimos nuestra casa, los sabores de nuestra tierra y una hospitalidad cálida y cercana.
+          </p>
+          <div class="editorial-head-actions">
+            <a href="#esencia" class="btn-text-link">
+              Conocé Lares <i data-lucide="arrow-down" style="width:14px;height:14px"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       2. LA ESENCIA FAMILIAR
+  ============================================================ -->
+  <section id="esencia">
+    <div class="esencia-split">
+      <div class="esencia-photo-col fade-up">
+        <img src="assets/_NZ75885.jpg" alt="Anfitriones y hospitalidad en Lares de Chacras Hotel Boutique" />
+      </div>
+      <div class="esencia-text-col fade-up">
+        <div class="esencia-text-inner">
+          <p class="section-label">HOSPITALIDAD CON IDENTIDAD</p>
+          <h2 class="section-title">Recibirte bien<br>es parte de quienes somos.</h2>
+          <p class="esencia-body-p">
+            En Lares, nos gusta que cada huésped se sienta como en casa. Creemos en una atención cercana, en escuchar lo que necesitás y en cuidar los detalles que acompañan tu viaje.
+          </p>
+          <p class="esencia-body-p">
+            Amamos compartir lo mejor de Mendoza: su cocina, sus vinos y la tranquilidad de un entorno que invita a bajar el ritmo.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CINTA DE TEXTO ANIMADO (MARQUEE TICKER) -->
+  <div class="cava-ticker-wrap" aria-hidden="true">
+    <div class="cava-ticker-track">
+      <div class="cava-ticker-item">
+        <span>ATENCIÓN PERSONALIZADA</span><span>✦</span>
+        <span>CUIDADO EN CADA DETALLE</span><span>✦</span>
+        <span>EXPERIENCIA ÚNICA</span><span>✦</span>
+        <span>VIVIR MENDOZA</span><span>✦</span>
+        <span>SERVICIO BOUTIQUE</span><span>✦</span>
+        <span>ATENCIÓN PERSONALIZADA</span><span>✦</span>
+        <span>CUIDADO EN CADA DETALLE</span><span>✦</span>
+        <span>EXPERIENCIA ÚNICA</span><span>✦</span>
+        <span>VIVIR MENDOZA</span><span>✦</span>
+        <span>SERVICIO BOUTIQUE</span><span>✦</span>
+      </div>
+      <div class="cava-ticker-item">
+        <span>ATENCIÓN PERSONALIZADA</span><span>✦</span>
+        <span>CUIDADO EN CADA DETALLE</span><span>✦</span>
+        <span>EXPERIENCIA ÚNICA</span><span>✦</span>
+        <span>VIVIR MENDOZA</span><span>✦</span>
+        <span>SERVICIO BOUTIQUE</span><span>✦</span>
+        <span>ATENCIÓN PERSONALIZADA</span><span>✦</span>
+        <span>CUIDADO EN CADA DETALLE</span><span>✦</span>
+        <span>EXPERIENCIA ÚNICA</span><span>✦</span>
+        <span>VIVIR MENDOZA</span><span>✦</span>
+        <span>SERVICIO BOUTIQUE</span><span>✦</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       3. LAS PERSONAS DETRÁS DE CADA ESTADÍA (EQUIPO)
+  ============================================================ -->
+  <section id="equipo">
+    <div class="container">
+      <div class="team-header fade-up">
+        <p class="section-label">NUESTRO EQUIPO</p>
+        <h2 class="section-title">La calidez tiene<br>muchas caras.</h2>
+        <p class="team-header-desc">
+          Una habitación preparada con cuidado, una recomendación para salir a recorrer, una mesa lista para compartir. Detrás de esos momentos está nuestro equipo, acompañándote con atención personalizada para que disfrutes tu visita.
+        </p>
+      </div>
+
+      <!-- Composición fotográfica editorial -->
+      <div class="team-editorial-mosaic">
+        <!-- Imagen principal -->
+        <div class="mosaic-primary-card fade-up">
+          <img src="assets/team_main.jpg" alt="Equipo de Lares de Chacras Hotel Boutique" />
+        </div>
+
+        <!-- Subgrilla de tareas cotidianas -->
+        <div class="mosaic-subgrid">
+          <div class="mosaic-subcard fade-up">
+            <img src="assets/team_1.jpg" alt="Miembro del equipo de Lares de Chacras" />
+          </div>
+          <div class="mosaic-subcard fade-up">
+            <img src="assets/team_2.jpg" alt="Hospitalidad y servicio en Lares de Chacras" />
+          </div>
+          <div class="mosaic-subcard fade-up">
+            <img src="assets/team_3.jpg" alt="Atención y cuidado en Lares de Chacras" />
+          </div>
+          <div class="mosaic-subcard fade-up">
+            <img src="assets/team_4.jpg" alt="Equipo y momentos en Lares de Chacras" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       4. NUESTRA FORMA DE SER (BLOQUE CIRUELA)
+  ============================================================ -->
+  <section id="forma-de-ser">
+    <div class="container forma-inner">
+      <h2 class="forma-title fade-up">
+        Los detalles hacen<br>que una casa se sienta propia.
+      </h2>
+      <div class="forma-pillars-grid">
+        <!-- Columna 1 -->
+        <div class="forma-pillar-col fade-up">
+          <div class="forma-pillar-icon">
+            <i data-lucide="heart-handshake" style="width:20px;height:20px"></i>
+          </div>
+          <h3 class="forma-pillar-title">Cercanía</h3>
+          <p class="forma-pillar-desc">
+            Escucharte, orientarte y acompañarte con una atención personal.
+          </p>
+        </div>
+
+        <!-- Columna 2 -->
+        <div class="forma-pillar-col fade-up">
+          <div class="forma-pillar-icon">
+            <i data-lucide="compass" style="width:20px;height:20px"></i>
+          </div>
+          <h3 class="forma-pillar-title">Identidad local</h3>
+          <p class="forma-pillar-desc">
+            Compartir la cocina, el vino y las recomendaciones que nos conectan con Mendoza.
+          </p>
+        </div>
+
+        <!-- Columna 3 -->
+        <div class="forma-pillar-col fade-up">
+          <div class="forma-pillar-icon">
+            <i data-lucide="sparkles" style="width:20px;height:20px"></i>
+          </div>
+          <h3 class="forma-pillar-title">Cuidado cotidiano</h3>
+          <p class="forma-pillar-desc">
+            Preparar cada espacio y atender los pequeños detalles de tu estadía.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       5. MENDOZA EN NUESTRA CASA
+  ============================================================ -->
+  <section id="mendoza-casa">
+    <div class="container">
+      <div class="mendoza-grid">
+        <!-- Composición Fotográfica con Superposición -->
+        <div class="mendoza-img-composition fade-up">
+          <img src="assets/cava_v2.jpg" alt="Vinos y cava subterránea familiar en Lares de Chacras" class="mendoza-img-primary" />
+          <img src="assets/resto_plato_vino.jpg" alt="Plato maridado y copas de vino de Mendoza" class="mendoza-img-secondary" />
+        </div>
+
+        <!-- Texto y Enlaces Discretos -->
+        <div class="mendoza-text-col fade-up">
+          <p class="section-label">SABORES Y MOMENTOS</p>
+          <h2 class="section-title">Nuestra tierra,<br>en cada encuentro.</h2>
+          <p class="mendoza-body-p">
+            La cocina casera, los vinos mendocinos y la calma del jardín forman parte de la experiencia de Lares.
+          </p>
+          <p class="mendoza-body-p">
+            También compartimos los vinos de Viña Lares, la bodega de nuestra familia. Una manera de acercarte a nuestra identidad y disfrutar Mendoza desde la casa.
+          </p>
+          <div class="mendoza-links-row">
+            <a href="index.html#cava" class="mendoza-text-link">
+              Conocé la cava <i data-lucide="arrow-right" style="width:14px;height:14px"></i>
+            </a>
+            <a href="experiencias.html" class="mendoza-text-link">
+              Descubrí nuestras experiencias <i data-lucide="arrow-right" style="width:14px;height:14px"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       6. CIERRE FOTOGRÁFICO
+  ============================================================ -->
+  <section class="hotel-cta-sec" id="cta-final">
+    <div class="container hotel-cta-inner">
+      <span class="hotel-cta-label">TE ESPERAMOS EN LARES</span>
+      <h2 class="hotel-cta-title">Tu casa para<br>descubrir Mendoza.</h2>
+      <p class="hotel-cta-desc">
+        Conocé nuestras habitaciones y elegí cómo querés vivir tu próxima estadía.
+      </p>
+      <div class="hotel-cta-actions">
+        <a href="habitaciones.html" class="btn-primary">
+          Explorar habitaciones
+        </a>
+        <a href="contacto.html" class="btn-cta-secondary">
+          Conversá con nosotros
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER GLOBAL (IDÉNTICO A HOME)
+  ============================================================ -->
+  <footer id="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- COLUMNA 1: MARCA Y DISTINCIONES -->
+        <div class="footer-brand">
+          <img src="assets/logo_footer.png" alt="Lares de Chacras Logo" class="footer-logo-img" />
+          <p class="footer-brand-desc">
+            Hotel boutique de dieciséis habitaciones en Chacras de Coria, Mendoza, entre las bodegas de Luján de Cuyo. Jardines, piscina, cava y restaurante propio.
+          </p>
+          <div class="footer-seals-block">
+            <span class="footer-seals-label">Distinciones</span>
+            <div class="footer-seals-row">
+              <img src="assets/michelin_key_2025.png" alt="Michelin Key 2025" class="footer-seal-img" title="Guía Michelin 2025 — Una Llave Michelin" />
+              <img src="assets/tripadvisor_travelers_choice_v2.png" alt="TripAdvisor Travelers Choice" class="footer-seal-img ta-seal" title="TripAdvisor Travellers' Choice 2026" />
+            </div>
+          </div>
+        </div>
+
+        <!-- COLUMNA 2: EL HOTEL + LA GUÍA -->
+        <div class="footer-nav-col">
+          <div class="footer-subgroup">
+            <p class="footer-col-title">El hotel</p>
+            <ul class="footer-links">
+              <li><a href="habitaciones.html">Habitaciones</a></li>
+              <li><a href="habitaciones.html#junior">Casa Vita</a></li>
+              <li><a href="servicios.html">Servicios</a></li>
+              <li><a href="index.html#photo-gallery">Galería</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-subgroup">
+            <p class="footer-col-title">La zona</p>
+            <ul class="footer-links">
+              <li><a href="la-guia.html">La guía</a></li>
+              <li><a href="contacto.html#ubicacion">Cómo llegar</a></li>
+              <li><a href="index.html#faq">Preguntas frecuentes</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- COLUMNA 3: VINO Y MESA + RESERVAS -->
+        <div class="footer-nav-col">
+          <div class="footer-subgroup">
+            <p class="footer-col-title">Vino y mesa</p>
+            <ul class="footer-links">
+              <li><a href="index.html#cava">La cava</a></li>
+              <li><a href="https://www.laresresto.com/" target="_blank" rel="noopener">Lares Restó</a></li>
+              <li><a href="experiencias.html">Experiencias</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-subgroup">
+            <p class="footer-col-title">Reservas</p>
+            <ul class="footer-links">
+              <li><a href="index.html#rooms">Promociones</a></li>
+              <li><a href="contacto.html">Contacto</a></li>
+              <li><a href="https://engine.mews.com/or/laresdechacras" target="_blank" rel="noopener">Check-in online</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- COLUMNA 4: CONTACTO & UBICACIÓN -->
+        <div>
+          <p class="footer-col-title">Ubicación y contacto</p>
+          <div class="footer-contact-list">
+            <a href="https://maps.google.com/?q=Larrea+1266,+M5505+Chacras+de+Coria,+Luj%C3%A1n+de+Cuyo,+Mendoza,+Argentina" target="_blank" rel="noopener" class="footer-contact-card" title="Abrir ubicación en Google Maps">
+              <div class="footer-contact-icon">
+                <i data-lucide="map-pin" style="width:15px;height:15px"></i>
+              </div>
+              <div class="footer-contact-info">
+                <span class="footer-contact-lbl">Dirección</span>
+                <span class="footer-contact-val">Larrea 1266, M5505 Chacras de Coria, Luján de Cuyo, Mendoza, Argentina</span>
+              </div>
+            </a>
+
+            <a href="tel:+542614961061" class="footer-contact-card" title="Llamar a recepción">
+              <div class="footer-contact-icon">
+                <i data-lucide="phone" style="width:15px;height:15px"></i>
+              </div>
+              <div class="footer-contact-info">
+                <span class="footer-contact-lbl">Teléfono</span>
+                <span class="footer-contact-val">+54 261 496-1061</span>
+              </div>
+            </a>
+
+            <a href="https://wa.me/5492613738750" target="_blank" rel="noopener" class="footer-contact-card" title="Conversar por WhatsApp">
+              <div class="footer-contact-icon">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M17.498 14.382c-.301-.15-1.781-.879-2.056-.979-.275-.1-.475-.15-.675.15-.2.299-.775.979-.95 1.179-.175.2-.35.225-.65.075-.3-.15-1.267-.467-2.414-1.488-.893-.795-1.496-1.777-1.671-2.077-.175-.3-.019-.462.13-.611.135-.134.301-.35.45-.525.15-.175.2-.299.3-.5.1-.2.05-.375-.025-.525-.075-.15-.675-1.628-.925-2.228-.243-.583-.49-.504-.675-.513-.175-.008-.375-.008-.575-.008-.2 0-.525.075-.8.375-.275.3-1.05 1.026-1.05 2.501 0 1.475 1.075 2.899 1.225 3.1.15.2 2.113 3.227 5.118 4.527.714.309 1.272.494 1.706.632.716.228 1.368.196 1.883.119.574-.086 1.781-.728 2.031-1.431.25-.703.25-1.303.175-1.43-.075-.128-.275-.203-.575-.353z"/>
+                  <path d="M12 2a10 10 0 0 0-8.49 15.31L2 22l4.82-1.47A10 10 0 1 0 12 2z"/>
+                </svg>
+              </div>
+              <div class="footer-contact-info">
+                <span class="footer-contact-lbl">WhatsApp</span>
+                <span class="footer-contact-val">+54 9 261 373 8750</span>
+              </div>
+            </a>
+
+            <a href="mailto:recepcion@laresdechacras.com" class="footer-contact-card" title="Escribir correo">
+              <div class="footer-contact-icon">
+                <i data-lucide="mail" style="width:15px;height:15px"></i>
+              </div>
+              <div class="footer-contact-info">
+                <span class="footer-contact-lbl">Correo</span>
+                <span class="footer-contact-val">recepcion@laresdechacras.com</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="footer-social-row">
+            <a href="https://www.instagram.com/laresdechacras" target="_blank" rel="noopener" class="footer-social-link" title="Instagram" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+              </svg>
+            </a>
+            <a href="https://www.facebook.com/laresdechacras" target="_blank" rel="noopener" class="footer-social-link" title="Facebook" aria-label="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Lares de Chacras Hotel Boutique. Todos los derechos reservados.</p>
+        <div style="display:flex; gap:1.5rem">
+          <a href="contacto.html">Contacto</a>
+          <a href="habitaciones.html">Habitaciones</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JAVASCRIPT -->
+  <script>
+    lucide.createIcons();
+
+    // Scroll Navbar Effect
+    const headerWrapper = document.getElementById('headerFixedWrapper');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 40) {
+        headerWrapper.classList.add('scrolled');
+      } else {
+        headerWrapper.classList.remove('scrolled');
+      }
+    });
+
+    // Mobile Menu Toggle
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const mobileClose = document.getElementById('mobileClose');
+    const mobileMenu = document.getElementById('mobileMenu');
+    if (hamburgerBtn && mobileMenu) {
+      hamburgerBtn.addEventListener('click', () => mobileMenu.classList.add('open'));
+    }
+    if (mobileClose && mobileMenu) {
+      mobileClose.addEventListener('click', () => mobileMenu.classList.remove('open'));
+    }
+
+    // Scroll Animation (Fade Up)
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    // Smooth Scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const targetId = this.getAttribute('href');
+        if (targetId && targetId !== '#') {
+          const target = document.querySelector(targetId);
+          if (target) {
+            e.preventDefault();
+            const top = target.getBoundingClientRect().top + window.scrollY - 110;
+            window.scrollTo({ top, behavior: 'smooth' });
+          }
+        }
+      });
+    });
+
+    // Trigger booking
+    document.querySelectorAll('.trigger-booking').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.open('https://engine.mews.com/or/laresdechacras', '_blank');
+      });
+    });
+  </script>
+</body>
+</html>

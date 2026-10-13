@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Experiencias | Lares de Chacras — Hotel Boutique Chacras de Coria</title>
+  <meta name="description" content="Descubrí las experiencias que podés disfrutar en Lares de Chacras: Wine Tasting, Bike Wine Tour, traslados privados y salidas a la cordillera en Mendoza." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+  <style>
+    :root {
+      --wine:        #732056;
+      --wine-dark:   #471335;
+      --wine-deep:   #320B24;
+      --wine-soft:   rgba(115,32,86,0.08);
+      --mauve:       #BF8FAF;
+      --taupe:       #A69C8A;
+      --taupe-light: #D8D2C7;
+      --sand-bg:     #F5F2EB;
+      --light-bg:    #F8F6F2;
+      --white:       #FFFFFF;
+      --text-dark:   #1C1E22;
+      --text-muted:  #5C6470;
+      --border-light: rgba(166,156,138,0.22);
+      --font-serif:  'Cormorant Garamond', Georgia, serif;
+      --font-sans:   'Jost', 'Helvetica Neue', sans-serif;
+      --transition:  0.38s cubic-bezier(0.25,0.46,0.45,0.94);
+      --radius:      2px;
+      --dark-bg:     #121418;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body { font-family: var(--font-sans); background: var(--light-bg); color: var(--text-dark); overflow-x: hidden; line-height: 1.6; }
+    img { display: block; max-width: 100%; height: auto; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    .container { max-width: 1360px; margin: 0 auto; padding: 0 2.5rem; }
+
+    /* BUTTONS */
+    .btn-primary {
+      display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem;
+      padding: 0.9rem 2rem; background: var(--wine); color: var(--white);
+      font-family: var(--font-sans); font-size: 0.72rem; font-weight: 600;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      border: 1px solid var(--wine); cursor: pointer; border-radius: var(--radius);
+      transition: all var(--transition); box-shadow: 0 4px 16px rgba(115,32,86,0.25);
+    }
+    .btn-primary:hover { background: var(--wine-dark); border-color: var(--wine-dark); transform: translateY(-2px); color: var(--white); }
+    .btn-color-banner {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.7rem;
+      padding: 1.05rem 2.4rem;
+      background: var(--white);
+      color: var(--wine-deep);
+      font-family: var(--font-sans);
+      font-size: 0.74rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      border-radius: var(--radius);
+      transition: all var(--transition);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+    }
+    .btn-color-banner:hover {
+      background: #FDF4F8;
+      color: var(--wine);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+    }
+
+    /* HEADER */
+    .header-fixed-wrapper { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; transition: all var(--transition); }
+    .top-promo-bar {
+      background: linear-gradient(90deg,#320B24 0%,#732056 35%,#8C286A 50%,#732056 65%,#320B24 100%);
+      background-size: 200% 100%; animation: promoGlow 8s ease infinite;
+      color: var(--white); padding: 0.32rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.12); z-index: 1001;
+    }
+    @keyframes promoGlow { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
+    .promo-inner { display: flex; align-items: center; justify-content: center; }
+    .promo-text { color: var(--white); font-family: var(--font-sans); font-weight: 300; font-size: 0.76rem; text-align: center; }
+    .promo-text strong { font-weight: 600; }
+    #navbar { width: 100%; padding: 0.45rem 0; transition: all var(--transition); background: rgba(18,20,24,0.96); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(191,143,175,0.18); }
+    .header-fixed-wrapper.scrolled #navbar { background: rgba(18,20,24,0.98); padding: 0.25rem 0; }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo-img { height: 52px; width: auto; object-fit: contain; }
+    .nav-links { display: flex; align-items: center; gap: 2.2rem; }
+    .nav-links a { font-family: var(--font-sans); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.88); transition: color var(--transition); position: relative; }
+    .nav-links a::after { content: ''; position: absolute; bottom: -6px; left: 0; width: 0; height: 1px; background: var(--mauve); transition: width var(--transition); }
+    .nav-links a:hover, .nav-links a.active { color: var(--mauve); }
+    .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+    .nav-right { display: flex; align-items: center; gap: 1.4rem; }
+    .nav-cta { display: inline-block; padding: 0.65rem 1.6rem; background: var(--wine); color: var(--white); font-family: var(--font-sans); font-size: 0.68rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; border-radius: var(--radius); transition: all var(--transition); border: none; cursor: pointer; }
+    .nav-cta:hover { background: var(--wine-dark); transform: translateY(-1px); }
+    .nav-hamburger { display: none; flex-direction: column; gap: 6px; cursor: pointer; background: none; border: none; padding: 6px; }
+    .nav-hamburger span { display: block; width: 26px; height: 1.5px; background: var(--white); }
+    .mobile-menu { display: none; position: fixed; inset: 0; background: var(--dark-bg); z-index: 9999; flex-direction: column; align-items: center; justify-content: center; gap: 1.8rem; }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { font-family: var(--font-serif); font-size: 2rem; font-weight: 300; font-style: italic; color: var(--white); }
+    .mobile-menu a:hover { color: var(--mauve); }
+    .mobile-close { position: absolute; top: 2rem; right: 2rem; background: none; border: none; color: var(--white); font-size: 2rem; cursor: pointer; }
+
+    /* FLOATING WHATSAPP & SEALS */
+    .floating-widget-wrap {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      z-index: 900;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .floating-seals {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    .floating-seal-img {
+      height: 62px;
+      width: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 4px 14px rgba(0,0,0,0.4));
+      cursor: default;
+      user-select: none;
+    }
+    .floating-seal-img.ta-seal { height: 72px; }
+    .floating-whatsapp {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 25px rgba(37,211,102,0.45);
+      transition: all var(--transition);
+    }
+    .floating-whatsapp img { width: 100%; height: 100%; object-fit: contain; }
+    .floating-whatsapp:hover { transform: scale(1.08) translateY(-2px); }
+
+    /* TYPOGRAPHY UTILITIES */
+    .section-label {
+      font-family: var(--font-sans);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--wine);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.9rem;
+    }
+    .section-label::before {
+      content: '';
+      display: inline-block;
+      width: 1.8rem;
+      height: 1px;
+      background: var(--mauve);
+    }
+    .btn-text-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-family: var(--font-sans);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--wine);
+      transition: all var(--transition);
+    }
+    .btn-text-link:hover {
+      color: var(--wine-dark);
+      transform: translateX(4px);
+    }
+
+    /* EDITORIAL HEAD (ESTILO HABITACIONES) */
+    #exp-editorial-head {
+      padding: 10.5rem 0 3.5rem;
+      background: var(--light-bg);
+    }
+    .editorial-head-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: flex-end;
+      gap: 5rem;
+      margin-bottom: 0;
+    }
+    .editorial-head-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.8rem, 5vw, 4.4rem);
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.06;
+      color: var(--text-dark);
+      letter-spacing: -0.01em;
+    }
+    .editorial-head-right {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      gap: 1.2rem;
+    }
+    .editorial-head-lead {
+      font-family: var(--font-sans);
+      font-size: 1.05rem;
+      font-weight: 300;
+      line-height: 1.8;
+      color: var(--text-muted);
+    }
+
+    /* EXP BLOCKS */
+    .exp-block { padding: 7rem 0; }
+    .exp-block + .exp-block { border-top: 1px solid var(--border-light); }
+    .exp-block.sand { background: var(--sand-bg); }
+    .exp-block.white { background: var(--white); }
+    .exp-block.light { background: var(--light-bg); }
+    .exp-grid { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 5rem; }
+    .exp-grid.reverse { direction: rtl; }
+    .exp-grid.reverse > * { direction: ltr; }
+    .exp-photo-col { position: relative; }
+    .exp-photo-main { width: 100%; aspect-ratio: 4/3; border-radius: var(--radius); overflow: hidden; box-shadow: 0 12px 40px rgba(0,0,0,0.1); }
+    .exp-photo-main img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.9s cubic-bezier(0.25,0.46,0.45,0.94); }
+    .exp-photo-main:hover img { transform: scale(1.04); }
+    .exp-photo-accent { position: absolute; bottom: -2.2rem; right: -2rem; width: 46%; aspect-ratio: 3/2; border-radius: var(--radius); overflow: hidden; border: 4px solid var(--white); box-shadow: 0 10px 30px rgba(0,0,0,0.16); z-index: 2; }
+    .exp-photo-accent img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .exp-grid.reverse .exp-photo-accent { right: auto; left: -2rem; }
+    .exp-text-col { display: flex; flex-direction: column; gap: 1.1rem; }
+    .exp-badge-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--wine);
+      color: var(--white);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 14px rgba(115, 32, 86, 0.28);
+      margin-bottom: 0.1rem;
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+    .exp-badge-icon:hover {
+      transform: scale(1.08);
+      background: var(--wine-dark);
+    }
+    .exp-title { font-family: var(--font-serif); font-size: clamp(2.2rem, 3.5vw, 3.2rem); font-weight: 300; font-style: italic; line-height: 1.1; color: var(--text-dark); }
+    .exp-tagline { font-family: var(--font-serif); font-size: 1.25rem; font-weight: 400; font-style: italic; color: var(--wine); line-height: 1.4; }
+    .exp-divider { width: 3rem; height: 1px; background: var(--mauve); opacity: 0.6; }
+    .exp-body { font-family: var(--font-sans); font-size: 1rem; font-weight: 300; line-height: 1.85; color: var(--text-muted); }
+
+    /* CIERRE / CTA (IDÉNTICO A HABITACIONES) */
+    #rooms-cta {
+      padding: 8rem 0;
+      background:
+        linear-gradient(135deg, rgba(50,11,36,0.80) 0%, rgba(115,32,86,0.68) 100%),
+        url('assets/banner_montana.jpg') center center / cover no-repeat;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    #rooms-cta::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at center, transparent 30%, rgba(18,20,24,0.45) 100%);
+      pointer-events: none;
+    }
+    #rooms-cta .container { position: relative; z-index: 2; }
+    .rooms-cta-label {
+      font-family: var(--font-sans);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--mauve);
+      margin-bottom: 0.9rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.8rem;
+    }
+    .rooms-cta-label::before, .rooms-cta-label::after {
+      content: '';
+      display: block;
+      width: 2.5rem;
+      height: 1px;
+      background: var(--mauve);
+      opacity: 0.6;
+    }
+    .rooms-cta-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.4rem, 4.5vw, 3.8rem);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--white);
+      margin-bottom: 2.4rem;
+      text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+    }
+
+    /* FOOTER */
+    #footer { background: #111216; border-top: 1px solid rgba(255,255,255,0.08); padding: 5.5rem 0 2.5rem; color: rgba(255,255,255,0.7); }
+    .footer-grid { display: grid; grid-template-columns: 1.35fr 1fr 1fr 1.25fr; gap: 3.5rem; margin-bottom: 4.5rem; }
+    .footer-brand { display: flex; flex-direction: column; }
+    .footer-logo-img { height: 76px; width: auto; object-fit: contain; filter: brightness(0) invert(1); margin-bottom: 1.4rem; align-self: flex-start; }
+    .footer-brand-desc { font-size: 0.84rem; font-weight: 300; line-height: 1.85; color: rgba(255,255,255,0.55); margin-bottom: 1.8rem; max-width: 320px; }
+    .footer-seals-block { display: flex; flex-direction: column; gap: 0.65rem; }
+    .footer-seals-label { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--mauve); }
+    .footer-seals-row { display: flex; align-items: center; gap: 1.2rem; }
+    .footer-seal-img { height: 56px; width: auto; object-fit: contain; filter: drop-shadow(0 4px 10px rgba(0,0,0,0.35)); }
+    .footer-seal-img.ta-seal { height: 66px; }
+    .footer-nav-col { display: flex; flex-direction: column; }
+    .footer-subgroup { display: flex; flex-direction: column; }
+    .footer-subgroup + .footer-subgroup { margin-top: 2rem; }
+    .footer-col-title { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.22em; text-transform: uppercase; color: var(--mauve); margin-bottom: 1.15rem; }
+    .footer-links { display: flex; flex-direction: column; gap: 0.75rem; }
+    .footer-links a { font-size: 0.83rem; color: rgba(255,255,255,0.62); transition: all 0.22s ease; }
+    .footer-links a:hover { color: var(--white); transform: translateX(4px); }
+    .footer-contact-list { display: flex; flex-direction: column; gap: 1.25rem; margin-bottom: 1.8rem; }
+    .footer-contact-card { display: flex; align-items: flex-start; gap: 0.85rem; color: rgba(255,255,255,0.7); }
+    .footer-contact-card:hover { color: var(--white); }
+    .footer-contact-icon { color: var(--mauve); width: 20px; height: 20px; flex-shrink: 0; margin-top: 2px; }
+    .footer-contact-lbl { display: block; font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--mauve); font-weight: 600; }
+    .footer-contact-val { font-size: 0.82rem; color: rgba(255,255,255,0.82); }
+    .footer-social-row { display: flex; align-items: center; gap: 1.2rem; }
+    .footer-social-link { color: rgba(255,255,255,0.65); transition: all var(--transition); }
+    .footer-social-link:hover { color: var(--white); transform: translateY(-2px); }
+    .footer-bottom { border-top: 1px solid rgba(255,255,255,0.07); padding-top: 2rem; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.2rem; font-size: 0.75rem; color: rgba(255,255,255,0.4); }
+    .footer-bottom a { color: rgba(255,255,255,0.5); }
+    .footer-bottom a:hover { color: var(--mauve); }
+
+    /* ANIMATIONS */
+    .fade-up { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .fade-up.in { opacity: 1; transform: translateY(0); }
+
+    /* RESPONSIVE */
+    @media (max-width: 1024px) {
+      .editorial-head-grid { grid-template-columns: 1fr; gap: 1.8rem; }
+      #exp-editorial-head { padding: 8.5rem 0 2.5rem; }
+      .exp-grid { grid-template-columns: 1fr; gap: 3rem; }
+      .exp-grid.reverse { direction: ltr; }
+      .exp-photo-accent { display: none; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+    }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+      #exp-editorial-head { padding: 7.5rem 0 2rem; }
+      .exp-block { padding: 4rem 0; }
+      #rooms-cta { padding: 5rem 0; }
+      .footer-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Mobile Menu -->
+  <nav class="mobile-menu" id="mobileMenu">
+    <button class="mobile-close" id="mobileClose">&times;</button>
+    <a href="el-hotel.html">El Hotel</a>
+    <a href="habitaciones.html">Habitaciones</a>
+    <a href="servicios.html">Servicios</a>
+    <a href="index.html#cava">Cava y Vinos</a>
+    <a href="experiencias.html" class="active">Experiencias</a>
+    <a href="https://www.laresresto.com/" target="_blank">Restaurante</a>
+    <a href="la-guia.html">La Guía</a>
+    <a href="contacto.html">Contacto</a>
+    <button class="btn-primary trigger-booking" style="margin-top:1.5rem">Reservar</button>
+  </nav>
+
+  <!-- Header -->
+  <div class="header-fixed-wrapper" id="headerFixedWrapper">
+    <div class="top-promo-bar">
+      <div class="container promo-inner">
+        <p class="promo-text">Cancelación gratuita hasta 14 días antes con la <strong>tarifa flexible.</strong></p>
+      </div>
+    </div>
+    <header id="navbar">
+      <div class="container">
+        <div class="nav-inner">
+          <a href="index.html"><img src="assets/logo.png" alt="Lares de Chacras" class="nav-logo-img" /></a>
+          <ul class="nav-links">
+            <li><a href="habitaciones.html">Habitaciones</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="index.html#cava">Cava y Vinos</a></li>
+            <li><a href="experiencias.html" class="active">Experiencias</a></li>
+            <li><a href="https://www.laresresto.com/" target="_blank">Restaurante</a></li>
+            <li><a href="el-hotel.html">El Hotel</a></li>
+            <li><a href="la-guia.html">La Guía</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+          <div class="nav-right">
+            <button class="nav-cta trigger-booking">Reservar</button>
+            <button class="nav-hamburger" id="hamburgerBtn" aria-label="Abrir menú">
+              <span></span><span></span><span></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+  </div>
+
+  <!-- ============================================================
+       1. CABECERA EDITORIAL (ESTILO HABITACIONES)
+  ============================================================ -->
+  <section id="exp-editorial-head">
+    <div class="container">
+      <div class="editorial-head-grid">
+        <div class="editorial-head-left">
+          <p class="section-label">EXPERIENCIAS LARES</p>
+          <h1 class="editorial-head-title">El viaje sigue<br>más allá de la casa.</h1>
+        </div>
+        <div class="editorial-head-right">
+          <p class="editorial-head-lead">
+            Una copa de nuestra bodega, un paseo entre viñedos o una salida a la cordillera. Descubrí las experiencias que podés disfrutar durante tu estadía en Lares.
+          </p>
+          <a href="#exp-wine" class="btn-text-link">
+            Explorar experiencias <i data-lucide="arrow-down" style="width:14px;height:14px"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       1. WINE TASTING TIME — fondo blanco / foto izq / texto der
+  ============================================================ -->
+  <section class="exp-block white" id="exp-wine">
+    <div class="container">
+      <div class="exp-grid">
+        <div class="exp-photo-col fade-up">
+          <div class="exp-photo-main">
+            <img src="assets/cava_new.jpg" alt="Wine Tasting Time — copa de Viña Lares en Lares de Chacras" />
+          </div>
+          <div class="exp-photo-accent">
+            <img src="assets/cava_banner.jpg" alt="Detalle de copa de vino de Viña Lares" />
+          </div>
+        </div>
+        <div class="exp-text-col fade-up">
+          <div class="exp-badge-icon"><i data-lucide="wine" style="width:20px;height:20px"></i></div>
+          <h2 class="exp-title">Wine Tasting Time</h2>
+          <p class="exp-tagline">Una copa de la familia, servida en casa.</p>
+          <div class="exp-divider"></div>
+          <p class="exp-body">Disfrutá la copa diaria de Viña Lares, la bodega de nuestra familia. Un momento para hacer una pausa, descubrir nuestros vinos y compartir el espíritu de la casa.</p>
+          <div>
+            <a href="https://wa.me/5492613738750?text=Hola%2C%20me%20interesa%20saber%20m%C3%A1s%20sobre%20el%20Wine%20Tasting%20Time%20de%20Lares%20de%20Chacras." target="_blank" rel="noopener" class="btn-primary">
+              Consultar por Wine Tasting Time
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       2. BIKE WINE TOUR — fondo color / texto izq / foto der
+  ============================================================ -->
+  <section class="exp-block sand" id="exp-bike">
+    <div class="container">
+      <div class="exp-grid reverse">
+        <div class="exp-photo-col fade-up">
+          <div class="exp-photo-main">
+            <img src="assets/exp_bicicletas.webp" alt="Bike Wine Tour — bicicletas entre viñedos de Luján de Cuyo" />
+          </div>
+          <div class="exp-photo-accent">
+            <img src="assets/exp_bodegas.jpg" alt="Bodegas en Luján de Cuyo" />
+          </div>
+        </div>
+        <div class="exp-text-col fade-up">
+          <div class="exp-badge-icon"><i data-lucide="bike" style="width:20px;height:20px"></i></div>
+          <h2 class="exp-title">Bike Wine Tour</h2>
+          <p class="exp-tagline">Mendoza, a tu ritmo y en bicicleta.</p>
+          <div class="exp-divider"></div>
+          <p class="exp-body">Bicicletas y mapa para descubrir las bodegas más cercanas de Luján de Cuyo. Un recorrido que combina dos visitas y un almuerzo maridado para disfrutar el paisaje y los sabores de la región.</p>
+          <div>
+            <a href="https://wa.me/5492613738750?text=Hola%2C%20me%20gustar%C3%ADa%20saber%20m%C3%A1s%20sobre%20el%20Bike%20Wine%20Tour%20de%20Lares%20de%20Chacras." target="_blank" rel="noopener" class="btn-primary">
+              Consultar por Bike Wine Tour
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       3. TRANSFER INOUT — fondo blanco / foto izq / texto der
+  ============================================================ -->
+  <section class="exp-block white" id="exp-transfer">
+    <div class="container">
+      <div class="exp-grid">
+        <div class="exp-photo-col fade-up">
+          <div class="exp-photo-main">
+            <img src="assets/exp_transfer.jpg" alt="Transfer privado INOUT — traslados en Mendoza" />
+          </div>
+          <div class="exp-photo-accent">
+            <img src="assets/casa_entre_bodegas.jpg" alt="Recorridos y traslados Lares de Chacras" />
+          </div>
+        </div>
+        <div class="exp-text-col fade-up">
+          <div class="exp-badge-icon"><i data-lucide="car" style="width:20px;height:20px"></i></div>
+          <h2 class="exp-title">Transfer INOUT</h2>
+          <p class="exp-tagline">Llegá a Lares. Salí a descubrir Mendoza.</p>
+          <div class="exp-divider"></div>
+          <p class="exp-body">Traslados privados en van desde y hacia el aeropuerto de Mendoza, coordinados por Lares. También podés consultar por recorridos de bodegas para disfrutar del vino y del paisaje sin manejar.</p>
+          <div>
+            <a href="https://wa.me/5492613738750?text=Hola%2C%20me%20interesa%20el%20servicio%20de%20Transfer%20INOUT%20de%20Lares%20de%20Chacras." target="_blank" rel="noopener" class="btn-primary">
+              Consultar por traslados
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       4. ALTA MONTAÑA Y CABALGATAS — fondo color / texto izq / foto der
+  ============================================================ -->
+  <section class="exp-block sand" id="exp-montana">
+    <div class="container">
+      <div class="exp-grid reverse">
+        <div class="exp-photo-col fade-up">
+          <div class="exp-photo-main">
+            <img src="assets/exp_cabalgatas.jpg" alt="Alta montaña y cabalgatas — cordillera y paseos a caballo" />
+          </div>
+          <div class="exp-photo-accent">
+            <img src="assets/exp_montana.jpg" alt="Cordillera de los Andes Mendoza" />
+          </div>
+        </div>
+        <div class="exp-text-col fade-up">
+          <div class="exp-badge-icon"><i data-lucide="mountain" style="width:20px;height:20px"></i></div>
+          <h2 class="exp-title">Alta Montaña y Cabalgatas</h2>
+          <p class="exp-tagline">Otra perspectiva de Mendoza.</p>
+          <div class="exp-divider"></div>
+          <p class="exp-body">Salidas a la cordillera y paseos a caballo para descubrir el entorno de una manera diferente. Son propuestas coordinadas a pedido: contanos qué te gustaría vivir y consultá las opciones para tu estadía.</p>
+          <div>
+            <a href="https://wa.me/5492613738750?text=Hola%2C%20me%20interesan%20las%20salidas%20de%20alta%20monta%C3%B1a%20y%20cabalgatas%20desde%20Lares%20de%20Chacras." target="_blank" rel="noopener" class="btn-primary">
+              Consultar por estas salidas
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       5. CIERRE / CTA (IDÉNTICO A HABITACIONES)
+  ============================================================ -->
+  <section id="rooms-cta">
+    <div class="container">
+      <p class="rooms-cta-label">RESERVAS DIRECTAS</p>
+      <h2 class="rooms-cta-title">Tu próxima pausa empieza acá.</h2>
+      <button class="btn-color-banner trigger-booking">
+        <i data-lucide="calendar" style="width:16px;height:16px"></i> Consultar disponibilidad
+      </button>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/logo_footer.png" alt="Lares de Chacras" class="footer-logo-img" />
+          <p class="footer-brand-desc">Hotel boutique de dieciséis habitaciones en Chacras de Coria, Mendoza, entre las bodegas de Luján de Cuyo. Jardines, piscina, cava y restaurante propio.</p>
+          <div class="footer-seals-block">
+            <span class="footer-seals-label">Distinciones</span>
+            <div class="footer-seals-row">
+              <img src="assets/michelin_key_2025.png" alt="Michelin Key 2025" class="footer-seal-img" />
+              <img src="assets/tripadvisor_travelers_choice_v2.png" alt="TripAdvisor Travelers Choice" class="footer-seal-img ta-seal" />
+            </div>
+          </div>
+        </div>
+        <div class="footer-nav-col">
+          <div class="footer-subgroup">
+            <p class="footer-col-title">El hotel</p>
+            <ul class="footer-links">
+              <li><a href="habitaciones.html">Habitaciones</a></li>
+              <li><a href="habitaciones.html#junior">Casa Vita</a></li>
+              <li><a href="servicios.html">Servicios</a></li>
+              <li><a href="index.html#photo-gallery">Galería</a></li>
+            </ul>
+          </div>
+          <div class="footer-subgroup">
+            <p class="footer-col-title">La zona</p>
+            <ul class="footer-links">
+              <li><a href="la-guia.html">La guía</a></li>
+              <li><a href="index.html#location">Cómo llegar</a></li>
+              <li><a href="index.html#faq">Preguntas frecuentes</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-nav-col">
+          <div class="footer-subgroup">
+            <p class="footer-col-title">Vino y mesa</p>
+            <ul class="footer-links">
+              <li><a href="index.html#cava">La cava</a></li>
+              <li><a href="https://www.laresresto.com/" target="_blank" rel="noopener">Lares Restó</a></li>
+              <li><a href="experiencias.html">Experiencias</a></li>
+            </ul>
+          </div>
+          <div class="footer-subgroup">
+            <p class="footer-col-title">Reservas</p>
+            <ul class="footer-links">
+              <li><a href="contacto.html">Contacto</a></li>
+              <li><a href="https://engine.mews.com/or/laresdechacras" target="_blank" rel="noopener">Check-in online</a></li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <p class="footer-col-title">Ubicación y contacto</p>
+          <div class="footer-contact-list">
+            <a href="https://maps.google.com/?q=Larrea+1266,+Chacras+de+Coria" target="_blank" rel="noopener" class="footer-contact-card">
+              <div class="footer-contact-icon"><i data-lucide="map-pin" style="width:15px;height:15px"></i></div>
+              <div><span class="footer-contact-lbl">Dirección</span><span class="footer-contact-val">Larrea 1266, M5505 Chacras de Coria, Luján de Cuyo, Mendoza</span></div>
+            </a>
+            <a href="tel:+542614961061" class="footer-contact-card">
+              <div class="footer-contact-icon"><i data-lucide="phone" style="width:15px;height:15px"></i></div>
+              <div><span class="footer-contact-lbl">Teléfono</span><span class="footer-contact-val">+54 261 496-1061</span></div>
+            </a>
+            <a href="https://wa.me/5492613738750" target="_blank" rel="noopener" class="footer-contact-card">
+              <div class="footer-contact-icon">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.498 14.382c-.301-.15-1.781-.879-2.056-.979-.275-.1-.475-.15-.675.15-.2.299-.775.979-.95 1.179-.175.2-.35.225-.65.075-.3-.15-1.267-.467-2.414-1.488-.893-.795-1.496-1.777-1.671-2.077-.175-.3-.019-.462.13-.611.135-.134.301-.35.45-.525.15-.175.2-.299.3-.5.1-.2.05-.375-.025-.525-.075-.15-.675-1.628-.925-2.228-.243-.583-.49-.504-.675-.513-.175-.008-.375-.008-.575-.008-.2 0-.525.075-.8.375-.275.3-1.05 1.026-1.05 2.501 0 1.475 1.075 2.899 1.225 3.1.15.2 2.113 3.227 5.118 4.527.714.309 1.272.494 1.706.632.716.228 1.368.196 1.883.119.574-.086 1.781-.728 2.031-1.431.25-.703.25-1.303.175-1.43-.075-.128-.275-.203-.575-.353z"/><path d="M12 2a10 10 0 0 0-8.49 15.31L2 22l4.82-1.47A10 10 0 1 0 12 2z"/></svg>
+              </div>
+              <div><span class="footer-contact-lbl">WhatsApp</span><span class="footer-contact-val">+54 9 261 373 8750</span></div>
+            </a>
+            <a href="mailto:recepcion@laresdechacras.com" class="footer-contact-card">
+              <div class="footer-contact-icon"><i data-lucide="mail" style="width:15px;height:15px"></i></div>
+              <div><span class="footer-contact-lbl">Correo</span><span class="footer-contact-val">recepcion@laresdechacras.com</span></div>
+            </a>
+          </div>
+          <div class="footer-social-row">
+            <a href="https://www.instagram.com/laresdechacras" target="_blank" rel="noopener" class="footer-social-link" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+            </a>
+            <a href="https://www.facebook.com/laresdechacras" target="_blank" rel="noopener" class="footer-social-link" aria-label="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Lares de Chacras Hotel Boutique. Todos los derechos reservados.</p>
+        <div style="display:flex;gap:1.5rem"><a href="#">Privacidad</a><a href="#">Términos</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Widget (Sellos + WhatsApp) -->
+  <div class="floating-widget-wrap">
+    <div class="floating-seals">
+      <img src="assets/michelin_key_2025.png" alt="Llave Michelin 2025" class="floating-seal-img" />
+      <img src="assets/tripadvisor_travelers_choice_v2.png" alt="TripAdvisor Travelers Choice" class="floating-seal-img ta-seal" />
+    </div>
+    <a href="https://wa.me/5492613738750?text=Hola%20Lares%20de%20Chacras,%20quisiera%20consultar%20por%20experiencias" target="_blank" rel="noopener" class="floating-whatsapp" aria-label="WhatsApp">
+      <img src="assets/WhatsApp.webp" alt="WhatsApp" />
+    </a>
+  </div>
+
+  <!-- Reservation Modal -->
+  <div id="reservationModal" style="position:fixed;inset:0;background:rgba(18,20,24,0.85);backdrop-filter:blur(8px);z-index:10001;display:none;align-items:center;justify-content:center;padding:1.5rem;">
+    <div style="background:#fff;width:100%;max-width:900px;height:85vh;border-radius:4px;overflow:hidden;display:flex;flex-direction:column;">
+      <div style="padding:1.2rem 2rem;background:var(--dark-bg);color:#fff;display:flex;align-items:center;justify-content:space-between;">
+        <span style="font-family:var(--font-sans);font-size:0.8rem;letter-spacing:0.18em;text-transform:uppercase;">Reservas Online · Lares de Chacras</span>
+        <button id="modalClose" style="background:none;border:none;color:#fff;font-size:1.8rem;cursor:pointer;">&times;</button>
+      </div>
+      <iframe src="https://engine.mews.com/or/laresdechacras" style="width:100%;flex:1;border:none;" title="Motor de Reserva Lares de Chacras"></iframe>
+    </div>
+  </div>
+
+  <script>
+    lucide.createIcons();
+
+    // Header scroll
+    const hfw = document.getElementById('headerFixedWrapper');
+    window.addEventListener('scroll', () => hfw.classList.toggle('scrolled', window.scrollY > 40), { passive: true });
+
+    // Mobile menu
+    document.getElementById('hamburgerBtn').addEventListener('click', () => document.getElementById('mobileMenu').classList.add('open'));
+    document.getElementById('mobileClose').addEventListener('click', () => document.getElementById('mobileMenu').classList.remove('open'));
+    document.querySelectorAll('.mobile-menu a').forEach(a => a.addEventListener('click', () => document.getElementById('mobileMenu').classList.remove('open')));
+
+    // Booking
+    const USE_MODAL = false;
+    const bookingModal = document.getElementById('reservationModal');
+    document.querySelectorAll('.trigger-booking').forEach(btn => {
+      btn.addEventListener('click', e => {
+        e.preventDefault();
+        USE_MODAL ? (bookingModal.style.display = 'flex') : window.open('https://engine.mews.com/or/laresdechacras', '_blank');
+      });
+    });
+    document.getElementById('modalClose').addEventListener('click', () => bookingModal.style.display = 'none');
+
+    // Fade-up observer
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); observer.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    // Smooth scroll nav
+    document.querySelectorAll('.exp-nav-link, .btn-text-link').forEach(link => {
+      link.addEventListener('click', e => {
+        const href = link.getAttribute('href');
+        if (href && href.startsWith('#')) {
+          const target = document.querySelector(href);
+          if (target) {
+            e.preventDefault();
+            const top = target.getBoundingClientRect().top + window.scrollY - 130;
+            window.scrollTo({ top, behavior: 'smooth' });
+          }
+        }
+      });
+    });
+  </script>
+</body>
+</html>

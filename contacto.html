@@ -1,0 +1,1696 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ubicación y Contacto | Lares de Chacras — Hotel Boutique en Mendoza</title>
+  <meta name="description" content="Contactate con Lares de Chacras en Chacras de Coria, Mendoza. Consultas por estadía, experiencias, traslados y cómo llegar al hotel." />
+
+  <!-- Google Fonts & Lucide Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+  <style>
+    :root {
+      --wine:        #732056;
+      --wine-dark:   #471335;
+      --wine-deep:   #320B24;
+      --wine-soft:   rgba(115,32,86,0.08);
+      --mauve:       #BF8FAF;
+      --taupe:       #A69C8A;
+      --taupe-light: #D8D2C7;
+      --sand-bg:     #F5F2EB;
+      --light-bg:    #F8F6F2;
+      --white:       #FFFFFF;
+      --text-dark:   #1C1E22;
+      --text-muted:  #5C6470;
+      --border-light: rgba(166,156,138,0.24);
+      --font-serif:  'Cormorant Garamond', Georgia, serif;
+      --font-sans:   'Jost', 'Helvetica Neue', sans-serif;
+      --transition:  0.35s cubic-bezier(0.25,0.46,0.45,0.94);
+      --radius:      3px;
+      --dark-bg:     #121418;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+    body { font-family: var(--font-sans); background: var(--light-bg); color: var(--text-dark); overflow-x: hidden; line-height: 1.6; }
+    img { display: block; max-width: 100%; height: auto; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    .container { max-width: 1360px; margin: 0 auto; padding: 0 2.5rem; }
+
+    /* BOTONES Y ENLACES */
+    .btn-primary {
+      display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem;
+      padding: 0.95rem 2.2rem; background: var(--wine); color: var(--white);
+      font-family: var(--font-sans); font-size: 0.72rem; font-weight: 600;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      border: 1px solid var(--wine); cursor: pointer; border-radius: var(--radius);
+      transition: all var(--transition); box-shadow: 0 4px 16px rgba(115,32,86,0.22);
+    }
+    .btn-primary:hover { background: var(--wine-dark); border-color: var(--wine-dark); transform: translateY(-2px); color: var(--white); box-shadow: 0 6px 22px rgba(115,32,86,0.32); }
+    .btn-primary:disabled { opacity: 0.65; cursor: not-allowed; transform: none; box-shadow: none; }
+
+    .btn-secondary, .btn-outline {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 0.95rem 2.2rem; background: transparent; color: var(--wine);
+      font-family: var(--font-sans); font-size: 0.72rem; font-weight: 600;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      border: 1px solid var(--wine); cursor: pointer; border-radius: var(--radius);
+      transition: all var(--transition);
+    }
+    .btn-secondary:hover, .btn-outline:hover {
+      background: var(--wine); color: var(--white); transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(115,32,86,0.25);
+    }
+
+    .btn-text-link {
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      font-family: var(--font-sans); font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--wine); transition: all var(--transition); background: none; border: none; cursor: pointer; padding: 0;
+    }
+    .btn-text-link:hover { color: var(--wine-dark); transform: translateX(3px); }
+
+    /* TYPOGRAPHY UTILITIES */
+    .section-label {
+      font-family: var(--font-sans);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--wine);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.9rem;
+    }
+    .section-label::before {
+      content: '';
+      display: inline-block;
+      width: 1.8rem;
+      height: 1px;
+      background: var(--mauve);
+    }
+    .section-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.4rem, 4vw, 3.4rem);
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.1;
+      color: var(--text-dark);
+      letter-spacing: -0.01em;
+    }
+
+    /* HEADER */
+    .header-fixed-wrapper { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; transition: all var(--transition); }
+    .top-promo-bar {
+      background: linear-gradient(90deg,#320B24 0%,#732056 35%,#8C286A 50%,#732056 65%,#320B24 100%);
+      background-size: 200% 100%; animation: promoGlow 8s ease infinite;
+      color: var(--white); padding: 0.32rem 0;
+      border-bottom: 1px solid rgba(255,255,255,0.12); z-index: 1001;
+    }
+    @keyframes promoGlow { 0%{background-position:0% 50%} 50%{background-position:100% 50%} 100%{background-position:0% 50%} }
+    .promo-inner { display: flex; align-items: center; justify-content: center; }
+    .promo-text { color: var(--white); font-family: var(--font-sans); font-weight: 300; font-size: 0.76rem; text-align: center; }
+    .promo-text strong { font-weight: 600; }
+    #navbar { width: 100%; padding: 0.45rem 0; transition: all var(--transition); background: rgba(18,20,24,0.96); backdrop-filter: blur(16px); border-bottom: 1px solid rgba(191,143,175,0.18); }
+    .header-fixed-wrapper.scrolled #navbar { background: rgba(18,20,24,0.98); padding: 0.25rem 0; }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo-img { height: 52px; width: auto; object-fit: contain; }
+    .nav-links { display: flex; align-items: center; gap: 2.2rem; }
+    .nav-links a { font-family: var(--font-sans); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.88); transition: color var(--transition); position: relative; }
+    .nav-links a::after { content: ''; position: absolute; bottom: -6px; left: 0; width: 0; height: 1px; background: var(--mauve); transition: width var(--transition); }
+    .nav-links a:hover, .nav-links a.active { color: var(--mauve); }
+    .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+    .nav-right { display: flex; align-items: center; gap: 1.4rem; }
+    .nav-cta { display: inline-block; padding: 0.65rem 1.6rem; background: var(--wine); color: var(--white); font-family: var(--font-sans); font-size: 0.68rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; border-radius: var(--radius); transition: all var(--transition); border: none; cursor: pointer; }
+    .nav-cta:hover { background: var(--wine-dark); transform: translateY(-1px); }
+    .nav-hamburger { display: none; flex-direction: column; gap: 6px; cursor: pointer; background: none; border: none; padding: 6px; }
+    .nav-hamburger span { display: block; width: 26px; height: 1.5px; background: var(--white); }
+    .mobile-menu { display: none; position: fixed; inset: 0; background: var(--dark-bg); z-index: 9999; flex-direction: column; align-items: center; justify-content: center; gap: 1.8rem; }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { font-family: var(--font-serif); font-size: 2rem; font-weight: 300; font-style: italic; color: var(--white); }
+    .mobile-menu a:hover, .mobile-menu a.active { color: var(--mauve); }
+    .mobile-close { position: absolute; top: 2rem; right: 2rem; background: none; border: none; color: var(--white); font-size: 2rem; cursor: pointer; }
+
+    /* FLOATING WHATSAPP & SEALS */
+    .floating-widget-wrap {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      z-index: 900;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+    }
+    .floating-seals {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    .floating-seal-img {
+      height: 62px;
+      width: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 4px 14px rgba(0,0,0,0.4));
+      cursor: default;
+      user-select: none;
+    }
+    .floating-seal-img.ta-seal { height: 72px; }
+    .floating-whatsapp {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 6px 25px rgba(37,211,102,0.45);
+      transition: all var(--transition);
+    }
+    .floating-whatsapp img { width: 100%; height: 100%; object-fit: contain; }
+    .floating-whatsapp:hover { transform: scale(1.08) translateY(-2px); }
+
+    /* ============================================================
+       1. ENCABEZADO EDITORIAL (ESTILO HABITACIONES)
+    ============================================================ */
+    #contact-editorial-head {
+      padding: 10.5rem 0 3.8rem;
+      background: var(--light-bg);
+      border-bottom: 1px solid var(--border-light);
+    }
+    .editorial-head-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: flex-end;
+      gap: 5rem;
+      margin-bottom: 0;
+    }
+    .editorial-head-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.8rem, 5vw, 4.4rem);
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.06;
+      color: var(--text-dark);
+      letter-spacing: -0.01em;
+    }
+    .editorial-head-right {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      gap: 1.3rem;
+    }
+    .editorial-head-lead {
+      font-family: var(--font-sans);
+      font-size: 1.05rem;
+      font-weight: 300;
+      line-height: 1.8;
+      color: var(--text-muted);
+    }
+    .editorial-head-actions {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+    }
+
+    /* ============================================================
+       2. CONTACTO, MAPA Y FORMULARIO
+    ============================================================ */
+    #contact-section {
+      padding: 6rem 0 7rem;
+      background: var(--white);
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 1fr;
+      gap: 5.5rem;
+      align-items: start;
+    }
+    .contact-direct-col {
+      display: flex;
+      flex-direction: column;
+    }
+    .contact-lead {
+      font-size: 1.05rem;
+      font-weight: 300;
+      line-height: 1.8;
+      color: var(--text-muted);
+      margin: 1rem 0 2.2rem;
+      max-width: 480px;
+    }
+    .contact-rows-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.8rem;
+    }
+    .contact-row-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.35rem;
+      padding: 0;
+      border: none;
+    }
+    .contact-row-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: rgba(115,32,86,0.06);
+      color: var(--wine);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+      transition: all var(--transition);
+    }
+    .contact-row-item:hover .contact-row-icon {
+      background: rgba(115,32,86,0.12);
+      transform: scale(1.05);
+    }
+    .contact-row-content {
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+      flex: 1;
+    }
+    .contact-row-channel {
+      font-family: var(--font-sans);
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--mauve);
+    }
+    .contact-row-value {
+      font-family: var(--font-sans);
+      font-size: 1.05rem;
+      font-weight: 400;
+      color: var(--text-dark);
+    }
+    .contact-row-action {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--wine);
+      margin-top: 0.15rem;
+      transition: all var(--transition);
+    }
+    .contact-row-action:hover {
+      color: var(--wine-dark);
+      transform: translateX(3px);
+    }
+
+    /* MAPA INTEGRADO DEBAJO DE LOS CONTACTOS (SIN LÍNEA DIVISORIA) */
+    .contact-map-block {
+      margin-top: 3.2rem;
+      padding-top: 0;
+      border-top: none;
+    }
+    .contact-map-header {
+      margin-bottom: 1.1rem;
+    }
+    .contact-map-lbl {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--mauve);
+      margin-bottom: 0.45rem;
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+    }
+    .contact-map-addr {
+      font-size: 1.15rem;
+      font-weight: 500;
+      color: var(--text-dark);
+      margin-bottom: 0.2rem;
+    }
+    .contact-map-sub {
+      font-size: 0.9rem;
+      font-weight: 300;
+      color: var(--text-muted);
+    }
+    .contact-map-frame-wrap {
+      width: 100%;
+      height: 490px;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+      border: 1px solid var(--border-light);
+      margin: 1.3rem 0 1.2rem;
+    }
+    .contact-map-frame-wrap iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
+    }
+    .contact-map-actions {
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    /* PANEL FORMULARIO: GLASS VIOLETA OSCURO */
+    .contact-form-panel {
+      background: linear-gradient(155deg, rgba(46, 12, 34, 0.92) 0%, rgba(24, 6, 18, 0.96) 100%);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(186, 108, 158, 0.28);
+      border-radius: var(--radius);
+      padding: 3.2rem 2.8rem;
+      box-shadow: 0 25px 60px rgba(25, 4, 18, 0.38), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+      position: sticky;
+      top: 100px;
+    }
+    .form-panel-title {
+      font-family: var(--font-serif);
+      font-size: 2.15rem;
+      font-weight: 300;
+      font-style: italic;
+      color: #ffffff;
+      margin-bottom: 0.4rem;
+    }
+    .form-panel-desc {
+      font-size: 0.92rem;
+      font-weight: 300;
+      color: rgba(255, 255, 255, 0.72);
+      margin-bottom: 2rem;
+      line-height: 1.7;
+    }
+
+    .form-group {
+      margin-bottom: 1.35rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+    }
+    .form-group label {
+      font-family: var(--font-sans);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.85);
+    }
+    .form-group label .req {
+      color: var(--mauve);
+      font-weight: 700;
+      margin-left: 2px;
+    }
+    .form-control {
+      width: 100%;
+      padding: 0.88rem 1.1rem;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: var(--radius);
+      font-family: var(--font-sans);
+      font-size: 0.92rem;
+      color: #ffffff;
+      transition: all var(--transition);
+      outline: none;
+    }
+    .form-control::placeholder {
+      color: rgba(255,255,255,0.32);
+    }
+    .form-control:focus {
+      border-color: var(--mauve);
+      background: rgba(255,255,255,0.09);
+      box-shadow: 0 0 0 3px rgba(163,86,134,0.22);
+    }
+    .form-control option {
+      background: #1e1b1c;
+      color: #ffffff;
+    }
+    .form-control[type="date"] {
+      color-scheme: dark;
+    }
+    .form-control.error {
+      border-color: #ef5350;
+      background: rgba(239,83,80,0.12);
+    }
+    .field-error-msg {
+      font-size: 0.72rem;
+      color: #ff8a80;
+      font-weight: 500;
+      display: none;
+    }
+    .field-error-msg.visible {
+      display: block;
+    }
+
+    /* CAMPOS CONDICIONALES DE ESTADÍA */
+    #stayFields {
+      display: none;
+      padding: 1.2rem;
+      background: rgba(255,255,255,0.04);
+      border: 1px dashed rgba(255,255,255,0.16);
+      border-radius: var(--radius);
+      margin-bottom: 1.35rem;
+      animation: fadeIn 0.35s ease;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .form-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .form-privacy-note {
+      font-size: 0.76rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.48);
+      margin-top: 1.1rem;
+      line-height: 1.6;
+      text-align: center;
+    }
+    .form-privacy-note a {
+      color: rgba(255,255,255,0.85);
+      text-decoration: underline;
+      cursor: pointer;
+    }
+    .form-privacy-note a:hover {
+      color: var(--white);
+    }
+
+    /* ESTADOS DE FEEDBACK */
+    .form-feedback {
+      display: none;
+      padding: 1.6rem;
+      border-radius: var(--radius);
+      margin-top: 1.2rem;
+      text-align: center;
+      animation: fadeIn 0.4s ease;
+    }
+    .form-feedback.success {
+      background: rgba(46,125,50,0.2);
+      border: 1px solid rgba(76,175,80,0.4);
+      color: #a5d6a7;
+    }
+    .form-feedback.error {
+      background: rgba(198,40,40,0.2);
+      border: 1px solid rgba(239,83,80,0.4);
+      color: #ffcdd2;
+    }
+    .feedback-title {
+      font-family: var(--font-serif);
+      font-size: 1.35rem;
+      font-style: italic;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+    }
+    .feedback-body {
+      font-size: 0.88rem;
+      line-height: 1.6;
+    }
+
+    /* ============================================================
+       3. DISTANCIAS DE REFERENCIA (FONDO CASI NEGRO + CARDS GLASS)
+    ============================================================ */
+    #distancias {
+      padding: 5.5rem 0 5.8rem;
+      background: #141214;
+      border-top: 1px solid rgba(255,255,255,0.07);
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    .distances-header-title {
+      font-family: var(--font-sans);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: #d182b3;
+      margin-bottom: 2.2rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    .distances-header-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: rgba(255,255,255,0.12);
+    }
+    .distances-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1.5rem;
+    }
+    .distance-stat-card {
+      background: rgba(255, 255, 255, 0.04);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: var(--radius);
+      padding: 2.2rem 1.4rem;
+      text-align: center;
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.3);
+      transition: transform var(--transition), border-color var(--transition), background var(--transition), box-shadow var(--transition);
+    }
+    .distance-stat-card:hover {
+      transform: translateY(-4px);
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(209, 130, 179, 0.4);
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+    }
+    .distance-num {
+      display: block;
+      font-family: var(--font-serif);
+      font-size: 2.4rem;
+      font-weight: 300;
+      font-style: italic;
+      color: #f7d5e6;
+      line-height: 1;
+      margin-bottom: 0.6rem;
+      text-shadow: 0 2px 10px rgba(163, 86, 134, 0.25);
+    }
+    .distance-name {
+      font-family: var(--font-sans);
+      font-size: 0.76rem;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      color: rgba(255, 255, 255, 0.85);
+      line-height: 1.45;
+    }
+
+    /* ============================================================
+       4. BANNER FINAL (ESTILO SERVICIOS / JARDÍN CON VIGNETTE VINO)
+    ============================================================ */
+    .contact-cta-sec {
+      position: relative;
+      min-height: 480px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 5.5rem 2rem;
+      text-align: center;
+      background: #14171d url('assets/cta_garden_bg.jpg') center 45% / cover no-repeat;
+      color: var(--white);
+      overflow: hidden;
+    }
+    .contact-cta-sec::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        180deg,
+        rgba(18, 20, 24, 0.65) 0%,
+        rgba(66, 17, 48, 0.76) 50%,
+        rgba(18, 20, 24, 0.9) 100%
+      );
+      z-index: 1;
+    }
+    .contact-cta-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .contact-cta-title {
+      font-family: var(--font-serif);
+      font-size: clamp(2.2rem, 3.8vw, 3.2rem);
+      font-weight: 300;
+      font-style: italic;
+      line-height: 1.15;
+      margin-bottom: 0.75rem;
+      color: var(--white);
+    }
+    .contact-cta-desc {
+      font-family: var(--font-sans);
+      font-size: 1.02rem;
+      font-weight: 300;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 2rem;
+    }
+    .contact-cta-actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+    }
+    .btn-cta-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.95rem 2.2rem;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      color: var(--white);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      border-radius: var(--radius);
+      font-family: var(--font-sans);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all var(--transition);
+    }
+    .btn-cta-secondary:hover {
+      background: rgba(255, 255, 255, 0.22);
+      border-color: var(--white);
+      color: var(--white);
+      transform: translateY(-2px);
+    }
+
+    /* FOOTER GLOBAL - EDITORIAL BOUTIQUE (IDÉNTICO A HOME) */
+    #footer {
+      background: #111216;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 5.5rem 0 2.5rem;
+      color: rgba(255, 255, 255, 0.7);
+      position: relative;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.35fr 1fr 1fr 1.25fr;
+      gap: 3.5rem;
+      margin-bottom: 4.5rem;
+    }
+
+    /* Col 1: Brand & Certifications */
+    .footer-brand {
+      display: flex;
+      flex-direction: column;
+    }
+    .footer-brand .footer-logo-img {
+      height: 78px;
+      width: auto;
+      object-fit: contain;
+      filter: brightness(0) invert(1);
+      margin-bottom: 1.4rem;
+      align-self: flex-start;
+    }
+    .footer-brand-desc {
+      font-family: var(--font-sans);
+      font-size: 0.84rem;
+      font-weight: 300;
+      line-height: 1.85;
+      color: rgba(255, 255, 255, 0.55);
+      margin-bottom: 1.8rem;
+      max-width: 320px;
+    }
+    .footer-seals-block {
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+    .footer-seals-label {
+      font-family: var(--font-sans);
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--mauve);
+    }
+    .footer-seals-row {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+    }
+    .footer-seal-img {
+      height: 56px;
+      width: auto;
+      object-fit: contain;
+      filter: drop-shadow(0 4px 10px rgba(0,0,0,0.35));
+      transition: transform var(--transition);
+      cursor: default;
+      user-select: none;
+      -webkit-user-drag: none;
+    }
+    .footer-seal-img.ta-seal {
+      height: 66px;
+    }
+    .footer-seal-img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Col 2 & 3: Navigation Sub-blocks */
+    .footer-nav-col {
+      display: flex;
+      flex-direction: column;
+    }
+    .footer-subgroup {
+      display: flex;
+      flex-direction: column;
+    }
+    .footer-nav-col .footer-subgroup:first-child {
+      min-height: 180px;
+    }
+    .footer-subgroup + .footer-subgroup {
+      margin-top: 2rem;
+    }
+    .footer-col-title {
+      font-family: var(--font-sans);
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--mauve);
+      margin-bottom: 1.15rem;
+    }
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .footer-links a {
+      font-family: var(--font-sans);
+      font-size: 0.83rem;
+      color: rgba(255, 255, 255, 0.62);
+      transition: all 0.22s ease;
+      display: inline-block;
+      text-decoration: none;
+    }
+    .footer-links a:hover {
+      color: var(--white);
+      transform: translateX(4px);
+    }
+
+    /* Col 4: Interactive Contact & Social */
+    .footer-contact-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      margin-bottom: 1.8rem;
+    }
+    .footer-contact-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.85rem;
+      padding: 0;
+      background: transparent;
+      border: none;
+      border-radius: 0;
+      transition: all var(--transition);
+      text-decoration: none;
+      color: rgba(255, 255, 255, 0.7);
+    }
+    .footer-contact-card:hover {
+      background: transparent;
+      transform: translateX(3px);
+      color: var(--white);
+    }
+    .footer-contact-icon {
+      color: var(--mauve);
+      width: 20px;
+      height: 20px;
+      background: transparent;
+      border-radius: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .footer-contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 0.15rem;
+    }
+    .footer-contact-lbl {
+      font-size: 0.62rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--mauve);
+      font-weight: 600;
+    }
+    .footer-contact-val {
+      font-size: 0.82rem;
+      line-height: 1.45;
+      color: rgba(255, 255, 255, 0.82);
+      transition: color var(--transition);
+    }
+    .footer-contact-card:hover .footer-contact-val {
+      color: var(--white);
+    }
+    .footer-social-row {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      margin-top: 0.5rem;
+    }
+    .footer-social-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
+      border: none;
+      color: rgba(255, 255, 255, 0.65);
+      text-decoration: none;
+      transition: all var(--transition);
+      padding: 0;
+    }
+    .footer-social-link:hover {
+      background: transparent;
+      color: var(--white);
+      transform: translateY(-2px);
+    }
+
+    /* Footer Bottom */
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.07);
+      padding-top: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      font-family: var(--font-sans);
+      font-size: 0.75rem;
+      color: rgba(255, 255, 255, 0.4);
+    }
+    .footer-bottom a {
+      color: rgba(255, 255, 255, 0.5);
+      text-decoration: none;
+      transition: color var(--transition);
+    }
+    .footer-bottom a:hover {
+      color: var(--mauve);
+    }
+
+    /* TOAST COPIAR DIRECCIÓN */
+    #copyToast {
+      position: fixed;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%) translateY(30px);
+      background: var(--dark-bg);
+      color: var(--white);
+      padding: 0.75rem 1.6rem;
+      border-radius: 40px;
+      font-size: 0.82rem;
+      letter-spacing: 0.06em;
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      z-index: 10002;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    #copyToast.show {
+      opacity: 1;
+      visibility: visible;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    /* MODAL POLÍTICA PRIVACIDAD */
+    .policy-modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(18,20,24,0.75);
+      backdrop-filter: blur(8px);
+      z-index: 10003;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+    .policy-modal-box {
+      background: var(--white);
+      max-width: 620px;
+      width: 100%;
+      border-radius: var(--radius);
+      padding: 2.5rem;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+      position: relative;
+      max-height: 80vh;
+      overflow-y: auto;
+    }
+    .policy-close {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      background: none;
+      border: none;
+      font-size: 1.8rem;
+      cursor: pointer;
+      color: var(--text-muted);
+    }
+
+    /* ANIMACIONES */
+    .fade-up { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .fade-up.in { opacity: 1; transform: translateY(0); }
+
+    @media (prefers-reduced-motion: reduce) {
+      .fade-up { opacity: 1; transform: none; transition: none; }
+      * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 1024px) {
+      .editorial-head-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .contact-grid { grid-template-columns: 1fr; gap: 4rem; }
+      .contact-form-panel { position: static; }
+      .distances-grid { grid-template-columns: repeat(3, 1fr); }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+    }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+      #contact-editorial-head { padding: 8.5rem 0 3rem; }
+      #contact-section { padding: 4.5rem 0 5rem; }
+      #distancias { padding: 4rem 0 4.5rem; }
+      .contact-cta-sec { min-height: 420px; padding: 4.5rem 1.5rem; }
+      .contact-form-panel { padding: 2.2rem 1.5rem; }
+      .form-grid-2 { grid-template-columns: 1fr; }
+      .distances-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+      .distances-footnote { text-align: left; }
+      .contact-map-frame-wrap { height: 280px; }
+      .footer-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Floating Widget (Sellos + WhatsApp) -->
+  <div class="floating-widget-wrap">
+    <div class="floating-seals">
+      <img src="assets/michelin_key_2025.png" alt="Llave Michelin 2025" class="floating-seal-img" />
+      <img src="assets/tripadvisor_travelers_choice_v2.png" alt="TripAdvisor Travelers Choice" class="floating-seal-img ta-seal" />
+    </div>
+    <a href="https://wa.me/5492613738750?text=Hola%20Lares%20de%20Chacras,%20me%20gustar%C3%ADa%20hacer%20una%20consulta." target="_blank" rel="noopener" class="floating-whatsapp" aria-label="WhatsApp">
+      <img src="assets/WhatsApp.webp" alt="WhatsApp" />
+    </a>
+  </div>
+
+  <!-- Mobile Menu -->
+  <nav class="mobile-menu" id="mobileMenu">
+    <button class="mobile-close" id="mobileClose" aria-label="Cerrar menú">&times;</button>
+    <a href="el-hotel.html">El Hotel</a>
+    <a href="habitaciones.html">Habitaciones</a>
+    <a href="servicios.html">Servicios</a>
+    <a href="index.html#cava">Cava y Vinos</a>
+    <a href="experiencias.html">Experiencias</a>
+    <a href="https://www.laresresto.com/" target="_blank">Restaurante</a>
+    <a href="la-guia.html">La Guía</a>
+    <a href="contacto.html" class="active">Contacto</a>
+    <button class="btn-primary trigger-booking" style="margin-top:1.5rem">Reservar</button>
+  </nav>
+
+  <!-- Header Fijo -->
+  <div class="header-fixed-wrapper" id="headerFixedWrapper">
+    <div class="top-promo-bar">
+      <div class="container promo-inner">
+        <p class="promo-text">Cancelación gratuita hasta 14 días antes con la <strong>tarifa flexible.</strong></p>
+      </div>
+    </div>
+    <header id="navbar">
+      <div class="container">
+        <div class="nav-inner">
+          <a href="index.html"><img src="assets/logo.png" alt="Lares de Chacras Hotel Boutique" class="nav-logo-img" /></a>
+          <ul class="nav-links">
+            <li><a href="habitaciones.html">Habitaciones</a></li>
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="index.html#cava">Cava y Vinos</a></li>
+            <li><a href="experiencias.html">Experiencias</a></li>
+            <li><a href="https://www.laresresto.com/" target="_blank">Restaurante</a></li>
+            <li><a href="el-hotel.html">El Hotel</a></li>
+            <li><a href="la-guia.html">La Guía</a></li>
+            <li><a href="contacto.html" class="active">Contacto</a></li>
+          </ul>
+          <div class="nav-right">
+            <button class="nav-cta trigger-booking">Reservar</button>
+            <button class="nav-hamburger" id="hamburgerBtn" aria-label="Abrir menú">
+              <span></span><span></span><span></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+  </div>
+
+  <!-- ============================================================
+       1. ENCABEZADO EDITORIAL (ESTILO HABITACIONES)
+  ============================================================ -->
+  <section id="contact-editorial-head">
+    <div class="container">
+      <div class="editorial-head-grid">
+        <div class="editorial-head-left fade-up">
+          <p class="section-label">UBICACIÓN Y CONTACTO</p>
+          <h1 class="editorial-head-title">Tu próxima pausa<br>empieza acá.</h1>
+        </div>
+        <div class="editorial-head-right fade-up">
+          <p class="editorial-head-lead">
+            Estamos en Chacras de Coria, Mendoza. Escribinos para consultar por tu estadía, conocer nuestras experiencias o coordinar tu llegada.
+          </p>
+          <div class="editorial-head-actions">
+            <a href="https://wa.me/5492613738750?text=Hola%20Lares%20de%20Chacras,%20me%20gustar%C3%ADa%20hacer%20una%20consulta." target="_blank" rel="noopener" class="btn-primary">
+              Escribinos por WhatsApp
+            </a>
+            <a href="#ubicacion" class="btn-secondary">
+              Cómo llegar
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       2. CONTACTO DIRECTO Y FORMULARIO
+  ============================================================ -->
+  <section id="contact-section">
+    <div class="container">
+      <div class="contact-grid">
+
+        <!-- Columna Izquierda: Contacto Directo -->
+        <div class="contact-direct-col fade-up">
+          <h2 class="section-title">Hablemos de tu visita.</h2>
+          <p class="contact-lead">
+            Elegí cómo contactarnos. Nuestro equipo puede ayudarte con tu estadía y las propuestas de Lares.
+          </p>
+
+          <div class="contact-rows-list">
+            <!-- WhatsApp -->
+            <div class="contact-row-item">
+              <div class="contact-row-icon">
+                <i data-lucide="message-circle" style="width:20px;height:20px"></i>
+              </div>
+              <div class="contact-row-content">
+                <span class="contact-row-channel">WhatsApp</span>
+                <span class="contact-row-value">+54 9 261 373 8750</span>
+                <a href="https://wa.me/5492613738750?text=Hola%20Lares%20de%20Chacras,%20me%20gustar%C3%ADa%20hacer%20una%20consulta." target="_blank" rel="noopener" class="contact-row-action">
+                  Iniciar conversación <i data-lucide="arrow-up-right" style="width:13px;height:13px"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div class="contact-row-item">
+              <div class="contact-row-icon">
+                <i data-lucide="mail" style="width:20px;height:20px"></i>
+              </div>
+              <div class="contact-row-content">
+                <span class="contact-row-channel">Email</span>
+                <span class="contact-row-value">recepcion@laresdechacras.com</span>
+                <a href="mailto:recepcion@laresdechacras.com" class="contact-row-action">
+                  Escribir un email <i data-lucide="arrow-up-right" style="width:13px;height:13px"></i>
+                </a>
+              </div>
+            </div>
+
+            <!-- Teléfonos -->
+            <div class="contact-row-item">
+              <div class="contact-row-icon">
+                <i data-lucide="phone" style="width:20px;height:20px"></i>
+              </div>
+              <div class="contact-row-content">
+                <span class="contact-row-channel">Teléfonos</span>
+                <span class="contact-row-value">+54 261 496-1061 &nbsp;·&nbsp; +54 261 496-5167</span>
+                <div style="display:flex; gap:1.2rem; flex-wrap:wrap;">
+                  <a href="tel:+542614961061" class="contact-row-action">Llamar 496-1061 <i data-lucide="phone-call" style="width:12px;height:12px"></i></a>
+                  <a href="tel:+542614965167" class="contact-row-action">Llamar 496-5167 <i data-lucide="phone-call" style="width:12px;height:12px"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Mapa Integrado Abajo de los Contactos Directos -->
+          <div class="contact-map-block fade-up" id="ubicacion">
+            <div class="contact-map-header">
+              <span class="contact-map-lbl"><i data-lucide="map-pin" style="width:13px;height:13px"></i> Encontranos en Chacras</span>
+              <p class="contact-map-addr" id="fullAddressText">Larrea 1266, M5505</p>
+              <p class="contact-map-sub">Chacras de Coria, Mendoza, Argentina.</p>
+            </div>
+            <div class="contact-map-frame-wrap">
+              <iframe 
+                src="https://maps.google.com/maps?q=Larrea+1266,+Chacras+de+Coria,+Mendoza,+Argentina&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                title="Ubicación de Lares de Chacras en Chacras de Coria, Mendoza"
+                loading="lazy"
+                allowfullscreen>
+              </iframe>
+            </div>
+            <div class="contact-map-actions">
+              <a href="https://maps.google.com/?q=Larrea+1266+Chacras+de+Coria+Lujan+de+Cuyo+Mendoza" target="_blank" rel="noopener" class="btn-primary" style="padding:0.75rem 1.6rem; font-size:0.74rem;">
+                <i data-lucide="navigation" style="width:14px;height:14px"></i> Google Maps
+              </a>
+              <button type="button" class="btn-text-link" id="copyAddressBtn">
+                <i data-lucide="copy" style="width:14px;height:14px"></i> <span id="copyBtnLabel">Copiar dirección</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Columna Derecha: Formulario -->
+        <div class="contact-form-panel fade-up">
+          <h3 class="form-panel-title">Dejanos tu consulta.</h3>
+          <p class="form-panel-desc">Contanos qué estás buscando y te responderemos por email.</p>
+
+          <form id="contactForm" novalidate>
+            <!-- Nombre y Apellido -->
+            <div class="form-group">
+              <label for="contactName">Nombre y apellido <span class="req">*</span></label>
+              <input type="text" id="contactName" name="name" class="form-control" placeholder="Ej. Florencia Herrera" required />
+              <span class="field-error-msg" id="errorName">Por favor, ingresá tu nombre y apellido.</span>
+            </div>
+
+            <!-- Email -->
+            <div class="form-group">
+              <label for="contactEmail">Email <span class="req">*</span></label>
+              <input type="email" id="contactEmail" name="email" class="form-control" placeholder="nombre@correo.com" required />
+              <span class="field-error-msg" id="errorEmail">Por favor, ingresá un correo electrónico válido.</span>
+            </div>
+
+            <!-- Teléfono -->
+            <div class="form-group">
+              <label for="contactPhone">Teléfono <span style="font-weight:400;text-transform:none;color:rgba(255,255,255,0.45);">(opcional)</span></label>
+              <input type="tel" id="contactPhone" name="phone" class="form-control" placeholder="+54 9 11 0000 0000" />
+            </div>
+
+            <!-- Motivo de consulta -->
+            <div class="form-group">
+              <label for="contactReason">Motivo de consulta</label>
+              <select id="contactReason" name="reason" class="form-control">
+                <option value="estadia">Estadía</option>
+                <option value="experiencias">Experiencias</option>
+                <option value="traslados">Traslados</option>
+                <option value="otra">Otra consulta</option>
+              </select>
+            </div>
+
+            <!-- Bloque Condicional para Estadía -->
+            <div id="stayFields">
+              <div class="form-grid-2">
+                <div class="form-group">
+                  <label for="dateIn">Fecha de llegada <span style="font-weight:400;text-transform:none;color:rgba(255,255,255,0.45);">(opcional)</span></label>
+                  <input type="date" id="dateIn" name="checkin" class="form-control" />
+                </div>
+                <div class="form-group">
+                  <label for="dateOut">Fecha de salida <span style="font-weight:400;text-transform:none;color:rgba(255,255,255,0.45);">(opcional)</span></label>
+                  <input type="date" id="dateOut" name="checkout" class="form-control" />
+                </div>
+              </div>
+              <span class="field-error-msg" id="errorDates">La fecha de salida debe ser posterior a la fecha de llegada.</span>
+
+              <div class="form-grid-2" style="margin-top:0.8rem;">
+                <div class="form-group" style="margin-bottom:0;">
+                  <label for="guestsCount">Huéspedes <span style="font-weight:400;text-transform:none;color:rgba(255,255,255,0.45);">(opcional)</span></label>
+                  <select id="guestsCount" name="guests" class="form-control">
+                    <option value="">Seleccionar</option>
+                    <option value="1">1 huésped</option>
+                    <option value="2">2 huéspedes</option>
+                    <option value="3">3 huéspedes</option>
+                    <option value="4">4 huéspedes</option>
+                    <option value="5+">5 o más</option>
+                  </select>
+                </div>
+                <div class="form-group" style="margin-bottom:0;">
+                  <label for="roomsCount">Habitaciones <span style="font-weight:400;text-transform:none;color:rgba(255,255,255,0.45);">(opcional)</span></label>
+                  <select id="roomsCount" name="rooms" class="form-control">
+                    <option value="">Seleccionar</option>
+                    <option value="1">1 habitación</option>
+                    <option value="2">2 habitaciones</option>
+                    <option value="3+">3 o más</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- Mensaje -->
+            <div class="form-group">
+              <label for="contactMessage">¿Cómo podemos ayudarte? <span class="req">*</span></label>
+              <textarea id="contactMessage" name="message" rows="4" class="form-control" placeholder="Contanos sobre tu visita o escribí tu consulta." required></textarea>
+              <span class="field-error-msg" id="errorMessage">Por favor, escribí tu mensaje o consulta.</span>
+            </div>
+
+            <button type="submit" id="submitBtn" class="btn-primary" style="width:100%; padding:1.05rem;">
+              Enviar consulta
+            </button>
+
+            <p class="form-privacy-note">
+              Usaremos tus datos para responder esta consulta. Consultá nuestra <a id="openPrivacyLink">Política de privacidad</a>.
+            </p>
+
+            <!-- Mensaje de Éxito -->
+            <div id="formSuccess" class="form-feedback success">
+              <div class="feedback-title">Recibimos tu consulta.</div>
+              <p class="feedback-body">Nuestro equipo te responderá al email que nos dejaste.</p>
+            </div>
+
+            <!-- Mensaje de Error -->
+            <div id="formError" class="form-feedback error">
+              <div class="feedback-title">No pudimos enviar tu consulta.</div>
+              <p class="feedback-body">Intentá nuevamente o escribinos directamente por <a href="https://wa.me/5492613738750" target="_blank" style="text-decoration:underline; font-weight:600; color:inherit;">WhatsApp</a>.</p>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       3. DISTANCIAS DE REFERENCIA
+  ============================================================ -->
+  <section id="distancias">
+    <div class="container">
+      <h4 class="distances-header-title">Distancias de referencia</h4>
+      <div class="distances-grid">
+        <div class="distance-stat-card fade-up">
+          <span class="distance-num">15 km</span>
+          <span class="distance-name">Ciudad de Mendoza</span>
+        </div>
+        <div class="distance-stat-card fade-up">
+          <span class="distance-num">25 km</span>
+          <span class="distance-name">Aeropuerto</span>
+        </div>
+        <div class="distance-stat-card fade-up">
+          <span class="distance-num">5 min</span>
+          <span class="distance-name">Bodegas de Chacras de Coria</span>
+        </div>
+        <div class="distance-stat-card fade-up">
+          <span class="distance-num">15 min</span>
+          <span class="distance-name">Bodegas de Luján de Cuyo</span>
+        </div>
+        <div class="distance-stat-card fade-up">
+          <span class="distance-num">99 km</span>
+          <span class="distance-name">Bodegas del Valle de Uco</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       4. BANNER FINAL (ESTILO JARDÍN / SERVICIOS)
+  ============================================================ -->
+  <section class="contact-cta-sec" id="cta-reserva">
+    <div class="container contact-cta-inner">
+      <h2 class="contact-cta-title">Todo listo para disfrutar Mendoza</h2>
+      <p class="contact-cta-desc">
+        Reservá directamente con nosotros y empezá a preparar tu estadía en Lares de Chacras.
+      </p>
+      <div class="contact-cta-actions">
+        <button class="btn-cta-secondary trigger-booking">
+          Reservar estadía
+        </button>
+        <a href="https://wa.me/5492613738750?text=Hola%20Lares%20de%20Chacras,%20quisiera%20consultar%20por%20mi%20estad%C3%ADa." target="_blank" rel="noopener" class="btn-primary">
+          Consultar por WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER GLOBAL (IDÉNTICO A HOME)
+  ============================================================ -->
+  <footer id="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- COLUMNA 1: MARCA Y DISTINCIONES -->
+        <div class="footer-brand">
+          <img src="assets/logo_footer.png" alt="Lares de Chacras Logo" class="footer-logo-img" />
+          <p class="footer-brand-desc">
+            Hotel boutique de dieciséis habitaciones en Chacras de Coria, Mendoza, entre las bodegas de Luján de Cuyo. Jardines, piscina, cava y restaurante propio.
+          </p>
+          <div class="footer-seals-block">
+            <span class="footer-seals-label">Distinciones</span>
+            <div class="footer-seals-row">
+              <img src="assets/michelin_key_2025.png" alt="Michelin Key 2025" class="footer-seal-img" title="Guía Michelin 2025 — Una Llave Michelin" />
+              <img src="assets/tripadvisor_travelers_choice_v2.png" alt="TripAdvisor Travelers Choice" class="footer-seal-img ta-seal" title="TripAdvisor Travellers' Choice 2026" />
+            </div>
+          </div>
+        </div>
+
+        <!-- COLUMNA 2: EL HOTEL + LA GUÍA -->
+        <div class="footer-nav-col">
+          <div class="footer-subgroup">
+            <p class="footer-col-title">El hotel</p>
+            <ul class="footer-links">
+              <li><a href="habitaciones.html">Habitaciones</a></li>
+              <li><a href="habitaciones.html#junior">Casa Vita</a></li>
+              <li><a href="servicios.html">Servicios</a></li>
+              <li><a href="index.html#photo-gallery">Galería</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-subgroup">
+            <p class="footer-col-title">La zona</p>
+            <ul class="footer-links">
+              <li><a href="la-guia.html">La guía</a></li>
+              <li><a href="contacto.html#ubicacion">Cómo llegar</a></li>
+              <li><a href="index.html#faq">Preguntas frecuentes</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- COLUMNA 3: VINO Y MESA + RESERVAS -->
+        <div class="footer-nav-col">
+          <div class="footer-subgroup">
+            <p class="footer-col-title">Vino y mesa</p>
+            <ul class="footer-links">
+              <li><a href="index.html#cava">La cava</a></li>
+              <li><a href="https://www.laresresto.com/" target="_blank" rel="noopener">Lares Restó</a></li>
+              <li><a href="experiencias.html">Experiencias</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-subgroup">
+            <p class="footer-col-title">Reservas</p>
+            <ul class="footer-links">
+              <li><a href="index.html#rooms">Promociones</a></li>
+              <li><a href="contacto.html">Contacto</a></li>
+              <li><a href="https://engine.mews.com/or/laresdechacras" target="_blank" rel="noopener">Check-in online</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- COLUMNA 4: CONTACTO & UBICACIÓN -->
+        <div>
+          <p class="footer-col-title">Ubicación y contacto</p>
+          <div class="footer-contact-list">
+            <a href="https://maps.google.com/?q=Larrea+1266,+M5505+Chacras+de+Coria,+Luj%C3%A1n+de+Cuyo,+Mendoza,+Argentina" target="_blank" rel="noopener" class="footer-contact-card" title="Abrir ubicación en Google Maps">
+              <div class="footer-contact-icon">
+                <i data-lucide="map-pin" style="width:15px;height:15px"></i>
+              </div>
+              <div class="footer-contact-info">
+                <span class="footer-contact-lbl">Dirección</span>
+                <span class="footer-contact-val">Larrea 1266, M5505 Chacras de Coria, Luján de Cuyo, Mendoza, Argentina</span>
+              </div>
+            </a>
+
+            <a href="tel:+542614961061" class="footer-contact-card" title="Llamar a recepción">
+              <div class="footer-contact-icon">
+                <i data-lucide="phone" style="width:15px;height:15px"></i>
+              </div>
+              <div class="footer-contact-info">
+                <span class="footer-contact-lbl">Teléfono</span>
+                <span class="footer-contact-val">+54 261 496-1061</span>
+              </div>
+            </a>
+
+            <a href="https://wa.me/5492613738750" target="_blank" rel="noopener" class="footer-contact-card" title="Conversar por WhatsApp">
+              <div class="footer-contact-icon">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M17.498 14.382c-.301-.15-1.781-.879-2.056-.979-.275-.1-.475-.15-.675.15-.2.299-.775.979-.95 1.179-.175.2-.35.225-.65.075-.3-.15-1.267-.467-2.414-1.488-.893-.795-1.496-1.777-1.671-2.077-.175-.3-.019-.462.13-.611.135-.134.301-.35.45-.525.15-.175.2-.299.3-.5.1-.2.05-.375-.025-.525-.075-.15-.675-1.628-.925-2.228-.243-.583-.49-.504-.675-.513-.175-.008-.375-.008-.575-.008-.2 0-.525.075-.8.375-.275.3-1.05 1.026-1.05 2.501 0 1.475 1.075 2.899 1.225 3.1.15.2 2.113 3.227 5.118 4.527.714.309 1.272.494 1.706.632.716.228 1.368.196 1.883.119.574-.086 1.781-.728 2.031-1.431.25-.703.25-1.303.175-1.43-.075-.128-.275-.203-.575-.353z"/>
+                  <path d="M12 2a10 10 0 0 0-8.49 15.31L2 22l4.82-1.47A10 10 0 1 0 12 2z"/>
+                </svg>
+              </div>
+              <div class="footer-contact-info">
+                <span class="footer-contact-lbl">WhatsApp</span>
+                <span class="footer-contact-val">+54 9 261 373 8750</span>
+              </div>
+            </a>
+
+            <a href="mailto:recepcion@laresdechacras.com" class="footer-contact-card" title="Escribir correo">
+              <div class="footer-contact-icon">
+                <i data-lucide="mail" style="width:15px;height:15px"></i>
+              </div>
+              <div class="footer-contact-info">
+                <span class="footer-contact-lbl">Correo</span>
+                <span class="footer-contact-val">recepcion@laresdechacras.com</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="footer-social-row">
+            <a href="https://www.instagram.com/laresdechacras" target="_blank" rel="noopener" class="footer-social-link" title="Instagram" aria-label="Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+              </svg>
+            </a>
+            <a href="https://www.facebook.com/laresdechacras" target="_blank" rel="noopener" class="footer-social-link" title="Facebook" aria-label="Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Lares de Chacras Hotel Boutique. Todos los derechos reservados.</p>
+        <div style="display:flex; gap:1.5rem">
+          <a id="privacyFooterLink" style="cursor:pointer;">Privacidad</a>
+          <a href="#">Términos</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Toast notificación Copiar Dirección -->
+  <div id="copyToast"><i data-lucide="check" style="width:16px;height:16px;color:#81C784;"></i> Dirección copiada al portapapeles</div>
+
+  <!-- Modal Política de Privacidad -->
+  <div class="policy-modal-backdrop" id="privacyModal" role="dialog" aria-modal="true">
+    <div class="policy-modal-box">
+      <button class="policy-close" id="closePrivacyBtn" aria-label="Cerrar">&times;</button>
+      <h3 style="font-family:var(--font-serif); font-size:1.8rem; font-style:italic; margin-bottom:1rem; color:var(--text-dark);">Política de Privacidad</h3>
+      <p style="font-size:0.92rem; color:var(--text-muted); line-height:1.7; margin-bottom:1rem;">
+        En <strong>Lares de Chacras</strong>, valoramos y respetamos tu privacidad. Los datos proporcionados en este formulario (nombre, correo electrónico, teléfono y detalles de consulta) son utilizados exclusivamente para responder tus solicitudes y brindarte asistencia personalizada respecto a tu estadía o visita a nuestro hotel.
+      </p>
+      <p style="font-size:0.92rem; color:var(--text-muted); line-height:1.7; margin-bottom:1rem;">
+        No compartimos, vendemos ni cedemos tu información a terceros, ni te suscribimos a listas publicitarias automáticas sin tu consentimiento expreso.
+      </p>
+      <p style="font-size:0.92rem; color:var(--text-muted); line-height:1.7;">
+        Para cualquier modificación o supresión de tus datos, podés escribirnos en cualquier momento a <a href="mailto:recepcion@laresdechacras.com" style="color:var(--wine); font-weight:600;">recepcion@laresdechacras.com</a>.
+      </p>
+    </div>
+  </div>
+
+  <!-- Reservation Modal Mews -->
+  <div id="reservationModal" style="position:fixed;inset:0;background:rgba(18,20,24,0.85);backdrop-filter:blur(8px);z-index:10001;display:none;align-items:center;justify-content:center;padding:1.5rem;">
+    <div style="background:#fff;width:100%;max-width:900px;height:85vh;border-radius:4px;overflow:hidden;display:flex;flex-direction:column;">
+      <div style="padding:1.2rem 2rem;background:var(--dark-bg);color:#fff;display:flex;align-items:center;justify-content:space-between;">
+        <span style="font-family:var(--font-sans);font-size:0.8rem;letter-spacing:0.18em;text-transform:uppercase;">Reservas Online · Lares de Chacras</span>
+        <button id="modalClose" style="background:none;border:none;color:#fff;font-size:1.8rem;cursor:pointer;">&times;</button>
+      </div>
+      <iframe src="https://engine.mews.com/or/laresdechacras" style="width:100%;flex:1;border:none;" title="Motor de Reserva Lares de Chacras"></iframe>
+    </div>
+  </div>
+
+  <script>
+    lucide.createIcons();
+
+    // Navbar scroll effect
+    const headerWrapper = document.getElementById('headerFixedWrapper');
+    window.addEventListener('scroll', () => {
+      headerWrapper.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+
+    // Mobile menu toggle
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const mobileClose  = document.getElementById('mobileClose');
+    const mobileMenu   = document.getElementById('mobileMenu');
+    hamburgerBtn.addEventListener('click', () => mobileMenu.classList.add('open'));
+    mobileClose.addEventListener('click', () => mobileMenu.classList.remove('open'));
+    mobileMenu.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => mobileMenu.classList.remove('open'));
+    });
+
+    // Motor de reservas
+    const USE_MODAL = false;
+    const bookingModal = document.getElementById('reservationModal');
+    document.querySelectorAll('.trigger-booking').forEach(btn => {
+      btn.addEventListener('click', e => {
+        e.preventDefault();
+        USE_MODAL ? (bookingModal.style.display = 'flex') : window.open('https://engine.mews.com/or/laresdechacras', '_blank');
+      });
+    });
+    document.getElementById('modalClose').addEventListener('click', () => bookingModal.style.display = 'none');
+
+    // Fade-up observer
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('in');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+    // Motivo de consulta toggle campos de estadía
+    const reasonSelect = document.getElementById('contactReason');
+    const stayFields = document.getElementById('stayFields');
+    function checkReason() {
+      if (reasonSelect.value === 'estadia') {
+        stayFields.style.display = 'block';
+      } else {
+        stayFields.style.display = 'none';
+      }
+    }
+    reasonSelect.addEventListener('change', checkReason);
+    checkReason(); // Inicializar con Estadía visible
+
+    // Trigger de reserva que lleva al formulario y activa campos de estadía
+    document.querySelectorAll('.trigger-booking').forEach(btn => {
+      btn.addEventListener('click', e => {
+        e.preventDefault();
+        const formPanel = document.querySelector('.contact-form-panel');
+        if (formPanel) {
+          formPanel.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          reasonSelect.value = 'estadia';
+          checkReason();
+          const nameInput = document.getElementById('contactName');
+          if (nameInput) setTimeout(() => nameInput.focus(), 600);
+        }
+      });
+    });
+
+    // Copiar dirección con feedback
+    const copyBtn = document.getElementById('copyAddressBtn');
+    const copyLabel = document.getElementById('copyBtnLabel');
+    const toast = document.getElementById('copyToast');
+    const fullAddress = 'Larrea 1266, M5505 Chacras de Coria, Mendoza, Argentina';
+
+    copyBtn.addEventListener('click', () => {
+      navigator.clipboard.writeText(fullAddress).then(() => {
+        copyLabel.textContent = '¡Copiada!';
+        toast.classList.add('show');
+        setTimeout(() => {
+          copyLabel.textContent = 'Copiar dirección';
+          toast.classList.remove('show');
+        }, 3000);
+      }).catch(() => {
+        // Fallback
+        const tempInput = document.createElement('input');
+        tempInput.value = fullAddress;
+        document.body.appendChild(tempInput);
+        tempInput.select();
+        document.execCommand('copy');
+        document.body.removeChild(tempInput);
+        copyLabel.textContent = '¡Copiada!';
+        toast.classList.add('show');
+        setTimeout(() => {
+          copyLabel.textContent = 'Copiar dirección';
+          toast.classList.remove('show');
+        }, 3000);
+      });
+    });
+
+    // Modal de privacidad
+    const privacyModal = document.getElementById('privacyModal');
+    const openPrivacyLink = document.getElementById('openPrivacyLink');
+    const privacyFooterLink = document.getElementById('privacyFooterLink');
+    const closePrivacyBtn = document.getElementById('closePrivacyBtn');
+
+    function openModal() { privacyModal.style.display = 'flex'; }
+    function closeModal() { privacyModal.style.display = 'none'; }
+
+    if (openPrivacyLink) openPrivacyLink.addEventListener('click', e => { e.preventDefault(); openModal(); });
+    if (privacyFooterLink) privacyFooterLink.addEventListener('click', e => { e.preventDefault(); openModal(); });
+    if (closePrivacyBtn) closePrivacyBtn.addEventListener('click', closeModal);
+    privacyModal.addEventListener('click', e => { if (e.target === privacyModal) closeModal(); });
+
+    // Validación y envío del formulario
+    const contactForm = document.getElementById('contactForm');
+    const submitBtn = document.getElementById('submitBtn');
+    const formSuccess = document.getElementById('formSuccess');
+    const formError = document.getElementById('formError');
+
+    const inputName = document.getElementById('contactName');
+    const inputEmail = document.getElementById('contactEmail');
+    const inputMessage = document.getElementById('contactMessage');
+    const dateIn = document.getElementById('dateIn');
+    const dateOut = document.getElementById('dateOut');
+
+    const errorName = document.getElementById('errorName');
+    const errorEmail = document.getElementById('errorEmail');
+    const errorMessage = document.getElementById('errorMessage');
+    const errorDates = document.getElementById('errorDates');
+
+    function validateEmail(email) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      let isValid = true;
+
+      // Ocultar mensajes previos
+      formSuccess.style.display = 'none';
+      formError.style.display = 'none';
+      [errorName, errorEmail, errorMessage, errorDates].forEach(el => el.classList.remove('visible'));
+      [inputName, inputEmail, inputMessage, dateIn, dateOut].forEach(el => el.classList.remove('error'));
+
+      // 1. Validar nombre
+      if (!inputName.value.trim()) {
+        inputName.classList.add('error');
+        errorName.classList.add('visible');
+        isValid = false;
+      }
+
+      // 2. Validar email
+      if (!inputEmail.value.trim() || !validateEmail(inputEmail.value.trim())) {
+        inputEmail.classList.add('error');
+        errorEmail.classList.add('visible');
+        isValid = false;
+      }
+
+      // 3. Validar fechas de estadía si ambas están ingresadas
+      if (reasonSelect.value === 'estadia' && dateIn.value && dateOut.value) {
+        const dIn = new Date(dateIn.value);
+        const dOut = new Date(dateOut.value);
+        if (dOut <= dIn) {
+          dateOut.classList.add('error');
+          errorDates.classList.add('visible');
+          isValid = false;
+        }
+      }
+
+      // 4. Validar mensaje
+      if (!inputMessage.value.trim()) {
+        inputMessage.classList.add('error');
+        errorMessage.classList.add('visible');
+        isValid = false;
+      }
+
+      if (!isValid) return;
+
+      // Simulación controlada de envío seguro
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Enviando…';
+
+      setTimeout(() => {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Enviar consulta';
+        formSuccess.style.display = 'block';
+        contactForm.reset();
+        checkReason();
+      }, 1100);
+    });
+
+    // Smooth scroll para anclas internas
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const targetId = this.getAttribute('href');
+        if (targetId && targetId !== '#') {
+          const target = document.querySelector(targetId);
+          if (target) {
+            e.preventDefault();
+            const top = target.getBoundingClientRect().top + window.scrollY - 110;
+            window.scrollTo({ top, behavior: 'smooth' });
+          }
+        }
+      });
+    });
+  </script>
+</body>
+</html>
