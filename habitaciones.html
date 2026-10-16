@@ -469,23 +469,68 @@
       background: var(--wine);
     }
 
+    /* CONTROLES DE CARRUSEL EN TARJETA */
+    .room-carousel-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: rgba(18, 20, 24, 0.68);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 4;
+      opacity: 0;
+      transition: all var(--transition);
+    }
+    .room-editorial-card:hover .room-carousel-arrow,
+    .room-media-frame:hover .room-carousel-arrow {
+      opacity: 0.95;
+    }
+    .room-carousel-arrow:hover {
+      opacity: 1 !important;
+      background: var(--wine);
+      border-color: var(--wine);
+      transform: translateY(-50%) scale(1.08);
+    }
+    .room-carousel-arrow.prev { left: 0.85rem; }
+    .room-carousel-arrow.next { right: 0.85rem; }
+    .room-carousel-arrow i { width: 18px; height: 18px; }
+    @media (hover: none) {
+      .room-carousel-arrow { opacity: 0.88; }
+    }
+
     /* MINIATURAS FOTOGRÁFICAS INTERACTIVAS */
     .room-media-switcher {
       position: absolute;
-      bottom: 1.2rem;
-      left: 1.2rem;
+      bottom: 1.1rem;
+      left: 1.1rem;
       display: flex;
       gap: 0.45rem;
+      max-width: calc(100% - 145px);
+      overflow-x: auto;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      padding: 3px;
       z-index: 3;
     }
+    .room-media-switcher::-webkit-scrollbar { display: none; }
     .room-thumb-dot {
       width: 44px;
       height: 32px;
+      flex-shrink: 0;
       border-radius: 2px;
       overflow: hidden;
-      border: 1px solid rgba(255, 255, 255, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.65);
       cursor: pointer;
-      opacity: 0.75;
+      opacity: 0.72;
       transition: all var(--transition);
       background: #000;
     }
@@ -497,8 +542,8 @@
     .room-thumb-dot:hover, .room-thumb-dot.active {
       opacity: 1;
       border-color: var(--white);
-      transform: scale(1.08);
-      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+      box-shadow: 0 0 0 2px var(--wine);
+      transform: scale(1.06);
     }
 
     /* DETALLES TIPOGRÁFICOS DE LA HABITACIÓN */
@@ -877,6 +922,7 @@
       width: 100%;
       max-height: 90vh;
       overflow-y: auto;
+      overflow-x: hidden;
       border-radius: var(--radius);
       box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
       position: relative;
@@ -931,15 +977,19 @@
     .room-drawer-body {
       padding: 2.2rem;
       display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
+      grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
       gap: 2.5rem;
+    }
+    .room-drawer-gallery-col {
+      min-width: 0;
+      width: 100%;
     }
     .drawer-gallery-main {
       width: 100%;
       aspect-ratio: 16 / 10;
       border-radius: var(--radius);
       overflow: hidden;
-      margin-bottom: 1rem;
+      margin-bottom: 0.85rem;
       background: #EAE6DF;
     }
     .drawer-gallery-main img {
@@ -948,30 +998,34 @@
       object-fit: cover;
     }
     .drawer-thumbs-row {
-      display: flex;
-      gap: 0.6rem;
-      overflow-x: auto;
-      padding-bottom: 0.4rem;
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 0.45rem;
+      width: 100%;
+      box-sizing: border-box;
     }
     .drawer-thumb-item {
-      width: 72px;
-      height: 52px;
+      width: 100%;
+      aspect-ratio: 16 / 11;
+      height: auto;
       border-radius: 2px;
       overflow: hidden;
       border: 2px solid transparent;
       cursor: pointer;
-      flex-shrink: 0;
-      opacity: 0.7;
+      opacity: 0.72;
       transition: all var(--transition);
+      background: #EAE6DF;
     }
     .drawer-thumb-item img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+      display: block;
     }
     .drawer-thumb-item.active, .drawer-thumb-item:hover {
       opacity: 1;
       border-color: var(--wine);
+      box-shadow: 0 0 0 1px var(--wine);
     }
     .drawer-info-col {
       display: flex;
@@ -1242,8 +1296,8 @@
     <a href="el-hotel.html">El Hotel</a>
     <a href="habitaciones.html">Habitaciones</a>
     <a href="servicios.html">Servicios</a>
-    <a href="index.html#cava">Cava y Vinos</a>
-    <a href="index.html#experiences">Experiencias</a>
+    <a href="cava-y-vinos.html">Cava y Vinos</a>
+    <a href="experiencias.html">Experiencias</a>
     <a href="https://www.laresresto.com/" target="_blank">Restaurante</a>
     <a href="la-guia.html">La Guía</a>
     <a href="contacto.html">Contacto</a>
@@ -1264,8 +1318,8 @@
           <ul class="nav-links">
             <li><a href="habitaciones.html" class="active">Habitaciones</a></li>
             <li><a href="servicios.html">Servicios</a></li>
-            <li><a href="index.html#cava">Cava y Vinos</a></li>
-            <li><a href="index.html#experiences">Experiencias</a></li>
+            <li><a href="cava-y-vinos.html">Cava y Vinos</a></li>
+            <li><a href="experiencias.html">Experiencias</a></li>
             <li><a href="https://www.laresresto.com/" target="_blank">Restaurante</a></li>
             <li><a href="el-hotel.html">El Hotel</a></li>
             <li><a href="la-guia.html">La Guía</a></li>
@@ -1311,24 +1365,39 @@
     <div class="container">
       <div class="rooms-editorial-grid">
 
-        <!-- 1. HABITACIÓN CLÁSICA -->
+        <!-- 1. HABITACIÓN CLÁSICA (6 FOTOS) -->
         <article class="room-editorial-card" data-category="clasica" id="clasica">
           <div class="room-media-frame">
             <span class="room-badge-top">Clásica · 23 m²</span>
-            <img src="assets/room_classic.jpg" alt="Habitación Clásica Lares de Chacras" class="room-main-photo" id="img-clasica" />
+            <img src="assets/habitaciones/clasica/136253197842566df3608d51b418ed797c2f903a9cb.webp" alt="Habitación Clásica Lares de Chacras" class="room-main-photo" id="img-clasica" />
+            <button class="room-carousel-arrow prev" data-room="clasica" aria-label="Foto anterior">
+              <i data-lucide="chevron-left"></i>
+            </button>
+            <button class="room-carousel-arrow next" data-room="clasica" aria-label="Foto siguiente">
+              <i data-lucide="chevron-right"></i>
+            </button>
             <div class="room-media-switcher">
-              <div class="room-thumb-dot active" data-target="img-clasica" data-src="assets/room_classic.jpg">
-                <img src="assets/room_classic.jpg" alt="Clásica" />
+              <div class="room-thumb-dot active" data-target="img-clasica" data-room="clasica" data-index="0" data-src="assets/habitaciones/clasica/136253197842566df3608d51b418ed797c2f903a9cb.webp">
+                <img src="assets/habitaciones/clasica/136253197842566df3608d51b418ed797c2f903a9cb.webp" alt="Clásica 1" />
               </div>
-              <div class="room-thumb-dot" data-target="img-clasica" data-src="assets/casa_principal_1.jpg">
-                <img src="assets/casa_principal_1.jpg" alt="Detalle Clásica" />
+              <div class="room-thumb-dot" data-target="img-clasica" data-room="clasica" data-index="1" data-src="assets/habitaciones/clasica/15328482984ab8945d75abca7b81d2264f09d5013b9.webp">
+                <img src="assets/habitaciones/clasica/15328482984ab8945d75abca7b81d2264f09d5013b9.webp" alt="Clásica 2" />
               </div>
-              <div class="room-thumb-dot" data-target="img-clasica" data-src="assets/casa_principal_2.jpg">
-                <img src="assets/casa_principal_2.jpg" alt="Luz Clásica" />
+              <div class="room-thumb-dot" data-target="img-clasica" data-room="clasica" data-index="2" data-src="assets/habitaciones/clasica/17031647740bec7ed871bfed08d7991d3d5572cfac5.webp">
+                <img src="assets/habitaciones/clasica/17031647740bec7ed871bfed08d7991d3d5572cfac5.webp" alt="Clásica 3" />
+              </div>
+              <div class="room-thumb-dot" data-target="img-clasica" data-room="clasica" data-index="3" data-src="assets/habitaciones/clasica/2384430965052716c00fba95ecf18bfb26d67808833.webp">
+                <img src="assets/habitaciones/clasica/2384430965052716c00fba95ecf18bfb26d67808833.webp" alt="Clásica 4" />
+              </div>
+              <div class="room-thumb-dot" data-target="img-clasica" data-room="clasica" data-index="4" data-src="assets/habitaciones/clasica/2725063643221633510d60fb74be32028e54b3a13ff.webp">
+                <img src="assets/habitaciones/clasica/2725063643221633510d60fb74be32028e54b3a13ff.webp" alt="Clásica 5" />
+              </div>
+              <div class="room-thumb-dot" data-target="img-clasica" data-room="clasica" data-index="5" data-src="assets/habitaciones/clasica/68126590966f2a80d01436bec9fa4f31525a865ab9.webp">
+                <img src="assets/habitaciones/clasica/68126590966f2a80d01436bec9fa4f31525a865ab9.webp" alt="Clásica 6" />
               </div>
             </div>
             <button class="room-photo-counter open-drawer-btn" data-room="clasica">
-              <i data-lucide="maximize-2" style="width:12px;height:12px"></i> Ver fotos
+              <i data-lucide="maximize-2" style="width:12px;height:12px"></i> Ver más
             </button>
           </div>
           <div class="room-card-header">
@@ -1350,24 +1419,42 @@
           </div>
         </article>
 
-        <!-- 2. HABITACIÓN ESPECIAL -->
+        <!-- 2. HABITACIÓN ESPECIAL (7 FOTOS) -->
         <article class="room-editorial-card" data-category="especial" id="especial">
           <div class="room-media-frame">
             <span class="room-badge-top">Especial · 28 m²</span>
-            <img src="assets/room_special.jpg" alt="Habitación Especial Lares de Chacras" class="room-main-photo" id="img-especial" />
+            <img src="assets/habitaciones/especial/1362532306480da80fbdb8f20c49eab9dba968cfe06.webp" alt="Habitación Especial Lares de Chacras" class="room-main-photo" id="img-especial" />
+            <button class="room-carousel-arrow prev" data-room="especial" aria-label="Foto anterior">
+              <i data-lucide="chevron-left"></i>
+            </button>
+            <button class="room-carousel-arrow next" data-room="especial" aria-label="Foto siguiente">
+              <i data-lucide="chevron-right"></i>
+            </button>
             <div class="room-media-switcher">
-              <div class="room-thumb-dot active" data-target="img-especial" data-src="assets/room_special.jpg">
-                <img src="assets/room_special.jpg" alt="Especial" />
+              <div class="room-thumb-dot active" data-target="img-especial" data-room="especial" data-index="0" data-src="assets/habitaciones/especial/1362532306480da80fbdb8f20c49eab9dba968cfe06.webp">
+                <img src="assets/habitaciones/especial/1362532306480da80fbdb8f20c49eab9dba968cfe06.webp" alt="Especial 1" />
               </div>
-              <div class="room-thumb-dot" data-target="img-especial" data-src="assets/casa_principal_4.jpg">
-                <img src="assets/casa_principal_4.jpg" alt="Balcón Especial" />
+              <div class="room-thumb-dot" data-target="img-especial" data-room="especial" data-index="1" data-src="assets/habitaciones/especial/14620150530307b5f048ca557cf57d4bf5fefa56c73.webp">
+                <img src="assets/habitaciones/especial/14620150530307b5f048ca557cf57d4bf5fefa56c73.webp" alt="Especial 2" />
               </div>
-              <div class="room-thumb-dot" data-target="img-especial" data-src="assets/casa_principal_3.jpg">
-                <img src="assets/casa_principal_3.jpg" alt="Detalle Especial" />
+              <div class="room-thumb-dot" data-target="img-especial" data-room="especial" data-index="2" data-src="assets/habitaciones/especial/2214115000519d8b86cf964a3e3c02b3378cb8d7b86.webp">
+                <img src="assets/habitaciones/especial/2214115000519d8b86cf964a3e3c02b3378cb8d7b86.webp" alt="Especial 3" />
+              </div>
+              <div class="room-thumb-dot" data-target="img-especial" data-room="especial" data-index="3" data-src="assets/habitaciones/especial/25991378656e1f3a55867ca515eaeb9727597195a3d.webp">
+                <img src="assets/habitaciones/especial/25991378656e1f3a55867ca515eaeb9727597195a3d.webp" alt="Especial 4" />
+              </div>
+              <div class="room-thumb-dot" data-target="img-especial" data-room="especial" data-index="4" data-src="assets/habitaciones/especial/3248922332bf9b99a8a09103e8cb0e8c91bac286c9.webp">
+                <img src="assets/habitaciones/especial/3248922332bf9b99a8a09103e8cb0e8c91bac286c9.webp" alt="Especial 5" />
+              </div>
+              <div class="room-thumb-dot" data-target="img-especial" data-room="especial" data-index="5" data-src="assets/habitaciones/especial/68126615327351b35e799d8fb2cb42a37e44726e66.webp">
+                <img src="assets/habitaciones/especial/68126615327351b35e799d8fb2cb42a37e44726e66.webp" alt="Especial 6" />
+              </div>
+              <div class="room-thumb-dot" data-target="img-especial" data-room="especial" data-index="6" data-src="assets/habitaciones/especial/85517383901d0353f0ecfe6ee73e22b462cc10b8af.webp">
+                <img src="assets/habitaciones/especial/85517383901d0353f0ecfe6ee73e22b462cc10b8af.webp" alt="Especial 7" />
               </div>
             </div>
             <button class="room-photo-counter open-drawer-btn" data-room="especial">
-              <i data-lucide="maximize-2" style="width:12px;height:12px"></i> Ver fotos
+              <i data-lucide="maximize-2" style="width:12px;height:12px"></i> Ver más
             </button>
           </div>
           <div class="room-card-header">
@@ -1389,24 +1476,39 @@
           </div>
         </article>
 
-        <!-- 3. HABITACIÓN SUPERIOR -->
+        <!-- 3. HABITACIÓN SUPERIOR (6 FOTOS) -->
         <article class="room-editorial-card" data-category="superior" id="superior">
           <div class="room-media-frame">
             <span class="room-badge-top">Superior · 30 m²</span>
-            <img src="assets/room_superior.jpg" alt="Habitación Superior Lares de Chacras" class="room-main-photo" id="img-superior" />
+            <img src="assets/habitaciones/superior/17031665240dee8d7cbd46ab3b31eff3770a08f07b3.webp" alt="Habitación Superior Lares de Chacras" class="room-main-photo" id="img-superior" />
+            <button class="room-carousel-arrow prev" data-room="superior" aria-label="Foto anterior">
+              <i data-lucide="chevron-left"></i>
+            </button>
+            <button class="room-carousel-arrow next" data-room="superior" aria-label="Foto siguiente">
+              <i data-lucide="chevron-right"></i>
+            </button>
             <div class="room-media-switcher">
-              <div class="room-thumb-dot active" data-target="img-superior" data-src="assets/room_superior.jpg">
-                <img src="assets/room_superior.jpg" alt="Superior" />
+              <div class="room-thumb-dot active" data-target="img-superior" data-room="superior" data-index="0" data-src="assets/habitaciones/superior/17031665240dee8d7cbd46ab3b31eff3770a08f07b3.webp">
+                <img src="assets/habitaciones/superior/17031665240dee8d7cbd46ab3b31eff3770a08f07b3.webp" alt="Superior 1" />
               </div>
-              <div class="room-thumb-dot" data-target="img-superior" data-src="assets/jacuzzi_lares.jpg">
-                <img src="assets/jacuzzi_lares.jpg" alt="Hidromasaje" />
+              <div class="room-thumb-dot" data-target="img-superior" data-room="superior" data-index="1" data-src="assets/habitaciones/superior/1873483179708c1b3a38d2432117fc87b5d39f85b52.webp">
+                <img src="assets/habitaciones/superior/1873483179708c1b3a38d2432117fc87b5d39f85b52.webp" alt="Superior 2" />
               </div>
-              <div class="room-thumb-dot" data-target="img-superior" data-src="assets/before_booking_main.jpg">
-                <img src="assets/before_booking_main.jpg" alt="Ambiente" />
+              <div class="room-thumb-dot" data-target="img-superior" data-room="superior" data-index="2" data-src="assets/habitaciones/superior/18734831808567443e94d7b84f88b740acd20798544.webp">
+                <img src="assets/habitaciones/superior/18734831808567443e94d7b84f88b740acd20798544.webp" alt="Superior 3" />
+              </div>
+              <div class="room-thumb-dot" data-target="img-superior" data-room="superior" data-index="3" data-src="assets/habitaciones/superior/187348318413d8af26635a9ee2e818d859449322f5d.webp">
+                <img src="assets/habitaciones/superior/187348318413d8af26635a9ee2e818d859449322f5d.webp" alt="Superior 4" />
+              </div>
+              <div class="room-thumb-dot" data-target="img-superior" data-room="superior" data-index="4" data-src="assets/habitaciones/superior/22141164890912fcf9df3e333ad9252f87232e315e2.webp">
+                <img src="assets/habitaciones/superior/22141164890912fcf9df3e333ad9252f87232e315e2.webp" alt="Superior 5" />
+              </div>
+              <div class="room-thumb-dot" data-target="img-superior" data-room="superior" data-index="5" data-src="assets/habitaciones/superior/5109499572a2871ee28ea9672e302efc6eb7c5c685.webp">
+                <img src="assets/habitaciones/superior/5109499572a2871ee28ea9672e302efc6eb7c5c685.webp" alt="Superior 6" />
               </div>
             </div>
             <button class="room-photo-counter open-drawer-btn" data-room="superior">
-              <i data-lucide="maximize-2" style="width:12px;height:12px"></i> Ver fotos
+              <i data-lucide="maximize-2" style="width:12px;height:12px"></i> Ver más
             </button>
           </div>
           <div class="room-card-header">
@@ -1428,24 +1530,48 @@
           </div>
         </article>
 
-        <!-- 4. JUNIOR CASA VITA -->
+        <!-- 4. JUNIOR CASA VITA (9 FOTOS) -->
         <article class="room-editorial-card" data-category="junior" id="junior">
           <div class="room-media-frame">
             <span class="room-badge-top">Casa Vita · 20 m²</span>
-            <img src="assets/casa_vita_2.jpg" alt="Junior Casa Vita Lares de Chacras" class="room-main-photo" id="img-junior" />
+            <img src="assets/habitaciones/junior/122656218233a745c46c8a5a0b6523ea4fdb3f69322.webp" alt="Junior Casa Vita Lares de Chacras" class="room-main-photo" id="img-junior" />
+            <button class="room-carousel-arrow prev" data-room="junior" aria-label="Foto anterior">
+              <i data-lucide="chevron-left"></i>
+            </button>
+            <button class="room-carousel-arrow next" data-room="junior" aria-label="Foto siguiente">
+              <i data-lucide="chevron-right"></i>
+            </button>
             <div class="room-media-switcher">
-              <div class="room-thumb-dot active" data-target="img-junior" data-src="assets/casa_vita_2.jpg">
-                <img src="assets/casa_vita_2.jpg" alt="Casa Vita" />
+              <div class="room-thumb-dot active" data-target="img-junior" data-room="junior" data-index="0" data-src="assets/habitaciones/junior/122656218233a745c46c8a5a0b6523ea4fdb3f69322.webp">
+                <img src="assets/habitaciones/junior/122656218233a745c46c8a5a0b6523ea4fdb3f69322.webp" alt="Junior 1" />
               </div>
-              <div class="room-thumb-dot" data-target="img-junior" data-src="assets/casa_vita.jpg">
-                <img src="assets/casa_vita.jpg" alt="Piscina Casa Vita" />
+              <div class="room-thumb-dot" data-target="img-junior" data-room="junior" data-index="1" data-src="assets/habitaciones/junior/21026780292773a9525cf37fc4587dbb1cae9c7795b.webp">
+                <img src="assets/habitaciones/junior/21026780292773a9525cf37fc4587dbb1cae9c7795b.webp" alt="Junior 2" />
               </div>
-              <div class="room-thumb-dot" data-target="img-junior" data-src="assets/casa_vita_3.jpg">
-                <img src="assets/casa_vita_3.jpg" alt="Living Casa Vita" />
+              <div class="room-thumb-dot" data-target="img-junior" data-room="junior" data-index="2" data-src="assets/habitaciones/junior/2453124373098e92daaf6ac3295c1cce65c7a5a03eb.webp">
+                <img src="assets/habitaciones/junior/2453124373098e92daaf6ac3295c1cce65c7a5a03eb.webp" alt="Junior 3" />
+              </div>
+              <div class="room-thumb-dot" data-target="img-junior" data-room="junior" data-index="3" data-src="assets/habitaciones/junior/280357070240c919a885a047d70e2e50010e432f8d6.webp">
+                <img src="assets/habitaciones/junior/280357070240c919a885a047d70e2e50010e432f8d6.webp" alt="Junior 4" />
+              </div>
+              <div class="room-thumb-dot" data-target="img-junior" data-room="junior" data-index="4" data-src="assets/habitaciones/junior/52566950883ea8390fdcd3b1d73542b21fc455c6bf.webp">
+                <img src="assets/habitaciones/junior/52566950883ea8390fdcd3b1d73542b21fc455c6bf.webp" alt="Junior 5" />
+              </div>
+              <div class="room-thumb-dot" data-target="img-junior" data-room="junior" data-index="5" data-src="assets/habitaciones/junior/5256695097b98e778c6c11d81a92657c57906a3e3e.webp">
+                <img src="assets/habitaciones/junior/5256695097b98e778c6c11d81a92657c57906a3e3e.webp" alt="Junior 6" />
+              </div>
+              <div class="room-thumb-dot" data-target="img-junior" data-room="junior" data-index="6" data-src="assets/habitaciones/junior/_NZ76265-HDR.jpg">
+                <img src="assets/habitaciones/junior/_NZ76265-HDR.jpg" alt="Junior 7" />
+              </div>
+              <div class="room-thumb-dot" data-target="img-junior" data-room="junior" data-index="7" data-src="assets/habitaciones/junior/_NZ76302.jpg">
+                <img src="assets/habitaciones/junior/_NZ76302.jpg" alt="Junior 8" />
+              </div>
+              <div class="room-thumb-dot" data-target="img-junior" data-room="junior" data-index="8" data-src="assets/habitaciones/junior/_NZ76418-HDR.jpg">
+                <img src="assets/habitaciones/junior/_NZ76418-HDR.jpg" alt="Junior 9" />
               </div>
             </div>
             <button class="room-photo-counter open-drawer-btn" data-room="junior">
-              <i data-lucide="maximize-2" style="width:12px;height:12px"></i> Ver fotos
+              <i data-lucide="maximize-2" style="width:12px;height:12px"></i> Ver más
             </button>
           </div>
           <div class="room-card-header">
@@ -1579,7 +1705,7 @@
         <button class="room-drawer-close" id="drawerClose" aria-label="Cerrar">&times;</button>
       </div>
       <div class="room-drawer-body">
-        <div>
+        <div class="room-drawer-gallery-col">
           <div class="drawer-gallery-main">
             <img src="" alt="" id="drawerMainImg" />
           </div>
@@ -1637,9 +1763,9 @@
           <div class="footer-subgroup">
             <p class="footer-col-title">Vino y mesa</p>
             <ul class="footer-links">
-              <li><a href="index.html#cava">La cava</a></li>
+              <li><a href="cava-y-vinos.html">La cava</a></li>
               <li><a href="https://www.laresresto.com/" target="_blank" rel="noopener">Lares Restó</a></li>
-              <li><a href="index.html#experiences">Experiencias</a></li>
+              <li><a href="experiencias.html">Experiencias</a></li>
             </ul>
           </div>
           <div class="footer-subgroup">
@@ -1759,13 +1885,35 @@
         e.stopPropagation();
         const targetId = thumb.dataset.target;
         const newSrc = thumb.dataset.src;
+        const roomKey = thumb.dataset.room;
+        const idx = parseInt(thumb.dataset.index || '0', 10);
         const mainImg = document.getElementById(targetId);
         if (mainImg) {
           mainImg.src = newSrc;
         }
         const parent = thumb.parentElement;
-        parent.querySelectorAll('.room-thumb-dot').forEach(d => d.classList.remove('active'));
+        const allThumbs = Array.from(parent.querySelectorAll('.room-thumb-dot'));
+        allThumbs.forEach(d => d.classList.remove('active'));
         thumb.classList.add('active');
+      });
+    });
+
+    // Carousel arrow controls for room cards
+    document.querySelectorAll('.room-carousel-arrow').forEach(arrow => {
+      arrow.addEventListener('click', e => {
+        e.stopPropagation();
+        const isNext = arrow.classList.contains('next');
+        const card = arrow.closest('.room-editorial-card');
+        if (!card) return;
+        const thumbs = Array.from(card.querySelectorAll('.room-thumb-dot'));
+        if (thumbs.length === 0) return;
+        const activeIdx = thumbs.findIndex(t => t.classList.contains('active'));
+        const newIdx = isNext ? (activeIdx + 1) % thumbs.length : (activeIdx - 1 + thumbs.length) % thumbs.length;
+        const targetThumb = thumbs[newIdx];
+        if (targetThumb) {
+          targetThumb.click();
+          targetThumb.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+        }
       });
     });
 
@@ -1776,7 +1924,14 @@
         title: 'Habitación Clásica',
         size: '23 m² · Cama Queen o Twin',
         desc: 'La habitación Clásica de Lares de Chacras es la síntesis de nuestra propuesta boutique: confort, maderas nobles y silencio. Pensada para quienes buscan una estadía cálida y relajada, con acceso inmediato a los jardines, la piscina y la cava subterránea.',
-        photos: ['assets/room_classic.jpg', 'assets/casa_principal_1.jpg', 'assets/casa_principal_2.jpg'],
+        photos: [
+          'assets/habitaciones/clasica/136253197842566df3608d51b418ed797c2f903a9cb.webp',
+          'assets/habitaciones/clasica/15328482984ab8945d75abca7b81d2264f09d5013b9.webp',
+          'assets/habitaciones/clasica/17031647740bec7ed871bfed08d7991d3d5572cfac5.webp',
+          'assets/habitaciones/clasica/2384430965052716c00fba95ecf18bfb26d67808833.webp',
+          'assets/habitaciones/clasica/2725063643221633510d60fb74be32028e54b3a13ff.webp',
+          'assets/habitaciones/clasica/68126590966f2a80d01436bec9fa4f31525a865ab9.webp'
+        ],
         amenities: [
           { icon: 'bed', text: 'Cama Queen o 2 camas Twin' },
           { icon: 'wifi', text: 'Wi-Fi de alta velocidad' },
@@ -1794,7 +1949,15 @@
         title: 'Habitación Especial',
         size: '28 m² · Balcón o Galería Propia',
         desc: 'Cinco metros más de amplitud y un contacto privilegiado con la naturaleza mendocina. Balcón cubierto en la planta alta con vista a las copas de los árboles, o galería abierta en la planta baja con salida directa a los jardines.',
-        photos: ['assets/room_special.jpg', 'assets/casa_principal_4.jpg', 'assets/casa_principal_3.jpg'],
+        photos: [
+          'assets/habitaciones/especial/1362532306480da80fbdb8f20c49eab9dba968cfe06.webp',
+          'assets/habitaciones/especial/14620150530307b5f048ca557cf57d4bf5fefa56c73.webp',
+          'assets/habitaciones/especial/2214115000519d8b86cf964a3e3c02b3378cb8d7b86.webp',
+          'assets/habitaciones/especial/25991378656e1f3a55867ca515eaeb9727597195a3d.webp',
+          'assets/habitaciones/especial/3248922332bf9b99a8a09103e8cb0e8c91bac286c9.webp',
+          'assets/habitaciones/especial/68126615327351b35e799d8fb2cb42a37e44726e66.webp',
+          'assets/habitaciones/especial/85517383901d0353f0ecfe6ee73e22b462cc10b8af.webp'
+        ],
         amenities: [
           { icon: 'sun', text: 'Balcón o galería exterior' },
           { icon: 'trees', text: 'Vista a los jardines' },
@@ -1812,7 +1975,14 @@
         title: 'Habitación Superior',
         size: '30 m² · Hidromasaje Privado',
         desc: 'Nuestras dos habitaciones superiores ofrecen el máximo nivel de confort y carácter de la casona. Una de ellas cuenta con una romántica estufa a leña y la otra con un amplio balcón terraza. Ambas poseen hidromasaje en el baño y servicio de café.',
-        photos: ['assets/room_superior.jpg', 'assets/jacuzzi_lares.jpg', 'assets/before_booking_main.jpg'],
+        photos: [
+          'assets/habitaciones/superior/17031665240dee8d7cbd46ab3b31eff3770a08f07b3.webp',
+          'assets/habitaciones/superior/1873483179708c1b3a38d2432117fc87b5d39f85b52.webp',
+          'assets/habitaciones/superior/18734831808567443e94d7b84f88b740acd20798544.webp',
+          'assets/habitaciones/superior/187348318413d8af26635a9ee2e818d859449322f5d.webp',
+          'assets/habitaciones/superior/22141164890912fcf9df3e333ad9252f87232e315e2.webp',
+          'assets/habitaciones/superior/5109499572a2871ee28ea9672e302efc6eb7c5c685.webp'
+        ],
         amenities: [
           { icon: 'bath', text: 'Bañera de hidromasaje' },
           { icon: 'flame', text: 'Estufa a leña o balcón terraza' },
@@ -1830,7 +2000,17 @@
         title: 'Junior Casa Vita',
         size: '20 m² · Casona Independiente',
         desc: 'Casa Vita es una casona contigua a 20 metros del edificio central. Sus habitaciones Junior ofrecen una atmósfera más íntima y aislada, con parque arbolado propio, piscina exclusiva para sus huéspedes y un gran living con hogar a leña.',
-        photos: ['assets/casa_vita_2.jpg', 'assets/casa_vita.jpg', 'assets/casa_vita_3.jpg', 'assets/casa_vita_1.jpg'],
+        photos: [
+          'assets/habitaciones/junior/122656218233a745c46c8a5a0b6523ea4fdb3f69322.webp',
+          'assets/habitaciones/junior/21026780292773a9525cf37fc4587dbb1cae9c7795b.webp',
+          'assets/habitaciones/junior/2453124373098e92daaf6ac3295c1cce65c7a5a03eb.webp',
+          'assets/habitaciones/junior/280357070240c919a885a047d70e2e50010e432f8d6.webp',
+          'assets/habitaciones/junior/52566950883ea8390fdcd3b1d73542b21fc455c6bf.webp',
+          'assets/habitaciones/junior/5256695097b98e778c6c11d81a92657c57906a3e3e.webp',
+          'assets/habitaciones/junior/_NZ76265-HDR.jpg',
+          'assets/habitaciones/junior/_NZ76302.jpg',
+          'assets/habitaciones/junior/_NZ76418-HDR.jpg'
+        ],
         amenities: [
           { icon: 'home', text: 'Edificio independiente' },
           { icon: 'waves', text: 'Piscina exclusiva Casa Vita' },
